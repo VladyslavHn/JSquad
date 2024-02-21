@@ -9,3 +9,4 @@ import './js/Servises/api';
 import './js/Servises/helpers';
 import './js/SignUp/signup';
 import './js/SignUp/signupmarkup' 
+import './js/MainPage/ModalWindow/modalwindow' 
