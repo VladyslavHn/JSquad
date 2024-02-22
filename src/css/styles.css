@@ -7,13 +7,14 @@
 
 @import url('./reset.css');
 @import url('./Header/header.css');
-@import url('./MainMenu/mainmenu.css');
+@import url('./BestSallers/bestsallers.css');
 @import url('./ShoppingList/pagination.css');
 @import url('./ShoppingList/shoppinglist.css');
 @import url('./Sidebar/sidebarallcategories.css');
 @import url('./Sidebar/sidebarsupport.css');
 @import url('./SignUp/signup.css');
 @import url('./ModalWindow/modalwindow.css');
+@import url('./CategoryPage/categorypage.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

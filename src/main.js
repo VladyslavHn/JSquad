@@ -1,8 +1,8 @@
-import './js/CartPage/CardPagination/cardpagination';
+
 import './js/CartPage/ShoppingList/shoppinglist';
 import './js/MainPage/Header/header';
-import './js/MainPage/MainMenu/MainPagination/mainpagination';
-import './js/MainPage/MainMenu/MenuItem/menuitem';
+import './js/MainPage/BestSellers/bestsallers';
+import './js/MainPage/CategoryPage/categorypage';
 import './js/MainPage/Sidebar/SidebarAllCategories/sidebarallcategories';
 import './js/MainPage/Sidebar/SidebarSupport/sidebarsupport';
 import './js/Servises/api';
