@@ -1,5 +1,6 @@
 
-import './js/CartPage/ShoppingList/shoppinglist';
+import './js/ShoppingList/ShoppingList/shoppinglist';
+import './js/ShoppingList/CardPagination/cardpagination';
 import './js/MainPage/Header/header';
 import './js/MainPage/BestSellers/bestsallers';
 import './js/MainPage/CategoryPage/categorypage';
