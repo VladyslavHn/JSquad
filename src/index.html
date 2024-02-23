@@ -15,17 +15,23 @@
 </head>
 
 <body>
-  <aside>
-    <load src="./html/MainPage/Sidebar/allcategories.html" />
-    <load src="./html/MainPage/Sidebar/support.html" />
-  </aside>
-  <main>
-    <load src="./html/MainPage/Header/header.html" />
-    <load src="./html/MainPage/BestSellers/bestsellers.html" />
-    <load src="./html/MainPage/CategoryPage/categorypage.html" />
+  <main class="main">
+    <div class="container">
+      <aside>
+        <load src="./partials/allcategories.html" />
+        <load src="./partials/support.html" />
+      </aside>
+      <section>
+        <load src="./partials/header.html" />
+        <load src="./partials/bestsellers.html" />
+        <load src="./partials/categorypage.html" />
+      </section>
+      <section>
+        <load src="./partials/modalwindow.html" />
+        <load src="./partials/signup.html" />
+      </section>
+    </div>
   </main>
-  <load src="./html/MainPage/ModalWindow/modalwindow.html" />
-  <load src="./html/MainPage/SignUp/signup.html" />
   <script type="module" src="./main.js"></script>
 </body>
 

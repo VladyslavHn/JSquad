@@ -13,14 +13,18 @@
 </head>
 
 <body>
-    <aside>
-        <load src="./html/Sidebar/SidebarSupport/support.html" />
-    </aside>
-    <main>
-        <load src="./html/MainPage/Header/header.html" />
-        <load src="./html/CardPage/ShoppingList/shoppinglist.html" />
+    <main class="main">
+        <div class="container">
+            <aside>
+                <load src="./partials/support.html" />
+            </aside>
+            <section>
+                <load src="./partials/header.html" />
+                <load src="./partials/shoppinglist.html" />
+            </section>
+            <load src="./partials/signup.html" />
+        </div>
     </main>
-    <load src="./html/MainPage/SignUp/signup.html" />
     <script type="module" src="./main.js"></script>
 </body>
 

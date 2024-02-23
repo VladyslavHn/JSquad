@@ -6,15 +6,15 @@
 */
 
 @import url('./reset.css');
-@import url('./Header/header.css');
-@import url('./BestSellers/bestsellers.css');
-@import url('./ShoppingList/pagination.css');
-@import url('./ShoppingList/shoppinglist.css');
-@import url('./Sidebar/sidebarallcategories.css');
-@import url('./Sidebar/sidebarsupport.css');
-@import url('./SignUp/signup.css');
-@import url('./ModalWindow/modalwindow.css');
-@import url('./CategoryPage/categorypage.css');
+@import url('./header.css');
+@import url('./bestsellers.css');
+@import url('./pagination.css');
+@import url('./shoppinglist.css');
+@import url('./sidebarallcategories.css');
+@import url('./sidebarsupport.css');
+@import url('./signup.css');
+@import url('./modalwindow.css');
+@import url('./categorypage.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
