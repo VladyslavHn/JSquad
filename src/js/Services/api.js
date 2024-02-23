@@ -1,5 +1,5 @@
 import axios from 'axios';
-export default backendAPI;
+
 axios.defaults.baseURL = `https://books-backend.p.goit.global/books`;
 
 const backendAPI = {
@@ -39,3 +39,5 @@ const backendAPI = {
     }
   },
 };
+
+export default backendAPI;
