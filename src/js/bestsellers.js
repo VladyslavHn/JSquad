@@ -1,4 +1,4 @@
-import  backendAPI from "../../Services/api";
+import  backendAPI from "./Services/api";
 
 const categoriesBooksList = document.querySelector('.categories-books-list');
 
