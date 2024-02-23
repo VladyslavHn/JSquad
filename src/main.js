@@ -11,3 +11,4 @@ import './js/Services/helpers';
 import './js/signup';
 import './js/signupmarkup' 
 import './js/modalwindow' 
+import './js/localstorage'
