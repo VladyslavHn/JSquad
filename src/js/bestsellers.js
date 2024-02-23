@@ -1,8 +1,9 @@
 import backendAPI from "./Services/api";
 
-const bestBooksList = document.querySelector('.bestsellers-list');
+
 
 export const renderBestBooks = async () => {
+    const bestBooksList = document.querySelector('.bestsellers-list');
     try {
         const bestSellersData = await backendAPI.getBestSellers();
         const markup = bestSellersData.map(({ books, list_name }) => {
