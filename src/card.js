@@ -1,0 +1,9 @@
+import './js/shoppinglist';
+import './js/cardpagination';
+import './js/header';
+import './js/sidebarsupport';
+import './js/Services/api';
+import './js/Services/helpers';
+import './js/signup';
+import './js/signupmarkup' 
+import './js/localstorage'
