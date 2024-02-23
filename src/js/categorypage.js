@@ -3,7 +3,7 @@ import backendAPI from './Services/api';
 function renderCategoryPage(books, category) {
   const categoryPage = document.querySelector('.bestsellers-list');
   const categoryTitle = document.querySelector('.bestsellers-title');
-  categoryTitle.textContent(category);
+  categoryTitle.textContent = category;
   const markup = books
     .map(
       ({ author, book_image, title }) => `<li class="book-category-item">
@@ -15,7 +15,7 @@ function renderCategoryPage(books, category) {
       <p class = "author-name"> ${author}</p>
     </div>
   </div>
-</li>;`
+</li>`
     )
     .join('');
 
