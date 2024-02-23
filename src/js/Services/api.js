@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = `https://books-backend.p.goit.global/books`;
 
-const backenadAPI = {
+const backendAPI = {
   getCategoryList: async function () {
     try {
       const response = await axios.get(`/category-list`);
@@ -40,4 +40,4 @@ const backenadAPI = {
   },
 };
 
-export default backenadAPI;
+export default backendAPI;
