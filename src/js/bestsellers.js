@@ -18,8 +18,8 @@ function renderBooks(elements) {
             </ul >
             </li >
             <button class="categories-btn" type="button">See more</button>`        
-        }).join('\n');
-
+    }).join('\n');
+    
     categoriesBooksList.insertAdjacentHTML('beforeend', markup);
 }
 
