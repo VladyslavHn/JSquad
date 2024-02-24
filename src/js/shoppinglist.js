@@ -73,7 +73,7 @@ function renderShoppingListPage() {
   } else {
     renderShoppingList(books);
     shoppingList.addEventListener('click', e => {
-      console.log(e.target.closest('.cart-item-del-button'));
+      console.log(e.target.closest('.cart-item-del-button').dataset.id);
     });
   }
 }
