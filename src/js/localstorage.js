@@ -51,7 +51,8 @@ const localStorageBooks = {
       const itemBookById = this.books.findIndex(item => {
         return item._id === id;
       });
-      this.books.splice(this.books.indexOf(itemBookById), 1);
+      this.books.splice(itemBookById, 1); 
+    //   this.books.splice(this.books.indexOf(itemBookById), 1);
       localStorage.setItem(this.key, JSON.stringify(this.books));
     },
   };
