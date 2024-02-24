@@ -3,7 +3,7 @@ import backendAPI from "./Services/api";
 
 
 export const renderBestBooks = async () => {
-    const bestBooksList = document.querySelector('.bestsellers-list');
+    const bestBooksList = document.querySelector('.best-books');
     try {
         const bestSellersData = await backendAPI.getBestSellers();
         const markup = bestSellersData.map(({ books, list_name }) => {
@@ -27,4 +27,4 @@ export const renderBestBooks = async () => {
     }
 }
 
-renderBooks();
+renderBestBooks();

@@ -15,24 +15,19 @@
 @import url('./signup.css');
 @import url('./modalwindow.css');
 @import url('./categorypage.css');
+@import url('./helpers.css');
+@import url('./fonts.css');
 
 :root {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  --black: #111;
-  --black-1: #202024;
-  --violet: #4f2ee8;
-  --yellow: #eac645;
-  --white: #fff;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
 }
 
 html {
