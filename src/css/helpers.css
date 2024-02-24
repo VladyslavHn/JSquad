@@ -9,3 +9,13 @@
 .page-title > span {
   color: #4f2ee8;
 }
+
+@media screen and (min-width: 768px) {
+  .page-title {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}
