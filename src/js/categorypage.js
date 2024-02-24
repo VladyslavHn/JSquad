@@ -19,7 +19,7 @@ export function renderCategoryPage(books, category) {
     )
     .join('');
 
-  categoryPage.insertAdjacentHTML('beforeend', markup);
+  categoryPage.innerHTML = markup;
 }
 
 // btn.addEventListener('click', async () => {
