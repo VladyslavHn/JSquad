@@ -42,8 +42,7 @@ function categoryMarkup(data) {
 
 categorySelectors.allCategory.addEventListener('click', async () => {
   try {
-    const bestSellersData = await backendAPI.getBestSellers();
-    renderBestBooks(bestSellersData);
+    renderBestBooks('.bestsellers-container', 'Best Sellers');
   } catch (error) {
     console.log(error);
   }
@@ -61,8 +60,10 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     event.target.classList.add('category-active');
 
     try {
-      const categoryData = await backendAPI.getSelectedCategory(category);
-      renderCategoryPage(categoryData);
+      if (!event.target.classList.contains('all-category')) {
+        const categoryData = await backendAPI.getSelectedCategory(category);
+        renderCategoryPage(categoryData);
+      }
     } catch (error) {
       console.log(error);
     }
