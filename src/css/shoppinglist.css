@@ -2,9 +2,6 @@
   margin-bottom: 40px;
 }
 
-.cart {
-}
-
 .cart-empty {
   display: flex;
   flex-direction: column;
