@@ -11,7 +11,7 @@ function renderShoppingList(books) {
   shoppingList.innerHTML = '';
   const hmtlBookList = books
     .map(book => {
-      return `<li class="cart-item data-id="${book._id}">
+      return `<li class="cart-item">
       <img
         class="cart-item-img"
         src="${book.book_image}"
@@ -25,7 +25,7 @@ function renderShoppingList(books) {
             <h3 class="cart-item-title">${book.title}</h3>
             <p class="cart-item-category">${book.list_name}</p>
           </div>
-          <button class="cart-item-del-button">
+          <button data-id="${book._id}" class="cart-item-del-button">
             <svg class="cart-item-del-button-icon" width="12" height="12">
               <use href="../img/symbol-defs.svg#icon-delete-shoppinglist-tab" />
             </svg>
@@ -72,6 +72,9 @@ function renderShoppingListPage() {
     cartEmptyMsg.classList.remove('is-hidden');
   } else {
     renderShoppingList(books);
+    shoppingList.addEventListener('click', e => {
+      console.log(e.target.closest('.cart-item-del-button'));
+    });
   }
 }
 
