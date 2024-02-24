@@ -3,11 +3,11 @@
 * {
   list-style: none;
 }
-.backdrop.is-open {
+/* .backdrop.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-}
+} */
 
 .backdrop {
   width: 100%;
