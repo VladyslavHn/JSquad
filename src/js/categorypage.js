@@ -1,6 +1,6 @@
 import backendAPI from './Services/api';
 
-function renderCategoryPage(books, category) {
+export function renderCategoryPage(books, category) {
   const categoryPage = document.querySelector('.bestsellers-list');
   const categoryTitle = document.querySelector('.bestsellers-title');
   categoryTitle.textContent = category;
