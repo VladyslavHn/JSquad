@@ -76,13 +76,14 @@ function renderShoppingListPage() {
 }
 
 // const book = {
-//   _id: '643282b1e85766588626a016',
-//   title: "A GOOD GIRL'S GUIDE TO MURDER",
-//   author: 'Holly Jackson',
-//   list_name: 'Series Books',
+//   _id: '642fd89ac8cf5ee957f12214',
+//   title: 'CRYING IN H MART',
+//   author: 'Michelle Zauner',
+//   list_name: 'Paperback Nonfiction',
 //   book_image:
-//     'https://storage.googleapis.com/du-prd/books/images/9780593379851.jpg',
-//   description: 'Pippa Fitz-Amobi solves murderous crimes.',
+//     'https://storage.googleapis.com/du-prd/books/images/9780525657743.jpg',
+//   description:
+//     'The daughter of a Korean mother and Jewish American father, and leader of the indie rock project Japanese Breakfast, describes creating her own identity after losing her mother to cancer.',
 //   amazon_buy_link: 'https://www.amazon.com/dp/0593379853?tag=NYTBSREV-20',
 //   apple_buy_link: 'https://goto.applebooks.apple/9781984896391?at=10lIEQ',
 // };
