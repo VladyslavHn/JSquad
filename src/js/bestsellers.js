@@ -28,6 +28,40 @@ export const renderBestBooks = async () => {
 
 renderBestBooks();
 
+// ========================================================================
+const bestsellersBtn = document.querySelector('.bestsellers-btn');
+    console.log(bestsellersBtn);
+    const categoryTitle = document.querySelector('.bestsellers-category-title');
+    console.log(categoryTitle);
+    const container = document.querySelector('.bestsellers-container');
+
+    bestsellersBtn.addEventListener('click', async (e) => {
+        const category = categoryTitle.textContent;
+        console.log(category);
+
+        const result = await backendAPI.getSelectedCategory(category);
+        console.log(result);
+        // if(category === ) {
+
+        // }
+        container.innerHTML = '';
+        renderCategoryPage(result, category);
+    });
+
+// =======================================================================
+// const bestsellersList = document.querySelector('.bestsellers-list');
+
+// bestsellersList.addEventListener('click', async (e) => {
+//      e.preventDefault();
+
+//      if (e.target.nodeName !== 'IMG') {
+//     return;
+//     }
+//     // викликаємо модальне вікно
+// });
+
+// =========================================================================
+
 // const handleSeeMoreClick = async (e) => {
 //     const category = e.target.getAttribute('data-category');
 
@@ -54,4 +88,4 @@ renderBestBooks();
 //     document.querySelector('.bestsellers-list').insertAdjacentHTML('beforeend', markupCategory);
 // };
 
-
+// ========================================================================
