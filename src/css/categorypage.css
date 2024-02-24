@@ -1,7 +1,7 @@
 .bestsellers-title {
   font-weight: 700;
-  font-size: 48px;
-  line-height: 1.08333;
+  font-size: 32px;
+  line-height: 1.1875;
   letter-spacing: -0.04em;
   color: #111;
 }
@@ -45,6 +45,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  .bestsellers-title {
+    font-size: 48px;
+    line-height: 1.08333;
+  }
+
   .book-category-list {
     display: flex;
     flex-wrap: wrap;
