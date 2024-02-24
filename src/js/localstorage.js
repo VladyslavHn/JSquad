@@ -32,11 +32,9 @@ const localStorageBooks = {
     } else {
       this.books = JSON.parse(localStorage.getItem(this.key));
     }
-
     if (this.isBookExsist(book._id)) {
       console.log('Oops, this book already in shopping list');
     } else {
-      console.log(this.books);
       this.books.push(book);
       localStorage.setItem(this.key, JSON.stringify(this.books));
     }
@@ -51,8 +49,7 @@ const localStorageBooks = {
     const itemBookById = this.books.findIndex(item => {
       return item._id === id;
     });
-    console.log(itemBookById);
-    this.books.splice(itemBookById, 1);
+    this.books.splice(this.books.indexOf(itemBookById), 1);
     localStorage.setItem(this.key, JSON.stringify(this.books));
   },
 };

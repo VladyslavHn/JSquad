@@ -30,10 +30,11 @@
 // Рендер информации в модалку
 import backendAPI from './Services/api';
 import localStorageBooks from '../js/localstorage';
-const bookId = '643282b1e85766588626a087';
+const bookId = '643282b2e85766588626a114';
 export const renderModal = async bookId => {
   const backdrop = document.querySelector('.modal-wrapper');
   const links = document.querySelector('.modal-icons-list');
+  const modalWindow = document.querySelector('.modal-window');
 
   try {
     const modalData = await backendAPI.getBookDescription(bookId);
@@ -59,6 +60,7 @@ export const renderModal = async bookId => {
         <a class="modal-icon" href="${modalData.buy_links[1].url}">apple</a>
       </li>`;
     links.insertAdjacentHTML('beforeend', murkupLinks);
+    // Добавление в локал сторедж, смена кнопок и текста
     let btnAdd = document.querySelector('.modal-btn-add');
     const book = {
       _id: modalData._id,
@@ -73,26 +75,34 @@ export const renderModal = async bookId => {
     console.log(modalData._id);
     if (localStorageBooks.isBookExsist(modalData._id)) {
       btnAdd.textContent = 'remove from the shopping list';
-      btnAdd.addEventListener(
-        'click',
-        // localStorageBooks.removeBookFromFavorites(modalData._id)
-        () => {
-          localStorageBooks.removeBookFromFavorites(modalData._id);
-          btnAdd.textContent = 'add to shopping list';
-          renderModal(modalData._id);
-        }
-      );
+      const congrats = `<p class="modal-text-congratulations">
+      Сongratulations! You have added the book to the shopping list. To delete,
+      press the button "Remove from the shopping list".
+    </p>`;
+      modalWindow.insertAdjacentHTML('beforeend', congrats);
+      btnAdd.addEventListener('click', remove);
+      function remove() {
+        localStorageBooks.removeBookFromFavorites(modalData._id);
+        btnAdd.textContent = 'add to shopping list';
+        btnAdd.classList.remove('modal-btn-remove');
+        btnAdd.removeEventListener('click', remove);
+        renderModal(modalData._id);
+      }
     } else {
       btnAdd.textContent = 'add to shopping list';
-      btnAdd.addEventListener(
-        'click',
-        // localStorageBooks.addBookToFavorites(book)
-        () => {
-          localStorageBooks.addBookToFavorites(book);
-          btnAdd.textContent = 'remove from the shopping list';
-          renderModal(modalData._id);
-        }
+      btnAdd.addEventListener('click', add);
+      const congratsRemove = document.querySelector(
+        '.modal-text-congratulations'
       );
+      congratsRemove.remove();
+      function add() {
+        localStorageBooks.addBookToFavorites(book);
+        btnAdd.textContent = 'remove from the shopping list';
+        btnAdd.classList.add('modal-btn-remove');
+        btnAdd.removeEventListener('click', add);
+
+        renderModal(modalData._id);
+      }
     }
 
     console.log(murkupLinks);
@@ -111,6 +121,7 @@ btnClose.addEventListener('click', () => {
   backdrop.classList.remove('is-open');
 });
 /////////////////////////////////////////////////////////////////////////////////
+
 // function showModal() {
 //   backdrop.classList.add('.is-open');
 // }
