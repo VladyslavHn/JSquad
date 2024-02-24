@@ -83,12 +83,12 @@
 }
 
 .cart-item-del-button {
-  height: 28px;
-  width: 28px;
+  display: flex;
+  align-items: center;
+  /* height: 28px;
+  width: 28px; */
   background-color: #4f2ee8;
-  display: block;
-  padding: 6px;
-  margin: 0;
+  padding: 8px;
   outline: none;
   border: none;
   border-radius: 50%;
