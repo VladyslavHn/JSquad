@@ -1,41 +1,41 @@
-import{b as n}from"./assets/api-01ea8258.js";import"./assets/vendor-0cb09735.js";const d={key:"books",books:[],getAllBooks:function(){return localStorage.getItem(this.key)===null?[]:JSON.parse(localStorage.getItem(this.key))},isBookExsist:function(e){return localStorage.getItem(this.key)===null?this.books=[]:this.books=JSON.parse(localStorage.getItem(this.key)),this.books.findIndex(s=>s._id===e)!==-1},addBookToFavorites:function(e){localStorage.getItem(this.key)===null?this.books=[]:this.books=JSON.parse(localStorage.getItem(this.key)),this.isBookExsist(e._id)?console.log("Oops, this book already in shopping list"):(this.books.push(e),localStorage.setItem(this.key,JSON.stringify(this.books)))},removeBookFromFavorites:function(e){localStorage.getItem(this.key)===null?this.books=[]:this.books=JSON.parse(localStorage.getItem(this.key));const o=this.books.findIndex(s=>s._id===e);this.books.splice(this.books.indexOf(o),1),localStorage.setItem(this.key,JSON.stringify(this.books))}},k=async()=>{const e=document.querySelector(".bestsellers-list");try{const s=(await n.getBestSellers()).map(({books:l,list_name:t})=>`<li class="bestsellers-item">
-             <h2 class="bestsellers-category-title">${t}</h2>
+import{b as i,l as d}from"./assets/api-ca5c8bef.js";import"./assets/vendor-0cb09735.js";const b=async()=>{const t=document.querySelector(".bestsellers-list");try{const a=(await i.getBestSellers()).map(({books:r,list_name:e})=>`<li class="bestsellers-item">
+             <h2 class="bestsellers-category-title">${e}</h2>
                 <ul class="bestsellers-books-list"> 
-                    ${l.map(({book_image:a,title:i,author:r})=>`<li class="bestsellers-books-item">
-                            <img class="bestsellers-books-img" src='${a}' alt="" />
-                            <h3 class="bestsellers-book-title">${i}</h3>
-                            <p class="bestsellers-book-author">${r}</p>
+                    ${r.map(({book_image:l,title:c,author:o})=>`<li class="bestsellers-books-item">
+                            <img class="bestsellers-books-img" src='${l}' alt="" />
+                            <h3 class="bestsellers-book-title">${c}</h3>
+                            <p class="bestsellers-book-author">${o}</p>
                         </li>`).join(`
 `)}
                 </ul>
                 <button class="bestsellers-btn" type="button">See more</button>
             </li>`).join(`
-`);e.insertAdjacentHTML("beforeend",s)}catch(o){console.error("Error fetching best sellers:",o)}};k();function y(e,o){const s=document.querySelector(".bestsellers-list"),l=document.querySelector(".bestsellers-title");l.textContent=o;const t=e.map(({author:a,book_image:i,title:r})=>`<li class="book-category-item">
+`);t.insertAdjacentHTML("beforeend",a)}catch(s){console.error("Error fetching best sellers:",s)}};b();function p(t,s){const a=document.querySelector(".bestsellers-list"),r=document.querySelector(".bestsellers-title");r.textContent=s;const e=t.map(({author:l,book_image:c,title:o})=>`<li class="book-category-item">
   <div class="book-category-card">
-    <img class="book-category-image" src="${i}" alt="Book cover" width="180" />
+    <img class="book-category-image" src="${c}" alt="Book cover" width="180" />
     <div class="book-category-text">
       <h3 class = "book-title">
-      ${r}</h3>
-      <p class = "author-name"> ${a}</p>
+      ${o}</h3>
+      <p class = "author-name"> ${l}</p>
     </div>
   </div>
-</li>`).join("");s.innerHTML=t}const g={categoryContainer:document.querySelector(".sidebar-category-container"),categoryList:document.querySelector(".sidebar-category-list"),allCategory:document.querySelector(".all-category")};function p(e){return e.map(s=>`<li class='sidebar-category-item' data-source="${s.list_name}">${s.list_name}</li>`).join("")}(async()=>{try{const e=await n.getCategoryList(),o=p(e);g.categoryList.insertAdjacentHTML("beforeend",o)}catch(e){console.log(e)}})();g.allCategory.addEventListener("click",async()=>{try{const e=await n.getBestSellers();k(e)}catch(e){console.log(e)}});g.categoryList.addEventListener("click",async e=>{if(e.target.classList.contains("sidebar-category-item")){const o=e.target.dataset.source;document.querySelectorAll(".sidebar-category-item").forEach(l=>{l.classList.remove("category-active")}),e.target.classList.add("category-active");try{const l=await n.getSelectedCategory(o);y(l)}catch(l){console.log(l)}}});const h="643282b2e85766588626a114",m=async e=>{const o=document.querySelector(".modal-wrapper"),s=document.querySelector(".modal-icons-list"),l=document.querySelector(".modal-window");try{const t=await n.getBookDescription(e);o.innerHTML="",s.innerHTML="";const a=`
-      <img class="modal-img-book" src="${t.book_image}" alt="book" />
+</li>`).join("");a.innerHTML=e}const u={categoryContainer:document.querySelector(".sidebar-category-container"),categoryList:document.querySelector(".sidebar-category-list"),allCategory:document.querySelector(".all-category")};function k(t){return t.map(a=>`<li class='sidebar-category-item' data-source="${a.list_name}">${a.list_name}</li>`).join("")}(async()=>{try{const t=await i.getCategoryList(),s=k(t);u.categoryList.insertAdjacentHTML("beforeend",s)}catch(t){console.log(t)}})();u.allCategory.addEventListener("click",async()=>{try{const t=await i.getBestSellers();b(t)}catch(t){console.log(t)}});u.categoryList.addEventListener("click",async t=>{if(t.target.classList.contains("sidebar-category-item")){const s=t.target.dataset.source;document.querySelectorAll(".sidebar-category-item").forEach(r=>{r.classList.remove("category-active")}),t.target.classList.add("category-active");try{const r=await i.getSelectedCategory(s);p(r)}catch(r){console.log(r)}}});const h="643282b2e85766588626a114",m=async t=>{const s=document.querySelector(".modal-wrapper"),a=document.querySelector(".modal-icons-list"),r=document.querySelector(".modal-window");try{const e=await i.getBookDescription(t);s.innerHTML="",a.innerHTML="";const l=`
+      <img class="modal-img-book" src="${e.book_image}" alt="book" />
       <ul class="modal-description-list">
-      <li><p class="modal-description-list-title">${t.title}</p></li>
-      <li><p class="modal-description-list-subtitle">${t.author}</p></li>
+      <li><p class="modal-description-list-title">${e.title}</p></li>
+      <li><p class="modal-description-list-subtitle">${e.author}</p></li>
       <li>
         <p class="modal-description-list-text">
-          ${t.description}
+          ${e.description}
         </p>
       </li>
-      </ul>`;o.insertAdjacentHTML("beforeend",a),console.log(a);const i=`<li class="modal-icons-wrapper-1">
-        <a class="modal-icon" href="${t.buy_links[0].url}">amazon</a>
+      </ul>`;s.insertAdjacentHTML("beforeend",l),console.log(l);const c=`<li class="modal-icons-wrapper-1">
+        <a class="modal-icon" href="${e.buy_links[0].url}">amazon</a>
       </li>
       <li class="modal-icons-wrapper-2">
-        <a class="modal-icon" href="${t.buy_links[1].url}">apple</a>
-      </li>`;s.insertAdjacentHTML("beforeend",i);let r=document.querySelector(".modal-btn-add");const b={_id:t._id,title:t.title,author:t.author,list_name:t.list_name,book_image:t.book_image,description:t.description,amazon_buy_link:t.buy_links[0].url,apple_buy_link:t.buy_links[1].url};if(console.log(t._id),d.isBookExsist(t._id)){let c=function(){d.removeBookFromFavorites(t._id),r.textContent="add to shopping list",r.classList.remove("modal-btn-remove"),r.removeEventListener("click",c),m(t._id)};r.textContent="remove from the shopping list";const u=`<p class="modal-text-congratulations">
+        <a class="modal-icon" href="${e.buy_links[1].url}">apple</a>
+      </li>`;a.insertAdjacentHTML("beforeend",c);let o=document.querySelector(".modal-btn-add");const y={_id:e._id,title:e.title,author:e.author,list_name:e.list_name,book_image:e.book_image,description:e.description,amazon_buy_link:e.buy_links[0].url,apple_buy_link:e.buy_links[1].url};if(console.log(e._id),d.isBookExsist(e._id)){let n=function(){d.removeBookFromFavorites(e._id),o.textContent="add to shopping list",o.classList.remove("modal-btn-remove"),o.removeEventListener("click",n),m(e._id)};o.textContent="remove from the shopping list";const g=`<p class="modal-text-congratulations">
       Сongratulations! You have added the book to the shopping list. To delete,
       press the button "Remove from the shopping list".
-    </p>`;l.insertAdjacentHTML("beforeend",u),r.addEventListener("click",c)}else{let c=function(){d.addBookToFavorites(b),r.textContent="remove from the shopping list",r.classList.add("modal-btn-remove"),r.removeEventListener("click",c),m(t._id)};r.textContent="add to shopping list",r.addEventListener("click",c),document.querySelector(".modal-text-congratulations").remove()}console.log(i)}catch(t){console.log("Error fetching modal:",t)}};m(h);const S=document.querySelector(".backdrop"),f=document.querySelector(".modal-close");f.addEventListener("click",()=>{S.classList.remove("is-open")});
+    </p>`;r.insertAdjacentHTML("beforeend",g),o.addEventListener("click",n)}else{let n=function(){d.addBookToFavorites(y),o.textContent="remove from the shopping list",o.classList.add("modal-btn-remove"),o.removeEventListener("click",n),m(e._id)};o.textContent="add to shopping list",o.addEventListener("click",n),document.querySelector(".modal-text-congratulations").remove()}console.log(c)}catch(e){console.log("Error fetching modal:",e)}};m(h);const v=document.querySelector(".backdrop"),L=document.querySelector(".modal-close");L.addEventListener("click",()=>{v.classList.remove("is-open")});
 //# sourceMappingURL=commonHelpers2.js.map

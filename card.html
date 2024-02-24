@@ -8,9 +8,10 @@
     
     
     
-  <script type="module" crossorigin src="/CrazySuperStars/assets/vendor-0cb09735.js"></script>
-  <script type="module" crossorigin src="/CrazySuperStars/assets/api-01ea8258.js"></script>
-  <link rel="stylesheet" href="/CrazySuperStars/assets/api-841ebce2.css">
+  <script type="module" crossorigin src="/CrazySuperStars/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/vendor-0cb09735.js">
+  <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/api-ca5c8bef.js">
+  <link rel="stylesheet" href="/CrazySuperStars/assets/api-4acc3e94.css">
 </head>
 
 <body>
@@ -140,7 +141,102 @@
 
             </aside>
             <section>
-                
+                <div class="cart">
+  <div class="cart-empty is-hidden">
+    <p class="cart-empty-msg">
+      This page is empty, add some books and proceed to order.
+    </p>
+    <picture class="cart-empty-img">
+      <source
+        srcset="
+          ../img/shoppinglist-empty-desk.png    1x,
+          ../img/shoppinglist-empty-desk-2x.png 2x
+        "
+        media="(min-width: 1440px)"
+        type="image/png"
+      />
+      <source
+        srcset="
+          ../img/shoppinglist-empty-tab.png    1x,
+          ../img/shoppinglist-empty-tab-2x.png 2x
+        "
+        media="(min-width: 768px)"
+        type="image/png"
+      />
+      <source
+        srcset="
+          ../img/shoppinglist-empty-mob.png    1x,
+          ../img/shoppinglist-empty-mob-2x.png 2x
+        "
+        media="(min-width: 365px)"
+        type="image/png"
+      />
+      <img
+        class="cart-empty-img"
+        src="../img/shoppinglist-empty-mob.png"
+        alt="shopping cart empty"
+        height="265"
+        width="198"
+      />
+    </picture>
+  </div>
+  <ul class="cart-list"></ul>
+
+  <!-- <ul class="cart-books-list">
+    <li class="cart-item">
+      <img
+        class="cart-item-img"
+        src="https://storage.googleapis.com/du-prd/books/images/9780593379851.jpg"
+        alt="book image"
+        width="100"
+        height="142"
+      />
+      <div class="cart-item-content">
+        <div class="cart-item-content-top">
+          <div class="cart-item-content-top-left">
+            <h3 class="cart-item-title">A GOOD GIRL'S GUIDE TO MURDER</h3>
+            <p class="cart-item-category">Series Books</p>
+          </div>
+          <button class="cart-item-del-button">
+            <svg class="cart-item-del-button-icon" width="12" height="12">
+              <use href="../img/symbol-defs.svg#icon-delete-shoppinglist-tab" />
+            </svg>
+          </button>
+        </div>
+        <div class="cart-item-content-middle">
+          <p class="cart-item-content-desc">
+            Pippa Fitz-Amobi solves murderous crimes. Lorem ipsum hola asd asd
+            as dasd asd asd asd asdas dasd asda dasd asd adad asd asd asdas
+          </p>
+          <div class="cart-item-content-bottom">
+            <p class="cart-item-author">Holly Jackson</p>
+            <div class="cart-items-links">
+              <a
+                class="cart-items-link"
+                target="_blank"
+                href="https://www.amazon.com/dp/0593379853?tag=NYTBSREV-20"
+              >
+                <svg class="cart-item-amazon" width="32" height="11">
+                  <use href="../img/symbol-defs.svg#icon-amazon" />
+                </svg>
+              </a>
+              <a
+                class="cart-items-link"
+                target="_blank"
+                href="https://goto.applebooks.apple/9781984896391?at=10lIEQ"
+              >
+                <svg class="cart-items-apple" width="16" height="16">
+                  <use href="../img/symbol-defs.svg#icon-applebook" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul> -->
+</div>
+
             </section>
         </div>
     </main>
