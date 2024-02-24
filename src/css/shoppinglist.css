@@ -1,3 +1,7 @@
+.page-title {
+  margin-bottom: 40px;
+}
+
 .cart-empty {
   display: flex;
   flex-direction: column;
@@ -21,15 +25,26 @@
   margin: auto;
 }
 
+/* BOOKS LIST */
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: max-content;
+  /* margin: 0 auto; */
+}
+
 /* BOOK CARD */
 .cart-item {
-  height: 170px;
-  padding: 14px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 8px;
   display: flex;
   gap: 14px;
   margin: 0 auto;
+  height: 170px;
+  max-width: 335px;
+  padding: 14px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -85,14 +100,14 @@
 .cart-item-del-button {
   display: flex;
   align-items: center;
-  /* height: 28px;
-  width: 28px; */
+  height: 28px;
+  width: 28px;
   background-color: #4f2ee8;
   padding: 8px;
   outline: none;
   border: none;
   border-radius: 50%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .cart-item-del-button-icon {
@@ -102,7 +117,7 @@
 .cart-item-content-middle {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
   justify-content: space-between;
 }
 
@@ -115,7 +130,7 @@
 
 .cart-item-content-desc {
   font-size: 14px;
-  line-height: 129%;
+  line-height: 1.29em;
   letter-spacing: -0.04em;
   /* white-space: nowrap; */
   /* text-overflow: ellipsis; */
@@ -169,6 +184,20 @@
   .cart-empty-msg {
     font-size: 18px;
     line-height: 1.33em;
+  }
+
+  .cart-item {
+    height: 213px;
+    min-width: 704px;
+  }
+
+  .cart-item-img {
+    height: 165px;
+    width: 116px;
+  }
+
+  .cart-item-content-top-left {
+    max-width: 500px;
   }
 }
 
