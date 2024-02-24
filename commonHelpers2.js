@@ -1,4 +1,4 @@
-import{b as r}from"./assets/api-3310354d.js";import"./assets/vendor-0cb09735.js";const i=async()=>{const e=document.querySelector(".best-books");try{const s=(await r.getBestSellers()).map(({books:o,list_name:l})=>`<li class="bestsellers-item">${l}
+import{b as r}from"./assets/api-46a5cd0f.js";import"./assets/vendor-0cb09735.js";const i=async()=>{const e=document.querySelector(".best-books");try{const s=(await r.getBestSellers()).map(({books:o,list_name:l})=>`<li class="bestsellers-item">${l}
                 <ul class="bestsellers-books-list"> 
                     ${o.map(({book_image:c,title:a,author:n})=>`<li class="bestsellers-books-item">
                             <img class="bestsellers-books-img" src='${c}' alt="" />
