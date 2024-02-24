@@ -7,7 +7,7 @@ const cartEmptyMsg = document.querySelector('.cart-empty');
 renderTitle('.container', 'Shopping List');
 
 function renderShoppingList(books) {
-  console.log(books);
+  // console.log(books);
   shoppingList.innerHTML = '';
   const hmtlBookList = books
     .map(book => {
@@ -68,18 +68,22 @@ function renderShoppingList(books) {
 
 function renderShoppingListPage() {
   const books = localStorageBooks.getAllBooks();
-  if (books.legth === 0) {
+  if (books.length === 0) {
     cartEmptyMsg.classList.remove('is-hidden');
   } else {
     renderShoppingList(books);
-    shoppingList.addEventListener('click', e => {
-      console.log(e.target.closest('.cart-item-del-button').dataset.id);
-    });
+    shoppingList.addEventListener('click', remove);
+    function remove(e) {
+      const bookId = e.target.closest('.cart-item-del-button').dataset.id;
+      localStorageBooks.removeBookFromFavorites(bookId);
+      shoppingList.removeEventListener('click', remove);
+      renderShoppingListPage();
+    }
   }
 }
 
 // const book = {
-//   _id: '642fd89ac8cf5ee957f12214',
+//   _id: '642fd89ac8cf5ee957f12219',
 //   title: 'CRYING IN H MART',
 //   author: 'Michelle Zauner',
 //   list_name: 'Paperback Nonfiction',
