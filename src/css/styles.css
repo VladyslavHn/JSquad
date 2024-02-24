@@ -15,6 +15,7 @@
 @import url('./signup.css');
 @import url('./modalwindow.css');
 @import url('./categorypage.css');
+@import url('./helpers.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
