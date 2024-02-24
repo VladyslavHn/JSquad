@@ -1,0 +1,302 @@
+<<<<<<< Updated upstream
+.bestsellers {}
+
+.bestsellers-container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+    .bestsellers-container {
+        padding-top: 98px;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .bestsellers-container {
+        padding-top: 40px;
+        padding-bottom: 72px;
+        max-width: 996px;
+    }
+}
+
+.bestsellers-title { /*Olena*/
+=======
+.bestsellers {
+    background: #f6f6f6;
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-container {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-title {
+    font-family: "DM Sans", sans-serif;
+>>>>>>> Stashed changes
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    color: #111;
+<<<<<<< Updated upstream
+    margin-bottom: 40px;
+}
+
+.bestsellers-title-color {
+    color: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) { /*Olena*/
+=======
+    margin: 40px 95px 40px 20px;
+}
+
+@media screen and (min-width: 768px) {
+>>>>>>> Stashed changes
+    .bestsellers-title {
+        font-size: 48px;
+        line-height: 1.08333;
+    }
+}
+
+<<<<<<< Updated upstream
+.bestsellers-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.bestsellers-item {
+    width: 100%;
+}
+
+.bestsellers-category-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #b4afaf;
+    margin-bottom: 18px;
+}
+
+.bestsellers-books-list {
+    display: flex;
+    height: 535px; 
+    margin-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    .bestsellers-books-list {
+        gap: 25px;
+        height: 366px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-title-color {
+    color: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-list {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-item {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-books-list {
+    display: flex;
+    gap: 25px;
+}
+
+@media screen and (min-width: 768px) {}
+>>>>>>> Stashed changes
+
+@media screen and (min-width: 1440px) {
+    .bestsellers-books-list {
+        gap: 24px;
+<<<<<<< Updated upstream
+        height: 306px;
+        margin-bottom: 32px;
+    }
+}
+
+.bestsellers-books-item { /*Olena book-category-item*/
+    width: 335px;
+    align-items: center;
+}
+
+.bestsellers-books-list .bestsellers-books-item:nth-child(2),
+.bestsellers-books-list .bestsellers-books-item:nth-child(3),
+.bestsellers-books-list .bestsellers-books-item:nth-child(4),
+.bestsellers-books-list .bestsellers-books-item:nth-child(5) {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .bestsellers-books-item {
+        width: 218px;
+    }
+
+    .bestsellers-books-list .bestsellers-books-item:nth-child(2),
+    .bestsellers-books-list .bestsellers-books-item:nth-child(3) {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .book-category-item {
+        width: 180px;
+        align-items: center;
+    }
+    
+    .bestsellers-books-list .bestsellers-books-item:nth-child(4),
+    .bestsellers-books-list .bestsellers-books-item:nth-child(5) {
+        display: block;
+    }
+}
+
+.bestsellers-books-img {
+    width: 100%;
+    height: 485px;
+=======
+    }
+}
+
+.bestsellers-books-item {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-books-img {
+>>>>>>> Stashed changes
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    .bestsellers-books-img {
+<<<<<<< Updated upstream
+        height: 316px;
+=======
+        width: 218px;
+>>>>>>> Stashed changes
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .bestsellers-books-img {
+<<<<<<< Updated upstream
+        height: 256px;
+=======
+        width: 180px;
+>>>>>>> Stashed changes
+    }
+}
+
+.bestsellers-book-title {
+<<<<<<< Updated upstream
+=======
+    font-family: "DM Sans", sans-serif;
+>>>>>>> Stashed changes
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+<<<<<<< Updated upstream
+    margin-top: 14px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    height: 18px;
+}
+
+.bestsellers-book-author {
+=======
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+.bestsellers-book-author {
+    font-family: "DM Sans", sans-serif;
+>>>>>>> Stashed changes
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: -0.04em;
+    color: #b4afaf;
+<<<<<<< Updated upstream
+    overflow: hidden;
+    height: 14px;
+    text-transform: capitalize;
+}
+
+=======
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+
+>>>>>>> Stashed changes
+.bestsellers-btn {
+    border: 2px solid #4f2ee8;
+    border-radius: 40px;
+    padding: 14px 26px;
+    width: 124px;
+<<<<<<< Updated upstream
+    height: 46px; 
+=======
+    height: 46px;
+
+    font-family: "DM Sans", sans-serif;
+>>>>>>> Stashed changes
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #111;
+<<<<<<< Updated upstream
+    float: right;
+    background-color: transparent;
+}
+
+=======
+    margin-top: 8px;
+    margin-bottom: 40px;
+    float: right;
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {}
+>>>>>>> Stashed changes
