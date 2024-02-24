@@ -1,5 +1,5 @@
 export function renderTitle(containerClass, title) {
-  const container = document.querySelector(con);
+  const container = document.querySelector(containerClass);
   const words = title.split(' ');
   const lastWord = words[words.length - 1];
   words.pop();
