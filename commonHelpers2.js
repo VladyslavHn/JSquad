@@ -1,4 +1,4 @@
-import{b as i,l as g,r as b,a as p}from"./assets/api-ad6736d5.js";import"./assets/vendor-0cb09735.js";const u=async e=>{const t=document.querySelector(".modal-wrapper"),r=document.querySelector(".modal-icons-list"),a=document.querySelector(".modal-window");try{const o=await i.getBookDescription(e);t.innerHTML="",r.innerHTML="";const d=`
+import{b as i,l as g,r as b,a as p}from"./assets/api-5dfa18f0.js";import"./assets/vendor-0cb09735.js";const u=async e=>{const t=document.querySelector(".modal-wrapper"),r=document.querySelector(".modal-icons-list"),a=document.querySelector(".modal-window");try{const o=await i.getBookDescription(e);t.innerHTML="",r.innerHTML="";const d=`
       <img class="modal-img-book" src="${o.book_image}" alt="book" />
       <ul class="modal-description-list">
       <li><p class="modal-description-list-title">${o.title}</p></li>
