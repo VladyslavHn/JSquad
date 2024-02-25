@@ -47,6 +47,7 @@
   height: 460px;
   display: flax;
   gap: 16px;
+  z-index: 1;
 }
 
 .slider {
@@ -67,7 +68,7 @@
   height: 256px;
   width: 1024;
   border-radius: 16px;
-  display: flax;
+  display: flex;
   position: relative;
   bottom: 0;
   transition: ease 1s;
