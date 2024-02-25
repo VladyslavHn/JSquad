@@ -46,6 +46,10 @@ html {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    padding-top: 112px;
+  }
+
   .container {
     max-width: 704px;
     padding-left: 0;

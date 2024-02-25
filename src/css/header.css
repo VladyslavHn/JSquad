@@ -39,6 +39,7 @@ button {
   width: 100%;
   z-index: 1000;
   margin-bottom: 40px;
+  background-color: #f6f6f6;
 }
 
 .header-container {
@@ -156,7 +157,11 @@ button {
   width: 100%;
   height: 100%;
   box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
-  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    rgb(79, 46, 232) 18.02733987569809%,
+    rgb(255, 255, 255) 100%
+  );
   padding: 20px;
   overflow-y: auto;
   display: flex;
@@ -179,7 +184,6 @@ button {
   margin-bottom: 17px;
   flex-direction: column;
 }
-
 
 @media screen and (min-width: 768px) {
   .menu-open-btn {
