@@ -1,21 +1,21 @@
 .pagination-list {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
   margin-bottom: 40px;
 }
 
 .pagination-list > button {
   border-radius: 50%;
-  height: 44px;
-  width: 44px;
+  height: 38px;
+  width: 38px;
   outline: none;
   border: 1px solid #111111;
 }
 
 .pagination-buttons-first,
 .pagination-buttons-prev {
-  background-color: black;
+  background-color: #111111;
   color: white;
 }
 
@@ -27,14 +27,14 @@
 
 .pagination-buttons-numbers {
   display: flex;
-  gap: 8px;
-  margin-left: 16px;
-  margin-right: 16px;
+  gap: 5px;
+  margin-left: 9px;
+  margin-right: 9px;
 }
 
 .pagination-buttons-numbers > li > button {
-  height: 44px;
-  width: 44px;
+  height: 38px;
+  width: 38px;
   border-radius: 50%;
   outline: none;
   border: 1px solid black;
@@ -43,4 +43,30 @@
 .active {
   background-color: #111111;
   color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .pagination-buttons-numbers > li > button {
+    height: 44px;
+    width: 44px;
+  }
+
+  .pagination-list > button {
+    height: 44px;
+    width: 44px;
+  }
+
+  .pagination-list {
+    gap: 8px;
+  }
+
+  .pagination-buttons-numbers {
+    display: flex;
+    gap: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
 }

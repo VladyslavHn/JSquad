@@ -4,13 +4,13 @@ export function createCartPagination(books, cartList) {
   const totalBooks = books.length;
   const booksPerPage = getBooksPerPage();
   const totalPages = getTotalPages(totalBooks, booksPerPage);
-  console.log(totalBooks);
-  console.log(booksPerPage);
-  console.log(totalPages);
-  const pagesBook = createBooksListsPerPage(books, booksPerPage, totalPages);
-  console.log(pagesBook);
-  renderShoppingList(pagesBook[0]);
-  renderPaginationButtons(totalPages, cartList, pagesBook);
+
+  let pagesBook = createBooksListsPerPage(books, booksPerPage, totalPages);
+  // console.log(pagesBook);
+  if (totalBooks > 0) {
+    renderShoppingList(pagesBook[0]);
+    renderPaginationButtons(totalPages, cartList, pagesBook);
+  }
 }
 
 function getBooksPerPage() {
@@ -47,6 +47,7 @@ function renderPaginationButtons(totalPages, cartList, books) {
     const numbersButtonsList = document.querySelector(
       '.pagination-buttons-numbers'
     );
+
     for (let i = 0; i < totalPages; i++) {
       const pageNumber = i + 1;
       numbersButtonsList.insertAdjacentHTML(
@@ -55,23 +56,61 @@ function renderPaginationButtons(totalPages, cartList, books) {
       );
     }
 
-    // if first on page, make first page button active
+    //select buttons
+
+    // if first-time on page, make first button active
     const currentButton = document.querySelector('.active');
     if (currentButton === null) {
       makeActiveButton(1);
     }
-
-    numbersButtonsList.addEventListener('click', e => {
+    cartList.addEventListener('click', e => {
       if (e.target.closest('button')) {
-        console.log(e.target.closest('button').dataset.page);
-        let newCurrentPage = e.target.closest('button').dataset.page;
-        const currentButton = document.querySelector('.active');
-        if (currentButton !== null) {
-          currentButton.classList.remove('active');
+        if (e.target.closest('button').dataset.page) {
+          console.log(e.target.closest('button').dataset.page);
+          let newCurrentPage = e.target.closest('button').dataset.page;
+          const currentButton = document.querySelector('.active');
+          if (currentButton !== null) {
+            currentButton.classList.remove('active');
+          }
+          // console.log(books);
+          renderShoppingList(books[newCurrentPage - 1]);
+          makeActiveButton(newCurrentPage);
         }
-        console.log(books);
-        renderShoppingList(books[newCurrentPage - 1]);
-        makeActiveButton(newCurrentPage);
+        if (
+          e.target
+            .closest('button')
+            .classList.contains('pagination-buttons-prev')
+        ) {
+          const currentButton = document.querySelector('.active');
+          if (currentButton !== null) {
+            const currentPage = currentButton.dataset.page;
+            console.log('pressed button prev, current page: ', currentPage);
+            if (currentPage > 1) {
+              renderShoppingList(books[currentPage - 2]);
+              currentButton.classList.remove('active');
+              console.log('prev', currentButton, books);
+              makeActiveButton(parseInt(currentPage) - 1);
+            }
+          }
+        }
+        if (
+          e.target
+            .closest('button')
+            .classList.contains('pagination-buttons-next')
+        ) {
+          const currentButton = document.querySelector('.active');
+          if (currentButton !== null) {
+            const currentPage = currentButton.dataset.page;
+            console.log(currentPage);
+            if (currentPage < books.length) {
+              console.log('pressed button next, current page: ', currentPage);
+              renderShoppingList(books[currentPage]);
+              currentButton.classList.remove('active');
+              console.log('next', currentButton, books);
+              makeActiveButton(parseInt(currentPage) + 1);
+            }
+          }
+        }
       }
       // console.log(currentButton);
     });
@@ -79,20 +118,18 @@ function renderPaginationButtons(totalPages, cartList, books) {
   }
 }
 
+function buttonsActions(e) {}
+
 function makeActiveButton(currentPage) {
+  console.log('make active button with page ' + currentPage);
   const activeButton = document.querySelector(`[data-page="${currentPage}"]`);
   activeButton.classList.add('active');
 }
 
 function createBooksListsPerPage(books, booksPerPage, totalPages) {
-  // console.log(books);
-  let i = 0;
   let booksPages = [];
-  let startPos = i;
-  // let endPos = booksPerPage;
-  for (i = 0; i < totalPages; i++) {
+  for (let i = 0; i < totalPages; i++) {
     booksPages[i] = books.splice(0, booksPerPage);
-    // console.log(booksPages[i]);
   }
   return booksPages;
 }
