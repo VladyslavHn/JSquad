@@ -1,7 +1,7 @@
 import backendAPI from "./Services/api";
 import { bookTemplate, renderTitle } from "./Services/helpers";
 import { renderCategoryPage } from "./categorypage";
-import { renderModal } from "./modalwindow";
+import { renderModal, showModal } from "./modalwindow";
 
 // ==================================================================================
 // Функція для відображення Best Sellers Books
@@ -51,13 +51,13 @@ export function renderBestBooks(bestBooks) {
 
 async function onImageClick(e) {
   e.preventDefault();
-  if (e.target.nodeName !== 'IMG') {
-    return;
+  if (e.target.nodeName === 'IMG' ||
+    e.target.nodeName === 'H3' ||
+    e.target.nodeName === 'P') {
+     let bookId = e.target.closest('.book-category-item').dataset.id;
+    renderModal(bookId);
+    showModal();
   }
-  let bookId = e.target.dataset.book;
-  console.log(bookId);
- 
-  renderModal(bookId);
 }
 
 // ========================================================================
