@@ -3,9 +3,18 @@
   font-size: 32px;
   line-height: 119%;
   letter-spacing: -0.04em;
-  color: #000;
 }
 
 .page-title > span {
   color: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) {
+  .page-title {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+}
+
+@media screen and (min-width: 1440px) {
 }
