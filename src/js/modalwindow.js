@@ -80,7 +80,7 @@ export const renderModal = async bookId => {
     console.log('Error fetching modal:', error);
   }
 };
-renderModal(bookId);
+// renderModal(bookId);
 /////////////////////////////////////////////////////////////////////////////////
 
 // Закрывание окна
