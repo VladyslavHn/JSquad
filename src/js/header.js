@@ -6,11 +6,11 @@ function toggleTheme() {
     if (themeSwitch.checked === false) {
         body.classList.add('light-theme');
         body.classList.remove('dark-theme');
-        localStorage.setItem('theme', 'light'); // Зберігаємо стан теми в локальному сховищі
+        localStorage.setItem('theme', 'light');
     } else {
         body.classList.remove('light-theme');
         body.classList.add('dark-theme');
-        localStorage.setItem('theme', 'dark'); // Зберігаємо стан теми в локальному сховищі
+        localStorage.setItem('theme', 'dark');
     }
 }
 
@@ -25,22 +25,6 @@ if (savedTheme === 'dark') {
 
 // Додавання події для перемикання теми
 themeSwitch.addEventListener('change', toggleTheme);
-
-// функція додавання та видалення класу
-
-  const menu = document.querySelector('.header-menu');
-
-  menu.addEventListener('click', function(event) {
-    if (event.target.matches('.header-menu-link')) {
-
-      const links = menu.querySelectorAll('.header-menu-link');
-      links.forEach(link => {
-        link.classList.remove('exception');
-      });
-
-      event.target.classList.add('exception');
-    }
-  });
 
 // відкриття та закриття мобільного меню
 
@@ -61,4 +45,35 @@ menuCloseButton.addEventListener('click', () => {
   mobMenu.classList.remove('is-open');
   menuOpenButton.classList.remove('hidden');
   menuCloseButton.classList.add('hidden');
+});
+
+
+
+// Функція, яка видаляє клас 'exception' з усіх елементів меню, окрім клікнутого
+function handleMenuClick(event, menuSelector, menuLinkSelector) {
+  if (event.target.classList.contains(menuLinkSelector)) {
+    event.preventDefault();
+    
+    const menu = document.querySelector(menuSelector);
+    const menuLinks = menu.querySelectorAll('.' + menuLinkSelector);
+
+    menuLinks.forEach(link => {
+      if (link !== event.target) {
+        link.classList.remove('exception');
+      }
+    });
+
+    event.target.classList.add('exception');
+
+    const path = event.target.getAttribute('href');
+    window.location.pathname = path;
+  }
+}
+
+document.querySelector('.header-menu').addEventListener('click', function(event) {
+  handleMenuClick(event, '.header-menu', 'header-menu-link');
+});
+
+document.querySelector('.mob-list').addEventListener('click', function(event) {
+  handleMenuClick(event, '.mob-list', 'mob-menu-link');
 });
