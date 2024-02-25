@@ -6,7 +6,7 @@ const shoppingList = document.querySelector('.cart-list');
 const cartEmptyMsg = document.querySelector('.cart-empty');
 const paginationButtons = document.querySelector('.pagination-list');
 
-renderTitle('.container', 'Shopping List');
+renderTitle('.cart', 'Shopping List');
 
 export function renderShoppingList(books) {
   // console.log(books);
