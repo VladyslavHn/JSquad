@@ -36,13 +36,14 @@ function categoryMarkup(data) {
 
 /**
  |============================
- | Слухачі на all-category та на categoryList
+ | Слухачі подій
  |============================
 */
 
-categorySelectors.allCategory.addEventListener('click', async () => {
+categorySelectors.allCategory.addEventListener('click', async event => {
   try {
-    renderBestBooks('.bestsellers-container', 'Best Sellers');
+    const bestBooksData = await backendAPI.getBestSellers();
+    renderBestBooks(bestBooksData);
   } catch (error) {
     console.log(error);
   }
