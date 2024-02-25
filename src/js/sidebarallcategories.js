@@ -62,7 +62,7 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
-        renderCategoryPage(categoryData);
+        renderCategoryPage(categoryData, category);
       }
     } catch (error) {
       console.log(error);
