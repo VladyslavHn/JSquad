@@ -1,6 +1,7 @@
 import backendAPI from "./Services/api";
 import { bookTemplate, renderTitle } from "./Services/helpers";
 import { renderCategoryPage } from "./categorypage";
+import { renderModal } from "./modalwindow";
 
 // ==================================================================================================
 // Рендер сторінки
@@ -18,7 +19,7 @@ export function renderBestBooks(bestBooks) {
             <li class="bestsellers-item">
              <h2 class="bestsellers-category-title">${list_name}</h2>
                 <ul class="bestsellers-books-list"> 
-                    ${books.map(({ book_image, title, author }) => {return bookTemplate({ book_image, title, author })
+                    ${books.map(({ title, author, book_image, _id }) => {return bookTemplate({ title, author, book_image, _id })
                         }).join('\n')}
                 </ul>
                 <button class="bestsellers-btn" type="button" data-category="${list_name}">See more</button>
@@ -27,10 +28,23 @@ export function renderBestBooks(bestBooks) {
 
   bestBooksList.insertAdjacentHTML('beforeend', markup);
 
-  const bestsellersBtn = document.querySelector('.bestsellers-list');
-  bestsellersBtn.addEventListener('click', onButtonClick);
+  const bestsellersList = document.querySelector('.bestsellers-list');
+  bestsellersList.addEventListener('click', onButtonClick);
+  bestsellersList.addEventListener('click', onImageClick);  
 }
-
+// =======================================================================
+// Слухач для модалки
+// =======================================================================
+async function onImageClick(e) {
+  e.preventDefault();
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+  let bookId = e.target.dataset.book;
+  console.log(bookId);
+ 
+  renderModal(bookId);
+}
 // ========================================================================
 // Слухач на кнопку
 // ======================================================================== 
@@ -40,14 +54,10 @@ async function onButtonClick(e) {
     return;
   }
   
-  let category = e.target.dataset.category;;
-   
+  let category = e.target.dataset.category;
   const openCategory = await backendAPI.getSelectedCategory(category);
-    
   renderCategoryPage(openCategory, category);
 };
-
-
 // ==================================================================================
 // Тестовий код
 // ==============================================================================
@@ -55,53 +65,8 @@ export async function testBestsellersBooks() {
     try {
         const bestSellersData = await backendAPI.getBestSellers();
       renderBestBooks(bestSellersData);
-     
     } catch (error) {
         console.error("Error fetching best sellers:", error);
     }
 }
 testBestsellersBooks();
-
-// =======================================================================
-// Слухач для модалки
-// =======================================================================
-// const bestsellersList = document.querySelector('.bestsellers-list');
-
-// bestsellersList.addEventListener('click', async (e) => {
-//      e.preventDefault();
-
-//      if (e.target.nodeName !== 'IMG') {
-//     return;
-//     }
-//     // викликаємо модальне вікно
-// });
-
-// =========================================================================
-
-// const handleSeeMoreClick = async (e) => {
-//     const category = e.target.getAttribute('data-category');
-
-//     const openCategory = await backendAPI.getSelectedCategory(category);
-
-
-//     const markupCategory = openCategory.map(({ books, list_name }) => {
-//       return `<li class="bestsellers-item">
-//         <h2 class="bestsellers-category-title">${list_name}</h2>
-//         <ul class="bestsellers-books-list"> 
-//           ${books.map(({ book_image, title, author }) => {
-//             return `<li class="bestsellers-books-item">
-//                       <img class="bestsellers-books-img" src='${book_image}' alt="" />
-//                       <h3 class="bestsellers-book-title">${title}</h3>
-//                       <p class="bestsellers-book-author">${author}</p>
-//                     </li>`;
-//           }).join('\n')}
-//         </ul>
-//         <button class="bestsellers-btn" type="button" data-category="${list_name}">See more</button>
-//       </li>`;
-//     }).join('\n');
-
-
-//     document.querySelector('.bestsellers-list').insertAdjacentHTML('beforeend', markupCategory);
-// };
-
-// ========================================================================
