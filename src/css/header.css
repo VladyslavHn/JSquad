@@ -44,6 +44,7 @@ button {
   align-items: center;
   padding-top: 18px;
   padding-bottom: 18px;
+  min-width: 100%;
 }
 
 .header-naviganion {
