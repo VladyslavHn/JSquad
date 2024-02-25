@@ -98,6 +98,6 @@ export function showModal() {
   backdrop.classList.add('is-open');
   body.classList.add('no-scroll');
 }
-showModal();
+// showModal();
 
 /////////////////////////////////////////////////////////////////////////////////
