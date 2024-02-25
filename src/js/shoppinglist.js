@@ -1,12 +1,14 @@
 import { renderTitle } from '../js/Services/helpers';
 import localStorageBooks from '../js/localstorage';
+import { createCartPagination } from './cardpagination';
 
 const shoppingList = document.querySelector('.cart-list');
 const cartEmptyMsg = document.querySelector('.cart-empty');
+const paginationButtons = document.querySelector('.pagination-list');
 
 renderTitle('.container', 'Shopping List');
 
-function renderShoppingList(books) {
+export function renderShoppingList(books) {
   // console.log(books);
   shoppingList.innerHTML = '';
   const hmtlBookList = books
@@ -71,7 +73,8 @@ function renderShoppingListPage() {
   if (books.length === 0) {
     cartEmptyMsg.classList.remove('is-hidden');
   } else {
-    renderShoppingList(books);
+    // renderShoppingList(books);
+    createCartPagination(books, paginationButtons);
     shoppingList.addEventListener('click', remove);
     function remove(e) {
       const bookId = e.target.closest('.cart-item-del-button').dataset.id;
