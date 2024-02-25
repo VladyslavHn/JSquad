@@ -1,14 +1,13 @@
 body.light-theme body {
-  background-color: #D0D0D0;
+  background-color: #d0d0d0;
   color: rgba(17, 17, 17, 0.6);
 }
 
 body.light-theme .header-container {
   background-color: #fff;
-  border: 1.50px solid #111;
+  border: 1.5px solid #111;
 }
-body.light-theme  {
-
+body.light-theme {
 }
 body.dark-theme {
   background-color: #202024;
@@ -153,9 +152,11 @@ button {
   stroke: #111;
   justify-content: center;
   align-items: center;
-  fill: transparent;
+  background-color: transparent;
+  background-color: #f6f6f6;
 }
-.menu-open-btn:focus.menu-open-icon {
+
+.menu-open-btn:focus .menu-open-icon {
   stroke: #4f2ee8;
 }
 .menu-open-btn:hover.menu-open-icon {
@@ -172,7 +173,8 @@ button {
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     rgb(79, 46, 232) 18.02733987569809%,
-    rgb(255, 255, 255) 100%);
+    rgb(255, 255, 255) 100%
+  );
   background-repeat: no-repeat;
   /* padding: 20px; */
   overflow-y: auto;
