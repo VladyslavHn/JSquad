@@ -11,8 +11,8 @@ export function renderCategoryPage(books, category) {
   );
   const categoryPage = document.querySelector('.book-category-list');
   const markup = books
-    .map(({ author, book_image, title }) => {
-      return bookTemplate({ author, book_image, title });
+    .map(({ author, book_image, title, _id }) => {
+      return bookTemplate({ author, book_image, title, _id });
     })
     .join('');
 
