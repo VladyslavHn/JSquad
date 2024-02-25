@@ -1,5 +1,6 @@
 import backendAPI from './Services/api';
 import { renderTitle, bookTemplate } from './Services/helpers';
+import { renderModal, showModal } from './modalwindow';
 
 export function renderCategoryPage(books, category) {
   const pageContainer = document.querySelector('.bestsellers-container');
@@ -17,8 +18,20 @@ export function renderCategoryPage(books, category) {
     .join('');
 
   categoryPage.innerHTML = markup;
+  categoryPage.addEventListener('click', onClickBook);
 }
 
+async function onClickBook(e) {
+  if (
+    e.target.nodeName === 'IMG' ||
+    e.target.nodeName === 'H3' ||
+    e.target.nodeName === 'P'
+  ) {
+    let bookId = e.target.closest('.book-category-item').dataset.source;
+    renderModal(bookId);
+    showModal();
+  }
+}
 // btn.addEventListener('click', async () => {
 //   const result = await backenadAPI.getSelectedCategory(
 //    category
