@@ -128,7 +128,7 @@ button {
   transition: transform 0.3s ease;
 }
 
-.theme-switch-input:checked ~ .slider {
+.theme-switch-input:checked ~ .header-slider {
   transform: translate(21px, -50%);
 }
 
@@ -138,7 +138,9 @@ button {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  background-color: #f6f6f6;
 }
+
 .menu-open-btn:focus .menu-open-icon {
   stroke: #4f2ee8;
 }
@@ -179,11 +181,14 @@ button {
 
 .menu-open-btn {
   margin-left: 14px;
+  border: none;
 }
 
 .menu-close-btn {
   margin-left: 14px;
   stroke: #111;
+  background-color: #f6f6f6;
+  border: none;
 }
 
 .mob-list {
@@ -211,13 +216,25 @@ button {
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: #111;
-}
+  }
 
 .exception {
   padding: 7px 16px;
   font-weight: 700;
   background: #eac645;
   border-radius: 36px;
+  border-radius: 36px;
+  padding: 8px 16px;
+  width: 72px;
+  height: 34px;
+}
+
+.mob-menu-calor{
+  color: #fff;
+}
+
+.mob-basket-icon {
+fill: #fff;
 }
 
 .hidden {
