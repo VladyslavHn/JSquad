@@ -10,7 +10,7 @@
   height: 44px;
   width: 44px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid #111111;
 }
 
 .pagination-buttons-first,
@@ -38,4 +38,9 @@
   border-radius: 50%;
   outline: none;
   border: 1px solid black;
+}
+
+.active {
+  background-color: #111111;
+  color: white;
 }
