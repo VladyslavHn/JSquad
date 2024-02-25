@@ -3,11 +3,12 @@
 * {
   list-style: none;
 }
-/* .backdrop.is-open {
+
+.backdrop.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-} */
+}
 
 .backdrop {
   width: 100%;
@@ -21,7 +22,9 @@
   visibility: hidden;
   pointer-events: none;
 }
-
+.no-scroll {
+  overflow: hidden;
+}
 .modal-window {
   width: 335px;
   flex-shrink: 0;
@@ -34,7 +37,8 @@
   transform: translate(-50%, -50%);
 }
 .modal-close {
-  border: 3px solid black;
+  background-color: transparent;
+  border: none;
   margin-left: 299px;
   margin-bottom: 4px;
   margin-top: 12px;
@@ -43,12 +47,14 @@
   flex-shrink: 0;
   cursor: pointer;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-icon-close {
-  fill: #111111;
-  width: 12px;
-  height: 12px;
+  stroke: #111111;
+  width: 24px;
+  height: 24px;
 }
 
 .modal-icon-close:hover {
@@ -102,23 +108,14 @@
   gap: 20px;
   margin-top: 14px;
   margin-left: 24px;
+  align-items: center;
 }
 
-.modal-icons-wrapper-1 {
-  /* background-color: black; */
-  width: 62px;
-  height: 19px;
+.modal-icon {
+  filter: grayscale(100%);
 }
-.modal-icons-wrapper-1:hover {
-  box-shadow: rgba(0, 0, 0, 0.15);
-}
-.modal-icons-wrapper-2 {
-  /* background-color: black; */
-  width: 33px;
-  height: 32px;
-}
-.modal-icons-wrapper-2:hover {
-  box-shadow: rgba(0, 0, 0, 0.15);
+.modal-icon:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 .modal-btn-add {
@@ -207,8 +204,12 @@
     position: absolute;
   }
   .modal-icon-close {
-    width: 14px;
-    height: 14px;
+    stroke: #111111;
+    width: 28px;
+    height: 28px;
+  }
+  .modal-icon-close:hover {
+    stroke: rgba(79, 46, 232, 1);
   }
   .modal-description-list {
     margin-top: 40px;
