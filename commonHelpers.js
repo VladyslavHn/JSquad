@@ -1,4 +1,4 @@
-import{l as n}from"./assets/api-2e341d5c.js";import"./assets/vendor-0cb09735.js";function l(e,s){const t=document.querySelector(e),i=s.split(" "),c=i[i.length-1];i.pop(),s=i.join(" "),t.insertAdjacentHTML("afterbegin",`<h1 class="page-title">${s} <span class="page-title-highlight">${c}</span></h1>`)}const a=document.querySelector(".cart-list"),o=document.querySelector(".cart-empty");l(".container","Shopping List");function r(e){console.log(e),a.innerHTML="";const s=e.map(t=>`<li class="cart-item data-id="${t._id}">
+import{l as c}from"./assets/api-12d4008f.js";import"./assets/vendor-0cb09735.js";function r(s,e){const t=document.querySelector(s),i=e.split(" "),o=i[i.length-1];i.pop(),e=i.join(" "),t.insertAdjacentHTML("afterbegin",`<h1 class="page-title">${e} <span class="page-title-highlight">${o}</span></h1>`)}const a=document.querySelector(".cart-list"),l=document.querySelector(".cart-empty");r(".container","Shopping List");function m(s){a.innerHTML="";const e=s.map(t=>`<li class="cart-item">
       <img
         class="cart-item-img"
         src="${t.book_image}"
@@ -12,7 +12,7 @@ import{l as n}from"./assets/api-2e341d5c.js";import"./assets/vendor-0cb09735.js"
             <h3 class="cart-item-title">${t.title}</h3>
             <p class="cart-item-category">${t.list_name}</p>
           </div>
-          <button class="cart-item-del-button">
+          <button data-id="${t._id}" class="cart-item-del-button">
             <svg class="cart-item-del-button-icon" width="12" height="12">
               <use href="../img/symbol-defs.svg#icon-delete-shoppinglist-tab" />
             </svg>
@@ -47,5 +47,5 @@ import{l as n}from"./assets/api-2e341d5c.js";import"./assets/vendor-0cb09735.js"
           </div>
         </div>
       </div>
-    </li>`).join("");a.insertAdjacentHTML("beforeend",s)}function m(){const e=n.getAllBooks();e.legth===0?o.classList.remove("is-hidden"):r(e)}m();
+    </li>`).join("");a.insertAdjacentHTML("beforeend",e)}function n(){const s=c.getAllBooks();if(s.length===0)l.classList.remove("is-hidden");else{let e=function(t){const i=t.target.closest(".cart-item-del-button").dataset.id;c.removeBookFromFavorites(i),a.removeEventListener("click",e),n()};m(s),a.addEventListener("click",e)}}n();
 //# sourceMappingURL=commonHelpers.js.map
