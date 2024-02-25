@@ -1,3 +1,12 @@
+body.light-theme body {
+  background-color: #d0d0d0;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+body.light-theme .header-container {
+  background-color: #fff;
+  border: 1.5px solid #111;
+}
 body.light-theme {
 }
 body.dark-theme {
@@ -27,8 +36,11 @@ body.dark-theme .theme-toggle {
 body.dark-theme .menu-open-icon {
   stroke: #fff;
 }
-
+body.dark-theme .menu-close-icon {
+  stroke: #fff;
+}
 button {
+  border: none;
   padding: 0;
 }
 
@@ -131,7 +143,10 @@ button {
 .theme-switch-input:checked ~ .header-slider {
   transform: translate(21px, -50%);
 }
-
+.menu-open-btn {
+  display: flex;
+  background-color: transparent;
+}
 .menu-open-icon {
   display: block;
   stroke: #111;
@@ -144,12 +159,12 @@ button {
 .menu-open-btn:focus .menu-open-icon {
   stroke: #4f2ee8;
 }
-.menu-open-btn:hover .menu-open-icon {
+.menu-open-btn:hover.menu-open-icon {
   stroke: #4f2ee8;
 }
 .mob-menu {
   position: fixed;
-  top: 64px;
+  top: 67px;
   left: 0;
   z-index: 999;
   width: 100%;
@@ -158,7 +173,8 @@ button {
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     rgb(79, 46, 232) 18.02733987569809%,
-    rgb(255, 255, 255) 100%);
+    rgb(255, 255, 255) 100%
+  );
   background-repeat: no-repeat;
   /* padding: 20px; */
   overflow-y: auto;
@@ -185,12 +201,18 @@ button {
 }
 
 .menu-close-btn {
+  display: flex;
   margin-left: 14px;
+  background-color: transparent;
+}
+.menu-close-icon {
   stroke: #111;
   background-color: #f6f6f6;
   border: none;
 }
-
+.menu-close-btn:hover .menu-close-icon {
+  stroke: #4f2ee8;
+}
 .mob-list {
   margin: 183px auto;
   justify-content: center;
@@ -251,9 +273,6 @@ fill: #fff;
   display: flex;
 }
 
-.mob-menu {
-
-}
 /* ==================================== */
 
 @media screen and (min-width: 768px) {
