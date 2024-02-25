@@ -8,7 +8,6 @@ const paginationButtons = document.querySelector('.pagination-list');
 
 renderTitle('.shoppinglist-title', 'Shopping List');
 export function renderShoppingList(books) {
-  // console.log(books);
   shoppingList.innerHTML = '';
   const hmtlBookList = books
     .map(book => {

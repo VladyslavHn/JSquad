@@ -1,14 +1,15 @@
 import { renderShoppingList } from './shoppinglist';
 
 export function createCartPagination(books, cartList) {
+  let currentPage = 1;
   const totalBooks = books.length;
   const booksPerPage = getBooksPerPage();
   const totalPages = getTotalPages(totalBooks, booksPerPage);
-
+  console.log('HELLO');
   let pagesBook = createBooksListsPerPage(books, booksPerPage, totalPages);
   // console.log(pagesBook);
-  if (totalBooks[0] > 0) {
-    renderShoppingList(pagesBook[0]);
+  renderShoppingList(pagesBook[0]);
+  if (totalPages > 0) {
     renderPaginationButtons(totalPages, cartList, pagesBook);
   }
 }
@@ -32,9 +33,9 @@ function renderPaginationButtons(totalPages, cartList, books) {
     cartList.insertAdjacentHTML(
       'beforeend',
       `<button class="pagination-buttons-first"><<</button>
-    <button class="pagination-buttons-prev"><</button>
-    <button class="pagination-buttons-next">></button>
-    <button class="pagination-buttons-last">>></button>`
+      <button class="pagination-buttons-prev"><</button>
+      <button class="pagination-buttons-next">></button>
+      <button class="pagination-buttons-last">>></button>`
     );
 
     const prevButton = document.querySelector('.pagination-buttons-prev');
