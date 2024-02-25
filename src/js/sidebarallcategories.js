@@ -41,6 +41,7 @@ function categoryMarkup(data) {
 */
 
 categorySelectors.allCategory.addEventListener('click', async () => {
+  console.log(1546);
   try {
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
@@ -62,7 +63,7 @@ categorySelectors.categoryList.addEventListener('click', async event => {
 
     try {
       const categoryData = await backendAPI.getSelectedCategory(category);
-      renderCategoryPage(categoryData);
+      renderCategoryPage(categoryData, String(Math.random()));
     } catch (error) {
       console.log(error);
     }
