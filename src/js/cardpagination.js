@@ -7,7 +7,7 @@ export function createCartPagination(books, cartList) {
 
   let pagesBook = createBooksListsPerPage(books, booksPerPage, totalPages);
   // console.log(pagesBook);
-  if (totalBooks > 0) {
+  if (totalBooks[0] > 0) {
     renderShoppingList(pagesBook[0]);
     renderPaginationButtons(totalPages, cartList, pagesBook);
   }
@@ -72,7 +72,7 @@ function renderPaginationButtons(totalPages, cartList, books) {
           if (currentButton !== null) {
             currentButton.classList.remove('active');
           }
-          // console.log(books);
+
           renderShoppingList(books[newCurrentPage - 1]);
           makeActiveButton(newCurrentPage);
         }
