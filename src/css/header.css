@@ -152,11 +152,9 @@ button {
   stroke: #111;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  background-color: #f6f6f6;
+  fill: transparent;
 }
-
-.menu-open-btn:focus .menu-open-icon {
+.menu-open-btn:focus.menu-open-icon {
   stroke: #4f2ee8;
 }
 .menu-open-btn:hover.menu-open-icon {
@@ -238,7 +236,7 @@ button {
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: #111;
-  }
+}
 
 .exception {
   padding: 7px 16px;
@@ -251,12 +249,12 @@ button {
   height: 34px;
 }
 
-.mob-menu-calor{
+.mob-menu-calor {
   color: #fff;
 }
 
 .mob-basket-icon {
-fill: #fff;
+  fill: #fff;
 }
 
 .hidden {
