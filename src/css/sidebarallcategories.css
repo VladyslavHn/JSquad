@@ -35,6 +35,26 @@
   text-transform: uppercase;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 114px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #e0e0e0;
+  width: 8px;
+  height: 114px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    rgb(79, 46, 232) 18.02733987569809%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
 @media screen and (min-width: 768px) {
   .sidebar-category-container {
     margin-top: 0;
@@ -53,6 +73,15 @@
     font-size: 18px;
     line-height: 1.3333;
     letter-spacing: -0.36px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 167px;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: 8px;
+    height: 167px;
   }
 }
 

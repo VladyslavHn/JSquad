@@ -1,32 +1,20 @@
 import backendAPI from "./Services/api";
-import { renderTitle } from "./Services/helpers";
-
-// ===================================================================
-// Екземпляр книжки
-// =================================================================
-
-function bookTemplate({ book_image, title, author }) {
-return `<li class="book-category-item">
-  <div class="book-category-card">
-    <img class="book-category-image" src="${book_image}" alt="Book cover" width="180" />
-    <div class="book-category-text">
-      <h3 class = "book-title">
-      ${title}</h3>
-      <p class = "author-name"> ${author}</p>
-    </div>
-  </div>
-</li>`
-}
+import { bookTemplate, renderTitle } from "./Services/helpers";
 
 // ==================================================================================================
 // Рендер сторінки
 // ======================================================================================================
-const bestBooksList = document.querySelector('.bestsellers-container');
 
 export function renderBestBooks(bestBooks) {
- renderTitle('.bestsellers-container','Best Sellers Books');
+  const bestBooksContainer = document.querySelector('.bestsellers-container');
+  bestBooksContainer.innerHTML = '';
+  renderTitle('.bestsellers-container', 'Best Sellers Books');
+  bestBooksContainer.insertAdjacentHTML('beforeend', `<ul class="bestsellers-list"></ul>`);
+  const bestBooksList = document.querySelector('.bestsellers-list');
+  
     const markup = bestBooks.map(({ books, list_name }) => {
-            return `<li class="bestsellers-item">
+      return `
+            <li class="bestsellers-item">
              <h2 class="bestsellers-category-title">${list_name}</h2>
                 <ul class="bestsellers-books-list"> 
                     ${books.map(({ book_image, title, author }) => {return bookTemplate({ book_image, title, author })
@@ -36,6 +24,7 @@ export function renderBestBooks(bestBooks) {
             </li>`;        
         }).join('\n');
         
+  
         bestBooksList.insertAdjacentHTML('beforeend', markup);
 }
 // ==================================================================================

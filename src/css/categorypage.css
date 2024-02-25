@@ -4,6 +4,7 @@
   line-height: 1.1875;
   letter-spacing: -0.04em;
   color: #111;
+  margin-bottom: 40px;
 }
 
 .book-category-list {
@@ -34,6 +35,8 @@
   color: #111;
   margin-top: 14px;
   margin-bottom: 4px;
+  overflow: hidden;
+  height: 18px;
 }
 
 .author-name {
@@ -42,6 +45,9 @@
   line-height: 1.16667;
   letter-spacing: -0.04em;
   color: #b4afaf;
+  overflow: hidden;
+  height: 14px;
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: 768px) {
