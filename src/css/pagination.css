@@ -1,0 +1,41 @@
+.pagination-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.pagination-list > button {
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  outline: none;
+  border: 1px solid black;
+}
+
+.pagination-buttons-first,
+.pagination-buttons-prev {
+  background-color: black;
+  color: white;
+}
+
+.pagination-buttons-next,
+.pagination-buttons-last {
+  background-color: #eac645;
+  color: black;
+}
+
+.pagination-buttons-numbers {
+  display: flex;
+  gap: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.pagination-buttons-numbers > li > button {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid black;
+}
