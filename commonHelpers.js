@@ -1,4 +1,7 @@
-import{r as o,l as a}from"./assets/api-c4115792.js";import"./assets/vendor-0cb09735.js";const s=document.querySelector(".cart-list"),r=document.querySelector(".cart-empty");o(".container","Shopping List");function l(e){s.innerHTML="";const i=e.map(t=>`<li class="cart-item">
+import{r as l,l as a}from"./assets/api-f6f9dab7.js";import"./assets/vendor-0cb09735.js";function d(e,n){const t=e.length,o=u();console.log(t),console.log(o),h(e),m(t,n),console.log(g(t,o))}function u(){return window.innerWidth<767?3:4}function g(e,n){return Math.ceil(e/n)}function m(e,n){if(e>1){n.insertAdjacentHTML("beforeend",`<button class="pagination-buttons-first"><<</button>
+    <button class="pagination-buttons-prev"><</button>
+    <button class="pagination-buttons-next">></button>
+    <button class="pagination-buttons-last">>></button>`);const t=document.querySelector(".pagination-buttons-prev");console.log(t),t.insertAdjacentHTML("afterend",'<ul class="pagination-buttons-numbers"></ul>');const o=document.querySelector(".pagination-buttons-numbers");console.log(o);for(let i=0;i<e;i++){console.log(`page ${i+1}`);const r=i+1;o.insertAdjacentHTML("beforeend",`<li><button>${r}</button></li>`)}}}const s=document.querySelector(".cart-list"),p=document.querySelector(".cart-empty"),b=document.querySelector(".pagination-list");l(".cart","Shopping List");function h(e){s.innerHTML="";const n=e.map(t=>`<li class="cart-item">
       <img
         class="cart-item-img"
         src="${t.book_image}"
@@ -47,5 +50,5 @@ import{r as o,l as a}from"./assets/api-c4115792.js";import"./assets/vendor-0cb09
           </div>
         </div>
       </div>
-    </li>`).join("");s.insertAdjacentHTML("beforeend",i)}function c(){const e=a.getAllBooks();if(e.length===0)r.classList.remove("is-hidden");else{let i=function(t){const n=t.target.closest(".cart-item-del-button").dataset.id;a.removeBookFromFavorites(n),s.removeEventListener("click",i),c()};l(e),s.addEventListener("click",i)}}c();
+    </li>`).join("");s.insertAdjacentHTML("beforeend",n)}function c(){const e=a.getAllBooks();if(e.length===0)p.classList.remove("is-hidden");else{let n=function(t){const o=t.target.closest(".cart-item-del-button").dataset.id;a.removeBookFromFavorites(o),s.removeEventListener("click",n),c()};d(e,b),s.addEventListener("click",n)}}c();
 //# sourceMappingURL=commonHelpers.js.map

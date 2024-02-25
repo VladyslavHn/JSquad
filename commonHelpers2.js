@@ -1,4 +1,4 @@
-import{r as p,b as d,l as u}from"./assets/api-c4115792.js";import"./assets/vendor-0cb09735.js";function k({book_image:t,title:o,author:s}){return`<li class="book-category-item">
+import{r as p,b as d,l as u}from"./assets/api-f6f9dab7.js";import"./assets/vendor-0cb09735.js";function k({book_image:t,title:o,author:s}){return`<li class="book-category-item">
   <div class="book-category-card">
     <img class="book-category-image" src="${t}" alt="Book cover" width="180" />
     <div class="book-category-text">
