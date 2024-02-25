@@ -43,15 +43,17 @@ function renderPaginationButtons(totalPages, cartList) {
     const numbersButtonsList = document.querySelector(
       '.pagination-buttons-numbers'
     );
+    if (totalPages > 3) {
+      for (let i = 0; i < totalPages; i++) {
+        console.log(`page ${i + 1}`);
+        const pageNumber = i + 1;
+        numbersButtonsList.insertAdjacentHTML(
+          'beforeend',
+          `<li><button>${pageNumber}</button></li>`
+        );
+      }
 
-    console.log(numbersButtonsList);
-    for (let i = 0; i < totalPages; i++) {
-      console.log(`page ${i + 1}`);
-      const pageNumber = i + 1;
-      numbersButtonsList.insertAdjacentHTML(
-        'beforeend',
-        `<li><button>${pageNumber}</button></li>`
-      );
+      console.log(numbersButtonsList);
     }
   }
 }
