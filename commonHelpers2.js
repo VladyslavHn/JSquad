@@ -1,4 +1,4 @@
-import{r as p,b as k,a as d,l as u}from"./assets/api-f8d4a1ba.js";import"./assets/vendor-0cb09735.js";function b(t){const o=document.querySelector(".bestsellers-container");o.innerHTML="",p(".bestsellers-container","Best Sellers Books"),o.insertAdjacentHTML("beforeend",'<ul class="bestsellers-list"></ul>');const r=document.querySelector(".bestsellers-list"),a=t.map(({books:e,list_name:l})=>`
+import{r as p,b as k,a as d,l as u}from"./assets/api-21313199.js";import"./assets/vendor-0cb09735.js";function b(t){const o=document.querySelector(".bestsellers-container");o.innerHTML="",p(".bestsellers-container","Best Sellers Books"),o.insertAdjacentHTML("beforeend",'<ul class="bestsellers-list"></ul>');const r=document.querySelector(".bestsellers-list"),a=t.map(({books:e,list_name:l})=>`
             <li class="bestsellers-item">
              <h2 class="bestsellers-category-title">${l}</h2>
                 <ul class="bestsellers-books-list"> 
