@@ -1,36 +1,6 @@
-// import backendAPI from './Services/api';
-// backendAPI.getBookDescription;
-
-// const renderModal = async () => {
-//   const backdrop = document.querySelector('.modal-description-list');
-//   try {
-//     const modalData = await backendAPI.getBookDescription(
-//       '643282b1e85766588626a0dc'
-//     );
-//     console.log(modalData);
-//     const markup = modalData
-//       .map(({ book_image, title, author, description }) => {
-//         return `
-//         <li><img class="modal-img-book" src="${book_image}" alt="book" /></li>
-//       <li><p class="modal-description-list-title">${title}</p></li>
-//       <li><p class="modal-description-list-subtitle">${author}</p></li>
-//       <li>
-//         <p class="modal-description-list-text">
-//           ${description}
-//         </p>
-//       </li>`;
-//       })
-//       .join('\n');
-//     backdrop.insertAdjacentHTML('beforeend', markup);
-//   } catch (error) {
-//     console.log('Error fetching modal:', error);
-//   }
-// };
-// renderModal();
 // Рендер информации в модалку
 import backendAPI from './Services/api';
 import localStorageBooks from '../js/localstorage';
-const bookId = '643282b2e85766588626a114';
 export const renderModal = async bookId => {
   const backdrop = document.querySelector('.modal-wrapper');
   const links = document.querySelector('.modal-icons-list');
@@ -52,12 +22,13 @@ export const renderModal = async bookId => {
       </li>
       </ul>`;
     backdrop.insertAdjacentHTML('beforeend', markupBooks);
-    console.log(markupBooks);
     const murkupLinks = `<li class="modal-icons-wrapper-1">
-        <a class="modal-icon" href="${modalData.buy_links[0].url}">amazon</a>
+        <a class="modal-icon" href="${modalData.buy_links[0].url}"><img class='modal-icon' src="../img/amazon.png" alt="" width='62' height='19' 
+       /></a>
       </li>
       <li class="modal-icons-wrapper-2">
-        <a class="modal-icon" href="${modalData.buy_links[1].url}">apple</a>
+        <a class="modal-icon" href="${modalData.buy_links[1].url}"><img class='modal-icon' src="../img/applebook.png" alt="" width='33' height='32'
+       /></a>
       </li>`;
     links.insertAdjacentHTML('beforeend', murkupLinks);
     // Добавление в локал сторедж, смена кнопок и текста
@@ -72,7 +43,6 @@ export const renderModal = async bookId => {
       amazon_buy_link: modalData.buy_links[0].url,
       apple_buy_link: modalData.buy_links[1].url,
     };
-    console.log(modalData._id);
     if (localStorageBooks.isBookExsist(modalData._id)) {
       btnAdd.textContent = 'remove from the shopping list';
       const congrats = `<p class="modal-text-congratulations">
@@ -94,7 +64,9 @@ export const renderModal = async bookId => {
       const congratsRemove = document.querySelector(
         '.modal-text-congratulations'
       );
-      congratsRemove.remove();
+      if (congratsRemove !== null) {
+        congratsRemove.remove();
+      }
       function add() {
         localStorageBooks.addBookToFavorites(book);
         btnAdd.textContent = 'remove from the shopping list';
@@ -104,26 +76,28 @@ export const renderModal = async bookId => {
         renderModal(modalData._id);
       }
     }
-
-    console.log(murkupLinks);
   } catch (error) {
     console.log('Error fetching modal:', error);
   }
 };
 renderModal(bookId);
-
 /////////////////////////////////////////////////////////////////////////////////
+
 // Закрывание окна
 const backdrop = document.querySelector('.backdrop');
 const btnClose = document.querySelector('.modal-close');
+const body = document.querySelector('body');
 
 btnClose.addEventListener('click', () => {
   backdrop.classList.remove('is-open');
+  body.classList.remove('no-scroll');
 });
 /////////////////////////////////////////////////////////////////////////////////
+//Открытие окна
+export function showModal() {
+  backdrop.classList.add('is-open');
+  body.classList.add('no-scroll');
+}
+showModal();
 
-// function showModal() {
-//   backdrop.classList.add('.is-open');
-// }
-
-// showModal();
+/////////////////////////////////////////////////////////////////////////////////
