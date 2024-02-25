@@ -24,20 +24,34 @@ function getTotalPages(totalBooks, booksPerPage) {
 }
 
 function renderPaginationButtons(totalPages, cartList) {
-  cartList.insertAdjacentHTML(
-    'beforeend',
-    `<li><button class="pagination-buttons-first"><<<</button></li>
-    <li><button class="pagination-buttons-prev"><</button></li>
-    <li><button class="pagination-buttons-next">></button></li>
-    <li><button class="pagination-buttons-last">>>></button></li>`
-  );
-  //first page
-  //previous page
-  //1 - 2 - 3 pages
-  //...
-  //next page
-  //last page
-  for (let i = 0; i < totalPages; i++) {
-    console.log(`page ${i + 1}`);
+  if (totalPages > 1) {
+    cartList.insertAdjacentHTML(
+      'beforeend',
+      `<button class="pagination-buttons-first"><<</button>
+    <button class="pagination-buttons-prev"><</button>
+    <button class="pagination-buttons-next">></button>
+    <button class="pagination-buttons-last">>></button>`
+    );
+
+    const prevButton = document.querySelector('.pagination-buttons-prev');
+    console.log(prevButton);
+    prevButton.insertAdjacentHTML(
+      'afterend',
+      '<ul class="pagination-buttons-numbers"></ul>'
+    );
+
+    const numbersButtonsList = document.querySelector(
+      '.pagination-buttons-numbers'
+    );
+
+    console.log(numbersButtonsList);
+    for (let i = 0; i < totalPages; i++) {
+      console.log(`page ${i + 1}`);
+      const pageNumber = i + 1;
+      numbersButtonsList.insertAdjacentHTML(
+        'beforeend',
+        `<li><button>${pageNumber}</button></li>`
+      );
+    }
   }
 }
