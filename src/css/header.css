@@ -33,6 +33,11 @@ button {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   margin-bottom: 40px;
 }
 
@@ -136,6 +141,44 @@ button {
   align-items: center;
   background-color: transparent;
 }
+.menu-open-btn:focus .menu-open-icon {
+  stroke: #4f2ee8;
+}
+.menu-open-btn:hover .menu-open-icon {
+  stroke: #4f2ee8;
+}
+.mob-menu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-close-btn {
+  margin-left: 14px;
+  stroke: #111;
+}
+
+.mob-list {
+  margin: 183px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.mob-item {
+  display: flex;
+  margin-bottom: 17px;
+  flex-direction: column;
+}
+
 
 @media screen and (min-width: 768px) {
   .menu-open-btn {
@@ -173,4 +216,16 @@ button {
   .header-menu {
     margin-left: 76px;
   }
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  display: none;
+}
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
 }
