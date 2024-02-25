@@ -1,5 +1,6 @@
 import backendAPI from "./Services/api";
 import { bookTemplate, renderTitle } from "./Services/helpers";
+import { renderCategoryPage } from "./categorypage";
 
 // ==================================================================================================
 // Рендер сторінки
@@ -20,46 +21,46 @@ export function renderBestBooks(bestBooks) {
                     ${books.map(({ book_image, title, author }) => {return bookTemplate({ book_image, title, author })
                         }).join('\n')}
                 </ul>
-                <button class="bestsellers-btn" type="button data-category="${list_name}">See more</button>
+                <button class="bestsellers-btn" type="button" data-category="${list_name}">See more</button>
             </li>`;        
         }).join('\n');
-        
-  
-        bestBooksList.insertAdjacentHTML('beforeend', markup);
+
+  bestBooksList.insertAdjacentHTML('beforeend', markup);
+
+  const bestsellersBtn = document.querySelector('.bestsellers-list');
+  bestsellersBtn.addEventListener('click', onButtonClick);
 }
+
+// ========================================================================
+// Слухач на кнопку
+// ======================================================================== 
+async function onButtonClick(e) {
+  
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  
+  let category = e.target.dataset.category;;
+   
+  const openCategory = await backendAPI.getSelectedCategory(category);
+    
+  renderCategoryPage(openCategory, category);
+};
+
+
 // ==================================================================================
 // Тестовий код
 // ==============================================================================
 export async function testBestsellersBooks() {
     try {
         const bestSellersData = await backendAPI.getBestSellers();
-        return renderBestBooks(bestSellersData);
+      renderBestBooks(bestSellersData);
+     
     } catch (error) {
         console.error("Error fetching best sellers:", error);
     }
 }
 testBestsellersBooks();
-// ========================================================================
-// Слухач на кнопку
-// ========================================================================
-// const bestsellersBtn = document.querySelector('.bestsellers-btn');
-//     console.log(bestsellersBtn);
-//     const categoryTitle = document.querySelector('.bestsellers-category-title');
-//     console.log(categoryTitle);
-//     const container = document.querySelector('.bestsellers-container');
-
-//     bestsellersBtn.addEventListener('click', async (e) => {
-//         const category = categoryTitle.textContent;
-//         console.log(category);
-
-//         const result = await backendAPI.getSelectedCategory(category);
-//         console.log(result);
-//         // if(category === ) {
-
-//         // }
-//         container.innerHTML = '';
-//         renderCategoryPage(result, category);
-//     });
 
 // =======================================================================
 // Слухач для модалки
