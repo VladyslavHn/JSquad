@@ -27,7 +27,7 @@ async function onClickBook(e) {
     e.target.nodeName === 'H3' ||
     e.target.nodeName === 'P'
   ) {
-    let bookId = e.target.closest('.book-category-item').dataset.source;
+    let bookId = e.target.closest('.book-category-item').dataset.id;
     renderModal(bookId);
     showModal();
   }
