@@ -10,7 +10,7 @@ export function renderTitle(containerClass, title) {
   );
 }
 
-export function bookTemplate(title, author, book_image) {
+export function bookTemplate({ title, author, book_image }) {
   return `<li class="book-category-item">
   <div class="book-category-card">
     <img class="book-category-image" src="${book_image}" alt="Book cover" width="180" />
