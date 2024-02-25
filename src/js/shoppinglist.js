@@ -3,10 +3,8 @@ import localStorageBooks from '../js/localstorage';
 import { createCartPagination } from './cardpagination';
 
 const shoppingList = document.querySelector('.cart-list');
-const cartEmptyMsg = document.querySelector('.cart-empty');
+const cartEmptyMsg = document.querySelector('.cart-empty-container');
 const paginationButtons = document.querySelector('.pagination-list');
-
-renderTitle('.cart', 'Shopping List');
 
 export function renderShoppingList(books) {
   // console.log(books);
@@ -70,34 +68,41 @@ export function renderShoppingList(books) {
 
 function renderShoppingListPage() {
   const books = localStorageBooks.getAllBooks();
+  shoppingList.innerHTML = '';
+  // renderTitle('.cart', 'Shopping List');
   if (books.length === 0) {
+    shoppingList.innerHTML = '';
     cartEmptyMsg.classList.remove('is-hidden');
   } else {
     // renderShoppingList(books);
     createCartPagination(books, paginationButtons);
     shoppingList.addEventListener('click', remove);
     function remove(e) {
-      const bookId = e.target.closest('.cart-item-del-button').dataset.id;
-      localStorageBooks.removeBookFromFavorites(bookId);
-      shoppingList.removeEventListener('click', remove);
-      renderShoppingListPage();
+      if (e.target.closest('.cart-item-del-button') !== null) {
+        const bookId = e.target.closest('.cart-item-del-button').dataset.id;
+        localStorageBooks.removeBookFromFavorites(bookId);
+        shoppingList.removeEventListener('click', remove);
+        renderShoppingListPage();
+        const cart = document.querySelector('.cart');
+        cart.scrollTop = cart.scrollHeight;
+      }
     }
   }
 }
 
-// const book = {
-//   _id: '642fd89ac8cf5ee957f12218',
-//   title: 'CRYING IN H MART',
-//   author: 'Michelle Zauner',
-//   list_name: 'Paperback Nonfiction',
-//   book_image:
-//     'https://storage.googleapis.com/du-prd/books/images/9780525657743.jpg',
-//   description:
-//     'The daughter of a Korean mother and Jewish American father, and leader of the indie rock project Japanese Breakfast, describes creating her own identity after losing her mother to cancer.',
-//   amazon_buy_link: 'https://www.amazon.com/dp/0593379853?tag=NYTBSREV-20',
-//   apple_buy_link: 'https://goto.applebooks.apple/9781984896391?at=10lIEQ',
-// };
+const book = {
+  _id: '642fd89ac8cf5ee957f1221',
+  title: '1',
+  author: 'Michelle Zauner',
+  list_name: 'Paperback Nonfiction',
+  book_image:
+    'https://storage.googleapis.com/du-prd/books/images/9780525657743.jpg',
+  description:
+    'The daughter of a Korean mother and Jewish American father, and leader of the indie rock project Japanese Breakfast, describes creating her own identity after losing her mother to cancer.',
+  amazon_buy_link: 'https://www.amazon.com/dp/0593379853?tag=NYTBSREV-20',
+  apple_buy_link: 'https://goto.applebooks.apple/9781984896391?at=10lIEQ',
+};
 
-// localStorageBooks.addBookToFavorites(book);
+localStorageBooks.addBookToFavorites(book);
 
 renderShoppingListPage();
