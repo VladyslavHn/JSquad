@@ -1,4 +1,4 @@
-import{l as n}from"./assets/api-5f30bd1a.js";import"./assets/vendor-0cb09735.js";function l(e,s){const t=document.querySelector(e),i=s.split(" "),c=i[i.length-1];i.pop(),s=i.join(" "),t.insertAdjacentHTML("afterbegin",`<h1 class="page-title">${s} <span class="page-title-highlight">${c}</span></h1>`)}const a=document.querySelector(".cart-list"),o=document.querySelector(".cart-empty");l(".container","Shopping List");function r(e){console.log(e),a.innerHTML="";const s=e.map(t=>`<li class="cart-item data-id="${t._id}">
+import{l as n}from"./assets/api-c3364f5a.js";import"./assets/vendor-0cb09735.js";function l(e,s){const t=document.querySelector(e),i=s.split(" "),c=i[i.length-1];i.pop(),s=i.join(" "),t.insertAdjacentHTML("afterbegin",`<h1 class="page-title">${s} <span class="page-title-highlight">${c}</span></h1>`)}const a=document.querySelector(".cart-list"),o=document.querySelector(".cart-empty");l(".container","Shopping List");function r(e){console.log(e),a.innerHTML="";const s=e.map(t=>`<li class="cart-item data-id="${t._id}">
       <img
         class="cart-item-img"
         src="${t.book_image}"
