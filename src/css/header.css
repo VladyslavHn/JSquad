@@ -171,7 +171,6 @@ button {
 .menu-close-btn {
   margin-left: 14px;
   stroke: #111;
-  display: none;
 }
 
 .mob-list {
@@ -185,7 +184,6 @@ button {
   margin-bottom: 17px;
   flex-direction: column;
 }
-
 
 /* ==================================== */
 .header-menu-link {
@@ -224,7 +222,6 @@ button {
 }
 /* ==================================== */
 
-
 @media screen and (min-width: 768px) {
   .menu-open-btn {
     display: none;
@@ -242,11 +239,11 @@ button {
     justify-content: center;
   }
 
-/* ==================================== */
+  /* ==================================== */
   .mob-menu {
     display: none;
   }
-/* ==================================== */
+  /* ==================================== */
 }
 
 @media screen and (min-width: 1440px) {
@@ -254,5 +251,3 @@ button {
     margin-left: 76px;
   }
 }
-
-
