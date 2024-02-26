@@ -17,6 +17,7 @@ const categorySelectors = {
 */
 
 function categoryMarkup(data) {
+  data.sort((a, b) => a.list_name.localeCompare(b.list_name));
   const result = data
     .map(
       item =>
@@ -72,13 +73,7 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
-        // if (categoryData.length === 0) {
-        //   notification(
-        //     `Sorry! There are no books available in the category "${category}".`
-        //   );
-        // } else {
-        //   renderCategoryPage(categoryData, category);
-        // }
+
         renderCategoryPage(categoryData, category);
       }
     } catch (error) {
