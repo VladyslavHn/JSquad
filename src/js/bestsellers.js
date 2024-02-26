@@ -5,13 +5,12 @@ import { renderCategoryPage } from './categorypage';
 import { renderModal, showModal } from './modalwindow';
 import { showLoader } from '../main';
 
-
 // ==================================================================================
 // Функція для відображення Best Sellers Books
 // ==============================================================================
 
 export async function topPageBestsellersBooks() {
-  showLoader()
+  showLoader();
   try {
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
@@ -81,24 +80,25 @@ async function onImageClick(e) {
 // ========================================================================
 
 async function onButtonClick(e) {
-  try{
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  let category = e.target.dataset.category;
-  const allCategoryItem = document.querySelector('.sidebar-category-item');
-  const sidebarCategoryList = document.querySelectorAll(
-    '.sidebar-category-item'
-  );
-
-  sidebarCategoryList.forEach(el => {
-    if (el.dataset.source === category) {
-      allCategoryItem.classList.remove('category-active');
-      el.classList.add('category-active');
+  try {
+    if (e.target.nodeName !== 'BUTTON') {
+      return;
     }
-  });
+    let category = e.target.dataset.category;
+    const allCategoryItem = document.querySelector('.sidebar-category-item');
+    const sidebarCategoryList = document.querySelectorAll(
+      '.sidebar-category-item'
+    );
 
-  const openCategory = await backendAPI.getSelectedCategory(category);
+    sidebarCategoryList.forEach(el => {
+      if (el.dataset.source === category) {
+        allCategoryItem.classList.remove('category-active');
+        el.classList.add('category-active');
+        el.scrollIntoView();
+      }
+    });
+
+    const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
     window.scrollTo({
       top: 0,
