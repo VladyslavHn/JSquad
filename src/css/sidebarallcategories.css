@@ -16,16 +16,23 @@
 .sidebar-category-item {
   color: rgba(17, 17, 17, 0.6);
   width: 307px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.125;
-  letter-spacing: -0.32px;
-
+  letter-spacing: -0.02em;
   cursor: pointer;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+body.dark-theme .sidebar-category-item {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .sidebar-category-item:hover,
 .sidebar-category-item:focus {
+  color: #4f2ee8;
+}
+body.dark-theme .sidebar-category-item:hover,
+body.dark-theme .sidebar-category-item:focus {
   color: #4f2ee8;
 }
 
@@ -33,6 +40,10 @@
   color: #4f2ee8;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+body.dark-theme .category-active {
+  color: rgba(234, 198, 69, 1);
 }
 
 ::-webkit-scrollbar {
@@ -47,7 +58,19 @@
   height: 114px;
 }
 
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.6);
+}
+
 ::-webkit-scrollbar-thumb:hover {
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    rgb(79, 46, 232) 18.02733987569809%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb:hover {
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     rgb(79, 46, 232) 18.02733987569809%,
