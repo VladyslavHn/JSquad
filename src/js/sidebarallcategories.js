@@ -2,7 +2,7 @@ import { hideLoader, showLoader } from '../main';
 import backendAPI from './Services/api';
 import { renderBestBooks } from './bestsellers';
 import { renderCategoryPage } from './categorypage';
-import { notification } from './Services/helpers';
+// import { notification } from './Services/helpers';
 
 const categorySelectors = {
   categoryContainer: document.querySelector('.sidebar-category-container'),
@@ -66,19 +66,20 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     event.target.classList.add('category-active');
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
 
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
-        if (categoryData.length === 0) {
-          notification(
-            `Sorry! There are no books available in the category "${category}".`
-          );
-        } else {
-          renderCategoryPage(categoryData, category);
-        }
+        // if (categoryData.length === 0) {
+        //   notification(
+        //     `Sorry! There are no books available in the category "${category}".`
+        //   );
+        // } else {
+        //   renderCategoryPage(categoryData, category);
+        // }
+        renderCategoryPage(categoryData, category);
       }
     } catch (error) {
       console.log(error);
