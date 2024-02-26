@@ -12,7 +12,7 @@
   margin-bottom: 40px;
 }
 
-.page-title-dark { /*dark theme*/
+body .dark-theme .page-title { /*dark theme*/
  color: #fff;
 }
 
@@ -84,7 +84,7 @@
   background-color: transparent;
 }
 
-.bestsellers-btn-dark { /*dark theme*/
+body .dark-theme .bestsellers-btn { /*dark theme*/
   color: #fff;
 }
 
@@ -94,8 +94,8 @@
   color: #fff;
 }
 
-.bestsellers-btn-dark:hover, /*dark theme*/
-.bestsellers-btn-dark:focus {
+body .dark-theme .bestsellers-btn:hover, /*dark theme*/
+body .dark-theme .bestsellers-btn:focus {
   background-color: #eac645;;
   color: #111;
 }
