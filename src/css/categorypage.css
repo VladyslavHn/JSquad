@@ -50,6 +50,15 @@ body.dark-theme .book-title {
   overflow: hidden;
 }
 
+.category-text-empty {
+  font-size: 18px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 100px;
+}
+
 .overlay-text {
   position: absolute;
   bottom: 0;
