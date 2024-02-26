@@ -1,3 +1,4 @@
+import { hideLoader, showLoader } from '../main';
 import backendAPI from './Services/api';
 import { renderBestBooks } from './bestsellers';
 import { renderCategoryPage } from './categorypage';
@@ -41,11 +42,14 @@ function categoryMarkup(data) {
 */
 
 categorySelectors.allCategory.addEventListener('click', async event => {
+  showLoader()
   try {
     const bestBooksData = await backendAPI.getBestSellers();
     renderBestBooks(bestBooksData);
   } catch (error) {
     console.log(error);
+  } finally {
+    hideLoader()
   }
 });
 

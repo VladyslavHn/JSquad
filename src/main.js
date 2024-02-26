@@ -39,10 +39,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-window.addEventListener('load', () => {
-  let background = document.querySelector('.background');
-  background.classList.add('hide');
-  setTimeout(() => {
-    background.remove();
-  }, 600)
-})
+
+export function showLoader() {
+  const loader = document.querySelector('.loader-container');
+  loader.classList.remove('is-hidden');
+}
+
+export function hideLoader() {
+  const loader = document.querySelector('.loader-container');
+
+  setTimeout(() => loader.classList.add('is-hidden'), 600);
+}

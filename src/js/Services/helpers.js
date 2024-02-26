@@ -10,7 +10,7 @@ export function renderTitle(containerClass, title) {
   container.insertAdjacentHTML(
     'afterbegin',
     `<h1 class="page-title">${title} <span class="page-title-highlight">${lastWord}</span></h1>`
-  );
+    );
 }
 
 export function bookTemplate({ title, author, book_image, _id }) {

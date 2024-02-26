@@ -59,11 +59,11 @@ import localStorageBooks from '../js/localstorage';
           </div>
         </div>
       </div>
-    </li>`;
+    </li>`
       })
       .join('');
-    shoppingList.insertAdjacentHTML('beforeend', hmtlBookList);
-  }
+      shoppingList.insertAdjacentHTML('beforeend', hmtlBookList);
+      }
 
   let pageData = {
     books: [],

@@ -80,7 +80,7 @@ html {
   fill: #fff;
 }
 
-.background {
+.loader-container {
   width: 100%;
   height: 100%;
   background-color: #f6f6f6;
@@ -93,14 +93,14 @@ html {
   align-items: center;
 }
 
-.hide {
-  opacity: 0;
+.is-hidden {
+  display: none;
 }
 
 .loader {
-  /* position: fixed;
-  top: 0;
-  right: 0; */
+  position: fixed;
+  top: 50%;
+  right: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,11 +112,6 @@ html {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-}
-
-.loader-hidden {
-  opacity: 0;
-  visibility: hidden;
 }
 
 @keyframes rotation {

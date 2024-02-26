@@ -1,18 +1,24 @@
+import { hideLoader } from '../main';
 import backendAPI from './Services/api';
 import { bookTemplate, renderTitle } from './Services/helpers';
 import { renderCategoryPage } from './categorypage';
 import { renderModal, showModal } from './modalwindow';
+import { showLoader } from '../main';
+
 
 // ==================================================================================
 // Функція для відображення Best Sellers Books
 // ==============================================================================
 
 export async function topPageBestsellersBooks() {
+  showLoader()
   try {
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
   } catch (error) {
     console.error('Error fetching best sellers:', error);
+  } finally {
+    hideLoader();
   }
 }
 
@@ -75,6 +81,7 @@ async function onImageClick(e) {
 // ========================================================================
 
 async function onButtonClick(e) {
+  try{
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
@@ -92,5 +99,16 @@ async function onButtonClick(e) {
   });
 
   const openCategory = await backendAPI.getSelectedCategory(category);
-  renderCategoryPage(openCategory, category);
+    renderCategoryPage(openCategory, category);
+  } catch(error) {
+    console.log('Error fetching modal:', error); 
+  }
+
+//   window.addEventListener('DOMSectionLoaded', () => {
+//   let background = document.querySelector('.background');
+//   background.classList.add('hide');
+//   setTimeout(() => {
+//     background.remove();
+//   }, 600)
+// })
 }
