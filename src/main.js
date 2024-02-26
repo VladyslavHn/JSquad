@@ -37,3 +37,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // scrollUpButton.classList.remove('.scroll-up.border');
   });
 });
+
+
+window.addEventListener('load', () => {
+  let background = document.querySelector('.background');
+  background.classList.add('hide');
+  setTimeout(() => {
+    background.remove();
+  }, 600)
+})
