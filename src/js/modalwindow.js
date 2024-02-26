@@ -8,7 +8,7 @@ const links = document.querySelector('.modal-icons-list');
 // const modalWindow = document.querySelector('.modal-window');
 const body = document.querySelector('body');
 const btnAddRemove = document.querySelector('.modal-btn-add');
-const bookAddMsg = document.querySelector('.modal-text-congratulations');
+const bookAddMsg = document.querySelector('.congrats');
 const closeModalButton = document.querySelector('.modal-close');
 
 const book = {
@@ -98,8 +98,12 @@ function renderLinks(modalData) {
 function manageButton(btnAddRemove, bookId) {
   if (localStorageBooks.isBookExsist(bookId)) {
     btnAddRemove.textContent = 'remove from the shopping list';
+    btnAddRemove.classList.add('modal-btn-remove');
+    bookAddMsg.classList.add('modal-text-congratulations');
   } else {
     btnAddRemove.textContent = 'add to shopping list';
+    btnAddRemove.classList.remove('modal-btn-remove');
+    bookAddMsg.classList.remove('modal-text-congratulations');
   }
 }
 function buttonClickHandler(e) {
