@@ -27,7 +27,7 @@ export function bookTemplate({ title, author, book_image, _id }) {
  </li>`;
 }
 
-function notification(message) {
+export function notification(message) {
   iziToast.show({
     message: message,
     messageColor: '#111',
