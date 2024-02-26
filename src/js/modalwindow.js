@@ -24,13 +24,13 @@ const book = {
 
 async function renderModal(bookId) {
   try {
-    console.log(bookId);
-    const modalData = await backendAPI.getBookDescription(bookId);
     modalWrapper.innerHTML = '';
     links.innerHTML = '';
+    //loader
+    const modalData = await backendAPI.getBookDescription(bookId);
+    //hide loader
 
     const markupBook = markupBooks(modalData);
-    // console.log(markupBook);
     modalWrapper.insertAdjacentHTML('beforeend', markupBook);
 
     const murkupLinks = renderLinks(modalData);
