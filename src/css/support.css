@@ -71,7 +71,7 @@
   transition: ease 1s;
 }
 
-.slider-button-scroll {
+.slider-button-scrollup, .slider-button-scrolldown {
   margin-top: 20px;
   margin-left: 152px;
   margin-right: 151px;
@@ -107,6 +107,22 @@
   height: 20px;
 }
 
+
+.scrolldown-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  display: none;
+}
+
+.scrolldown-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
+}
+
+
 @media screen and (min-width: 768px) {
   .slider-suport-title {
     font-size: 24px;
@@ -118,14 +134,14 @@
     height: 474px;
   }
 
-  .slider-button-scroll {
+  .slider-button-scrollup, .slider-button-scrolldown {
     margin-top: 24px;
     margin-left: 159px;
     margin-right: 159px;
     margin-bottom: 24px;
   }
 
-  .slider-button-scroll {
+    .slider-button-scrollup, .slider-button-scrolldown {
     width: 38px;
     height: 38px;
   }
