@@ -100,7 +100,6 @@ async function onButtonClick(e) {
 
   const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
-
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
