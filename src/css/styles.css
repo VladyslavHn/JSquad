@@ -49,6 +49,37 @@ html {
   display: none;
 }
 
+.scroll-up {
+  position: fixed;
+  bottom: 145px;
+  right: 25px;
+  background-color: #4f2ee8;
+  border: none;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  display: none;
+  z-index: 2;
+}
+
+/* .scroll-up.border:hover,
+.scroll-up.border:focus {
+  border: 5px solid rgb(78, 143, 248);
+} */
+
+.scroll-up.show {
+  display: block;
+}
+
+.scroll-up-icon {
+  fill: #fff;
+}
+
+.scroll-up-button-arrow {
+  fill: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .card-support {
     display: none;

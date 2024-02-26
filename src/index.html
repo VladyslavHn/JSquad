@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/modern-normalize.min.css" />
-    <link rel="stylesheet" href="./css/fonts.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
 
-  <body>
-    <load src="./partials/header.html" />
-    <main class="main">
-      <div class="container">
-        <aside>
-          <load src="./partials/allcategories.html" />
-          <load src="./partials/support.html" />
-        </aside>
-        <load src="./partials/mainpage.html" />
-      </div>
-    </main>
-    <load src="./partials/modalwindow.html" />
-    <load src="./partials/signup.html" />
-    <script type="module" src="./main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vanilla App Template</title>
+  <link rel="stylesheet" href="./css/modern-normalize.min.css" />
+  <link rel="stylesheet" href="./css/fonts.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <load src="./partials/header.html" />
+  <main class="main">
+    <div class="container">
+      <aside>
+        <load src="./partials/allcategories.html" />
+        <load src="./partials/support.html" />
+      </aside>
+      <load src="./partials/mainpage.html" />
+    </div>
+  </main>
+  <load src="./partials/modalwindow.html" />
+  <load src="./partials/signup.html" />
+  <button class="scroll-up">
+    <svg class="scroll-up-icon" width="28" height="28">
+      <use class="scroll-up-button-arrow" href="./img/symbol-defs.svg#icon-Vector-scroll"></use>
+    </svg>
+  </button>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
