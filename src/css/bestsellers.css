@@ -85,7 +85,7 @@ body.dark-theme .page-title {
   background-color: transparent;
 }
 
-body .dark-theme .bestsellers-btn {
+body.dark-theme .bestsellers-btn {
   /*dark theme*/
   color: #fff;
 }
@@ -96,8 +96,8 @@ body .dark-theme .bestsellers-btn {
   color: #fff;
 }
 
-body .dark-theme .bestsellers-btn:hover, /*dark theme*/
-body .dark-theme .bestsellers-btn:focus {
+body.dark-theme .bestsellers-btn:hover, /*dark theme*/
+body.dark-theme .bestsellers-btn:focus {
   background-color: #eac645;
   color: #111;
 }
