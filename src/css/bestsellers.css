@@ -12,8 +12,9 @@
   margin-bottom: 40px;
 }
 
-body .dark-theme .page-title { /*dark theme*/
- color: #fff;
+body.dark-theme .page-title {
+  /*dark theme*/
+  color: #fff;
 }
 
 .page-title-highlight {
@@ -84,7 +85,8 @@ body .dark-theme .page-title { /*dark theme*/
   background-color: transparent;
 }
 
-body .dark-theme .bestsellers-btn { /*dark theme*/
+body .dark-theme .bestsellers-btn {
+  /*dark theme*/
   color: #fff;
 }
 
@@ -96,7 +98,7 @@ body .dark-theme .bestsellers-btn { /*dark theme*/
 
 body .dark-theme .bestsellers-btn:hover, /*dark theme*/
 body .dark-theme .bestsellers-btn:focus {
-  background-color: #eac645;;
+  background-color: #eac645;
   color: #111;
 }
 
@@ -139,7 +141,7 @@ body .dark-theme .bestsellers-btn:focus {
     height: 306px;
     margin-bottom: 32px;
   }
- 
+
   .bestsellers-books-list .book-category-item:nth-child(4),
   .bestsellers-books-list .book-category-item:nth-child(5) {
     display: block;
@@ -147,6 +149,3 @@ body .dark-theme .bestsellers-btn:focus {
 }
 
 /*===================================================*/
-
-
-
