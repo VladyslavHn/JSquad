@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 export function renderTitle(containerClass, title) {
   const container = document.querySelector(containerClass);
   const words = title.split(' ');
@@ -22,4 +25,13 @@ export function bookTemplate({ title, author, book_image, _id }) {
       <p class = "author-name"> ${author}</p>
     </div>
  </li>`;
+}
+
+function notification(message) {
+  iziToast.show({
+    message: message,
+    messageColor: '#111',
+    backgroundColor: '#eac645',
+    position: 'center',
+  });
 }
