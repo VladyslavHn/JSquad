@@ -3,7 +3,6 @@ import localStorageBooks from '../js/localstorage';
 (function () {
   const shoppingList = document.querySelector('.cart-list');
   const cartEmptyMsg = document.querySelector('.cart-empty-container');
-  const paginationButtons = document.querySelector('.pagination-list');
   const paginationList = document.querySelector('.pagination-list');
 
   renderTitle('.shoppinglist-title', 'Shopping List');
@@ -119,15 +118,6 @@ import localStorageBooks from '../js/localstorage';
         makeActiveButton(pageButton);
         pageData.currentPage = pageButton;
         console.log('premuto pulsante: ', pageData);
-        // let newCurrentPage = e.target.closest('button').dataset.page;
-        // let currentButton = document.querySelector('.active');
-        // if (currentButton !== null) {
-        //   currentButton.classList.remove('active');
-        // }
-        // makeActiveButton(newCurrentPage);
-        // currentButton = document.querySelector('.active');
-        // console.log(currentButton);
-        // renderShoppingList(pagesBook[newCurrentPage - 1]);
       }
     }
   }
@@ -285,22 +275,22 @@ import localStorageBooks from '../js/localstorage';
     return booksPages;
   }
 
-  for (let i = 0; i < 20; i++) {
-    const book = {
-      _id: `${i}`,
-      title: `${i}`,
-      author: 'Michelle Zauner',
-      list_name: 'Paperback Nonfiction',
-      book_image:
-        'https://storage.googleapis.com/du-prd/books/images/9780525657743.jpg',
-      description:
-        'The daughter of a Korean mother and Jewish American father, and leader of the indie rock project Japanese Breakfast, describes creating her own identity after losing her mother to cancer.',
-      amazon_buy_link: 'https://www.amazon.com/dp/0593379853?tag=NYTBSREV-20',
-      apple_buy_link: 'https://goto.applebooks.apple/9781984896391?at=10lIEQ',
-    };
+  // for (let i = 0; i < 20; i++) {
+  //   const book = {
+  //     _id: `${i}`,
+  //     title: `${i}`,
+  //     author: 'Michelle Zauner',
+  //     list_name: 'Paperback Nonfiction',
+  //     book_image:
+  //       'https://storage.googleapis.com/du-prd/books/images/9780525657743.jpg',
+  //     description:
+  //       'The daughter of a Korean mother and Jewish American father, and leader of the indie rock project Japanese Breakfast, describes creating her own identity after losing her mother to cancer.',
+  //     amazon_buy_link: 'https://www.amazon.com/dp/0593379853?tag=NYTBSREV-20',
+  //     apple_buy_link: 'https://goto.applebooks.apple/9781984896391?at=10lIEQ',
+  //   };
 
-    localStorageBooks.addBookToFavorites(book);
-  }
+  //   localStorageBooks.addBookToFavorites(book);
+  // }
 
   renderShoppingListPage(pageData);
 
