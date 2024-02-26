@@ -181,7 +181,7 @@ button {
 }
 
 .mob-menu-img {
-  background-image: url(../img/books-bg-mob2x.png);
+  background-image: url(../img/books-bg-mob.png);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 147% auto;
@@ -192,6 +192,15 @@ button {
   display: flex;
   flex-direction: column;
 }
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .mob-menu-img {
+    background-image: url(../img/books-bg-mob2x.png);
+  }
+}
+
 
 .menu-open-btn {
   margin-left: 14px;
