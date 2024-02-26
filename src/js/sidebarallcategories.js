@@ -2,6 +2,7 @@ import { hideLoader, showLoader } from '../main';
 import backendAPI from './Services/api';
 import { renderBestBooks } from './bestsellers';
 import { renderCategoryPage } from './categorypage';
+import { notification } from './Services/helpers';
 
 const categorySelectors = {
   categoryContainer: document.querySelector('.sidebar-category-container'),
@@ -42,14 +43,14 @@ function categoryMarkup(data) {
 */
 
 categorySelectors.allCategory.addEventListener('click', async event => {
-  showLoader()
+  showLoader();
   try {
     const bestBooksData = await backendAPI.getBestSellers();
     renderBestBooks(bestBooksData);
   } catch (error) {
     console.log(error);
   } finally {
-    hideLoader()
+    hideLoader();
   }
 });
 
@@ -67,7 +68,13 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
-        renderCategoryPage(categoryData, category);
+        if (categoryData.length === 0) {
+          notification(
+            `Sorry! There are no books available in the category "${category}".`
+          );
+        } else {
+          renderCategoryPage(categoryData, category);
+        }
       }
     } catch (error) {
       console.log(error);
