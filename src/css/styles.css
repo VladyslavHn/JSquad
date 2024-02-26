@@ -80,6 +80,10 @@ html {
   fill: #fff;
 }
 
+body.dark-theme .loader-container {
+  background-color: #111;
+}
+
 .loader-container {
   width: 100%;
   height: 100%;
@@ -97,6 +101,11 @@ html {
 .is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+body.dark-theme .loader {
+  border: 5px solid #f6f6f6;
+  border-bottom-color: #eac645;
 }
 
 .loader {
