@@ -1,4 +1,4 @@
-import{r as f,l as b}from"./assets/api-a283289b.js";import"./assets/vendor-8dea2054.js";(function(){const i=document.querySelector(".cart-list");document.querySelector(".cart-empty-container");const c=document.querySelector(".pagination-list");f(".shoppinglist-title","Shopping List");function a(t){i.innerHTML="";const e=t.map(n=>`<li class="cart-item">
+import{r as f,l as b}from"./assets/api-24e14dfc.js";import"./assets/vendor-8dea2054.js";(function(){const i=document.querySelector(".cart-list");document.querySelector(".cart-empty-container");const c=document.querySelector(".pagination-list");f(".shoppinglist-title","Shopping List");function a(t){i.innerHTML="";const e=t.map(n=>`<li class="cart-item">
       <img
         class="cart-item-img"
         src="${n.book_image}"
