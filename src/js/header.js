@@ -1,3 +1,33 @@
+// Функція, яка видаляє клас 'exception' з усіх елементів меню, окрім клікнутого
+function handleMenuLinkClick(event, menuSelector, menuLinkSelector) {
+  if (event.target.classList.contains(menuLinkSelector)) {
+    event.preventDefault();
+    
+    const menu = document.querySelector(menuSelector);
+    const menuLinks = menu.querySelectorAll('.' + menuLinkSelector);
+
+    menuLinks.forEach(link => {
+      if (link !== event.target) {
+        link.classList.remove('exception');
+      }
+    });
+
+    event.target.classList.add('exception');
+
+    const path = event.target.getAttribute('href');
+    window.location.pathname = path;
+  }
+}
+
+document.querySelector('.header-menu').addEventListener('click', function(event) {
+  handleMenuLinkClick(event, '.header-menu', 'header-menu-link');
+});
+
+document.querySelector('.mob-list').addEventListener('click', function(event) {
+  handleMenuLinkClick(event, '.mob-list', 'mob-menu-link');
+});
+
+
 const themeSwitch = document.querySelector('.theme-switch-input');
 const body = document.querySelector('body');
 
@@ -45,35 +75,4 @@ menuCloseButton.addEventListener('click', () => {
   mobMenu.classList.remove('is-open');
   menuOpenButton.classList.remove('hidden');
   menuCloseButton.classList.add('hidden');
-});
-
-
-
-// Функція, яка видаляє клас 'exception' з усіх елементів меню, окрім клікнутого
-function handleMenuClick(event, menuSelector, menuLinkSelector) {
-  if (event.target.classList.contains(menuLinkSelector)) {
-    event.preventDefault();
-    
-    const menu = document.querySelector(menuSelector);
-    const menuLinks = menu.querySelectorAll('.' + menuLinkSelector);
-
-    menuLinks.forEach(link => {
-      if (link !== event.target) {
-        link.classList.remove('exception');
-      }
-    });
-
-    event.target.classList.add('exception');
-
-    const path = event.target.getAttribute('href');
-    window.location.pathname = path;
-  }
-}
-
-document.querySelector('.header-menu').addEventListener('click', function(event) {
-  handleMenuClick(event, '.header-menu', 'header-menu-link');
-});
-
-document.querySelector('.mob-list').addEventListener('click', function(event) {
-  handleMenuClick(event, '.mob-list', 'mob-menu-link');
 });
