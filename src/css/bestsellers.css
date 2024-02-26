@@ -1,48 +1,23 @@
 .bestsellers-container {
-  /*змінити назву*/
   padding-top: 40px;
   padding-bottom: 80px;
 }
 
-@media screen and (min-width: 768px) {
-  .bestsellers-container {
-    padding-top: 98px;
-    padding-bottom: 100px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .bestsellers-container {
-    padding-top: 0;
-    /* padding-top: 40px; */
-    padding-bottom: 72px;
-    max-width: 996px;
-  }
-}
-
 .page-title {
-  /*bestsellers-title +Olena*/
   font-weight: 700;
   font-size: 32px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
   color: #111;
   margin-bottom: 40px;
-  /*- Olena*/
+}
+
+.page-title-dark { /*dark theme*/
+ color: #fff;
 }
 
 .page-title-highlight {
-  /*bestsellers-title-color -Olena*/
   color: #4f2ee8;
-}
-
-@media screen and (min-width: 768px) {
-
-  /*Olena*/
-  .page-title {
-    font-size: 48px;
-    line-height: 1.08333;
-  }
 }
 
 .bestsellers-list {
@@ -73,22 +48,6 @@
   margin-bottom: 8px;
 }
 
-@media screen and (min-width: 768px) {
-  .bestsellers-books-list {
-    gap: 25px;
-    height: 366px;
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .bestsellers-books-list {
-    gap: 24px;
-    height: 306px;
-    margin-bottom: 32px;
-  }
-}
-
 .book-category-item {
   /*Olena book-category-item*/
   width: 335px;
@@ -102,72 +61,11 @@
   display: none;
 }
 
-@media screen and (min-width: 768px) {
-  .book-category-item {
-    width: 218px;
-    align-items: center;
-  }
-
-  .bestsellers-books-list .book-category-item:nth-child(2),
-  .bestsellers-books-list .book-category-item:nth-child(3) {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .book-category-item {
-    width: 180px;
-  }
-
-  .bestsellers-books-list .book-category-item:nth-child(4),
-  .bestsellers-books-list .book-category-item:nth-child(5) {
-    display: block;
-  }
-}
-
 .book-category-image {
+  /*Olena book-category-image*/
   width: 100%;
   height: 485px;
   border-radius: 8px;
-}
-
-@media screen and (min-width: 768px) {
-  .book-category-image {
-    height: 316px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .book-category-image {
-    height: 256px;
-  }
-}
-
-.book-title {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.125;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: #111;
-  margin-top: 14px;
-  margin-bottom: 4px;
-  overflow: hidden;
-  /*-Olena*/
-  height: 18px;
-  /*-Olena*/
-}
-
-.author-name {
-  font-style: italic;
-  font-size: 12px;
-  line-height: 1.16667;
-  letter-spacing: -0.04em;
-  color: #b4afaf;
-  overflow: hidden;
-  /*-Olena*/
-  height: 14px;
-  text-transform: capitalize;
 }
 
 .bestsellers-btn {
@@ -185,3 +83,70 @@
   float: right;
   background-color: transparent;
 }
+
+.bestsellers-btn-dark { /*dark theme*/
+  color: #fff;
+}
+
+.bestsellers-btn:hover,
+.bestsellers-btn:focus {
+  background-color: #4f2ee8;
+  color: #fff;
+}
+
+.bestsellers-btn-dark:hover, /*dark theme*/
+.bestsellers-btn-dark:focus {
+  background-color: #eac645;;
+  color: #111;
+}
+
+/*====================768px=======================*/
+
+@media screen and (min-width: 768px) {
+  .bestsellers-container {
+    padding-top: 98px;
+    padding-bottom: 100px;
+  }
+
+  .page-title {
+    font-size: 48px;
+    line-height: 1.08333;
+  }
+
+  .bestsellers-books-list {
+    gap: 25px;
+    height: 366px;
+    margin-bottom: 20px;
+  }
+
+  .bestsellers-books-list .book-category-item:nth-child(2),
+  .bestsellers-books-list .book-category-item:nth-child(3) {
+    display: block;
+  }
+}
+
+/*====================1440px=====================*/
+
+@media screen and (min-width: 1440px) {
+  .bestsellers-container {
+    padding-top: 0;
+    padding-bottom: 72px;
+    max-width: 996px;
+  }
+
+  .bestsellers-books-list {
+    gap: 24px;
+    height: 306px;
+    margin-bottom: 32px;
+  }
+ 
+  .bestsellers-books-list .book-category-item:nth-child(4),
+  .bestsellers-books-list .book-category-item:nth-child(5) {
+    display: block;
+  }
+}
+
+/*===================================================*/
+
+
+

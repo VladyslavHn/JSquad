@@ -11,14 +11,15 @@ export function renderTitle(containerClass, title) {
 }
 
 export function bookTemplate({ title, author, book_image, _id }) {
-  return `<li class="book-category-item" data-source="${_id}">
-  <div class="book-category-card">
-    <img class="book-category-image" src="${book_image}" alt="Book cover" width="335"  />
-    <div class="book-category-text">
+  return `<li class="book-category-item" data-id="${_id}">
+    <div class = "img-cover">
+      <img class="book-category-image" src="${book_image}" alt="Book cover" width="335"  /> 
+      <p class="overlay-text">quick view</p>
+      </div>
+        <div class="book-category-text">
       <h3 class = "book-title">
       ${title}</h3>
       <p class = "author-name"> ${author}</p>
     </div>
-  </div>
-</li>`;
+ </li>`;
 }
