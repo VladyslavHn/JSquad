@@ -90,21 +90,27 @@ async function onButtonClick(e) {
       '.sidebar-category-item'
     );
 
-    sidebarCategoryList.forEach(el => {
-      if (el.dataset.source === category) {
-        allCategoryItem.classList.remove('category-active');
-        el.classList.add('category-active');
-        el.scrollIntoView();
-      }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
     });
 
     const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
+
+    sidebarCategoryList.forEach(el => {
+      if (el.dataset.source === category) {
+        allCategoryItem.classList.remove('category-active');
+        el.classList.add('category-active');
+        el.scrollIntoView(true);
+      }
+    });
+
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
-  } catch(error) {
-    console.log('Error fetching modal:', error); 
+  } catch (error) {
+    console.log('Error fetching modal:', error);
   }
 }
