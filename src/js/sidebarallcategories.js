@@ -63,6 +63,10 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     });
 
     event.target.classList.add('category-active');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
 
     try {
       if (!event.target.classList.contains('all-category')) {

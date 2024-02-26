@@ -100,15 +100,12 @@ async function onButtonClick(e) {
 
   const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   } catch(error) {
     console.log('Error fetching modal:', error); 
   }
-
-//   window.addEventListener('DOMSectionLoaded', () => {
-//   let background = document.querySelector('.background');
-//   background.classList.add('hide');
-//   setTimeout(() => {
-//     background.remove();
-//   }, 600)
-// })
 }

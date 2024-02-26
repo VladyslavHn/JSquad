@@ -194,13 +194,12 @@ button {
 }
 
 @media (min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
   .mob-menu-img {
     background-image: url(../img/books-bg-mob2x.png);
   }
 }
-
 
 .menu-open-btn {
   margin-left: 14px;
@@ -247,7 +246,15 @@ button {
   color: #111;
 }
 
-.exception {
+.btn-active {
+  border-radius: 36px;
+  padding: 8px 16px;
+  width: 72px;
+  height: 34px;
+  background: #eac645;
+}
+
+/* .exception {
   padding: 7px 16px;
   font-weight: 700;
   background: #eac645;
@@ -256,7 +263,7 @@ button {
   padding: 8px 16px;
   width: 72px;
   height: 34px;
-}
+} */
 
 .mob-menu-calor {
   color: #fff;
@@ -283,6 +290,10 @@ button {
 /* ==================================== */
 
 @media screen and (min-width: 768px) {
+  .header-container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
   .menu-open-btn {
     display: none;
   }
@@ -307,6 +318,10 @@ button {
 }
 
 @media screen and (min-width: 1440px) {
+  .header-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
   .header-menu {
     margin-left: 76px;
   }
