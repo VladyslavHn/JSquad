@@ -10,8 +10,8 @@
     
   <script type="module" crossorigin src="/CrazySuperStars/commonHelpers.js"></script>
   <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/vendor-0cb09735.js">
-  <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/api-42202113.js">
-  <link rel="stylesheet" href="/CrazySuperStars/assets/api-95f1a2db.css">
+  <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/api-d211d684.js">
+  <link rel="stylesheet" href="/CrazySuperStars/assets/api-11cb4586.css">
 </head>
 
 <body>
@@ -159,43 +159,37 @@
             </aside>
             <section style="width: 100%;">
                 <div class="cart">
-  <div class="cart-empty is-hidden">
-    <p class="cart-empty-msg">
-      This page is empty, add some books and proceed to order.
-    </p>
-    <picture class="cart-empty-img">
-      <source
-        srcset="
-          ../img/shoppinglist-empty-desk.png    1x,
-          ../img/shoppinglist-empty-desk-2x.png 2x
-        "
-        media="(min-width: 1440px)"
-        type="image/png"
-      />
-      <source
-        srcset="
-          ../img/shoppinglist-empty-tab.png    1x,
-          ../img/shoppinglist-empty-tab-2x.png 2x
-        "
-        media="(min-width: 768px)"
-        type="image/png"
-      />
-      <source
-        srcset="
-          ../img/shoppinglist-empty-mob.png    1x,
-          ../img/shoppinglist-empty-mob-2x.png 2x
-        "
-        media="(min-width: 365px)"
-        type="image/png"
-      />
-      <img
-        class="cart-empty-img"
-        src="../img/shoppinglist-empty-mob.png"
-        alt="shopping cart empty"
-        height="265"
-        width="198"
-      />
-    </picture>
+  <div class="shoppinglist-title"></div>
+  <div class="cart-empty-container is-hidden">
+    <div class="cart-empty">
+      <p class="cart-empty-msg">
+        This page is empty, add some books and proceed to order.
+      </p>
+      <picture class="cart-empty-img">
+        <source
+          srcset="/CrazySuperStars/assets/shoppinglist-empty-desk-f620737d.png 1x, /CrazySuperStars/assets/shoppinglist-empty-desk-2x-b7e4a452.png 2x"
+          media="(min-width: 1440px)"
+          type="image/png"
+        />
+        <source
+          srcset="/CrazySuperStars/assets/shoppinglist-empty-tab-967c20ad.png 1x, /CrazySuperStars/assets/shoppinglist-empty-tab-2x-f60e6310.png 2x"
+          media="(min-width: 768px)"
+          type="image/png"
+        />
+        <source
+          srcset="/CrazySuperStars/assets/shoppinglist-empty-mob-c3b346c2.png 1x, /CrazySuperStars/assets/shoppinglist-empty-mob-2x-75749c88.png 2x"
+          media="(min-width: 365px)"
+          type="image/png"
+        />
+        <img
+          class="cart-empty-img"
+          src="/CrazySuperStars/assets/shoppinglist-empty-mob-c3b346c2.png"
+          alt="shopping cart empty"
+          height="265"
+          width="198"
+        />
+      </picture>
+    </div>
   </div>
   <ul class="cart-list"></ul>
   <div class="pagination-list"></div>
