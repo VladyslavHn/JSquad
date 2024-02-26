@@ -1,8 +1,11 @@
+import { hideLoader, showLoader } from '../main';
 import backendAPI from './Services/api';
 import { renderTitle, bookTemplate } from './Services/helpers';
 import { renderModal, showModal } from './modalwindow';
 
 export function renderCategoryPage(books, category) {
+  showLoader()
+  try {
   const pageContainer = document.querySelector('.bestsellers-container');
   pageContainer.innerHTML = '';
   renderTitle('.bestsellers-container', category);
@@ -18,7 +21,12 @@ export function renderCategoryPage(books, category) {
     .join('');
 
   categoryPage.innerHTML = markup;
-  categoryPage.addEventListener('click', onClickBook);
+    categoryPage.addEventListener('click', onClickBook);
+  } catch {
+    console.log('Error fetching modal:', error);
+  } finally {
+    hideLoader();
+    }
 }
 
 async function onClickBook(e) {

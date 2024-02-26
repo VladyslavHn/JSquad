@@ -1,18 +1,23 @@
+import { hideLoader } from '../main';
 import backendAPI from './Services/api';
 import { bookTemplate, renderTitle } from './Services/helpers';
 import { renderCategoryPage } from './categorypage';
 import { renderModal, showModal } from './modalwindow';
+import { showLoader } from '../main';
 
 // ==================================================================================
 // Функція для відображення Best Sellers Books
 // ==============================================================================
 
 export async function topPageBestsellersBooks() {
+  showLoader();
   try {
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
   } catch (error) {
     console.error('Error fetching best sellers:', error);
+  } finally {
+    hideLoader();
   }
 }
 
@@ -75,22 +80,31 @@ async function onImageClick(e) {
 // ========================================================================
 
 async function onButtonClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  let category = e.target.dataset.category;
-  const allCategoryItem = document.querySelector('.sidebar-category-item');
-  const sidebarCategoryList = document.querySelectorAll(
-    '.sidebar-category-item'
-  );
-
-  sidebarCategoryList.forEach(el => {
-    if (el.dataset.source === category) {
-      allCategoryItem.classList.remove('category-active');
-      el.classList.add('category-active');
+  try {
+    if (e.target.nodeName !== 'BUTTON') {
+      return;
     }
-  });
+    let category = e.target.dataset.category;
+    const allCategoryItem = document.querySelector('.sidebar-category-item');
+    const sidebarCategoryList = document.querySelectorAll(
+      '.sidebar-category-item'
+    );
 
-  const openCategory = await backendAPI.getSelectedCategory(category);
-  renderCategoryPage(openCategory, category);
+    sidebarCategoryList.forEach(el => {
+      if (el.dataset.source === category) {
+        allCategoryItem.classList.remove('category-active');
+        el.classList.add('category-active');
+        el.scrollIntoView();
+      }
+    });
+
+    const openCategory = await backendAPI.getSelectedCategory(category);
+    renderCategoryPage(openCategory, category);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  } catch(error) {
+    console.log('Error fetching modal:', error); 
+  }
 }

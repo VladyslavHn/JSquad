@@ -22,12 +22,19 @@ export const renderModal = async bookId => {
       </li>
       </ul>`;
     backdrop.insertAdjacentHTML('beforeend', markupBooks);
-    const murkupLinks = `<li class="modal-icons-wrapper-1">
-        <a class="modal-icon" href="${modalData.buy_links[0].url}"><img class='modal-icon' src="../img/amazon.png" alt="" width='62' height='19' 
+    if (modalData.description === '') {
+      const description = document.querySelector(
+        '.modal-description-list-text'
+      );
+      description.textContent =
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ';
+    }
+    const murkupLinks = `<li>
+        <a class="modal-icon amazon" href="${modalData.buy_links[0].url}"><img class='modal-icon' src="./img/amazon.png" alt="" width='62' height='19' 
        /></a>
       </li>
-      <li class="modal-icons-wrapper-2">
-        <a class="modal-icon" href="${modalData.buy_links[1].url}"><img class='modal-icon' src="../img/applebook.png" alt="" width='33' height='32'
+      <li>
+        <a class="modal-icon" href="${modalData.buy_links[1].url}"><img class='modal-icon' src="./img/applebook.png" alt="" width='33' height='32'
        /></a>
       </li>`;
     links.insertAdjacentHTML('beforeend', murkupLinks);

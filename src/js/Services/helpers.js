@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 export function renderTitle(containerClass, title) {
   const container = document.querySelector(containerClass);
   const words = title.split(' ');
@@ -7,7 +10,7 @@ export function renderTitle(containerClass, title) {
   container.insertAdjacentHTML(
     'afterbegin',
     `<h1 class="page-title">${title} <span class="page-title-highlight">${lastWord}</span></h1>`
-  );
+    );
 }
 
 export function bookTemplate({ title, author, book_image, _id }) {
@@ -22,4 +25,13 @@ export function bookTemplate({ title, author, book_image, _id }) {
       <p class = "author-name"> ${author}</p>
     </div>
  </li>`;
+}
+
+export function notification(message) {
+  iziToast.show({
+    message: message,
+    messageColor: '#111',
+    backgroundColor: '#eac645',
+    position: 'center',
+  });
 }

@@ -45,9 +45,7 @@
   );
   width: 335px;
   height: 460px;
-  display: flax;
   gap: 16px;
-  z-index: 1;
 }
 
 .slider {

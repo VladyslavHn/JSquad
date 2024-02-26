@@ -80,27 +80,36 @@ html {
   fill: #fff;
 }
 
-.background {
+body.dark-theme .loader-container {
+  background-color: #111;
+}
+
+.loader-container {
   width: 100%;
   height: 100%;
   background-color: #f6f6f6;
   z-index: 1002;
-  transition: 0.6s;
+  transition: opacity 0.3s;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
 }
 
-.hide {
+.is-hidden {
   opacity: 0;
+  pointer-events: none;
+}
+
+body.dark-theme .loader {
+  border: 5px solid #f6f6f6;
+  border-bottom-color: #eac645;
 }
 
 .loader {
-  /* position: fixed;
-  top: 0;
-  right: 0; */
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,16 +123,8 @@ html {
   animation: rotation 1s linear infinite;
 }
 
-.loader-hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
 @keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -156,7 +157,6 @@ html {
 
   .container {
     max-width: 1392px;
-    overflow: hidden;
     display: flex;
   }
 
@@ -169,5 +169,10 @@ html {
 
   .load {
     flex: 1;
+  }
+
+  footer {
+    width: 100%;
+    height: 220px;
   }
 }
