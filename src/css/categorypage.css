@@ -30,6 +30,10 @@
   height: 18px;
 }
 
+body.dark-theme .book-title {
+  color: #fff;
+}
+
 .author-name {
   font-style: italic;
   font-size: 12px;
