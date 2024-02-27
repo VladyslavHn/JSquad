@@ -46,6 +46,7 @@ export function renderCategoryPage(books, category) {
     } finally {
       hideLoader();
     }
+  }
 }
 
 async function onClickBook(e) {
