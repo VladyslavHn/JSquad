@@ -71,7 +71,7 @@ async function onImageClick(e) {
   ) {
     let bookId = e.target.closest('.book-category-item').dataset.id;
     // renderModal(bookId);
-    showModal(bookId);
+    renderModal(bookId);
   }
 }
 
