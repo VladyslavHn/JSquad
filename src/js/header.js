@@ -72,42 +72,78 @@ menuCloseButton.addEventListener('click', () => {
 
 //функція яка робить активним посилання в мобільному меню
 
-document.addEventListener('DOMContentLoaded', function() {
-  const home = document.querySelector('.mob-menu-home');
-  const shoppingList = document.querySelector('.mob-menu-calor');
-  const mobBasketIcon = document.querySelector('.mob-basket-icon')
-  function applyBackground() {
-    const currentPath = window.location.pathname;
-    home.classList.toggle('btn-active-home', currentPath === '/index.html' || currentPath === '/');
-    shoppingList.classList.toggle('btn-active-shopping', currentPath.includes('card.html'));
-    mobBasketIcon.classList.toggle('mob-basket-isactive', currentPath.includes('card.html'));
-  }
-  applyBackground();
-  home.addEventListener('click', function (event) {
-    event.preventDefault();
-    window.location.href = './index.html';
-  });
-  shoppingList.addEventListener('click', function (event) {
-    event.preventDefault();
-    window.location.href = './card.html';
-  });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+  
+//   const home = document.querySelector('.mob-menu-home');
+//   const shoppingList = document.querySelector('.mob-menu-calor');
+//   const mobBasketIcon = document.querySelector('.mob-basket-icon')
+//   function applyBackground() {
+//     const currentPath = window.location.pathname;
+//     home.classList.toggle('btn-active-home', currentPath === '/index.html' || currentPath === '/');
+//     shoppingList.classList.toggle('btn-active-shopping', currentPath.includes('card.html'));
+//     mobBasketIcon.classList.toggle('mob-basket-isactive', currentPath.includes('card.html'));
+//   }
+//   applyBackground();
+//   home.addEventListener('click', function (event) {
+//     event.preventDefault();
+//     window.location.href = './index.html';
+//   });
+//   shoppingList.addEventListener('click', function (event) {
+//     event.preventDefault();
+//     window.location.href = './card.html';
+//   });
+// });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const home = document.querySelector('.header-menu-home');
-  const shoppingList = document.querySelector('.header-menu-shopping');
-  function applyBackground() {
-    const currentPath = window.location.pathname;
-    home.classList.toggle('btn-active', currentPath === '/index.html' || currentPath === '/');
-    shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
-  }
-  applyBackground();
-  home.addEventListener('click', function (event) {
-    event.preventDefault();
-    window.location.href = './index.html';
-  });
-  shoppingList.addEventListener('click', function (event) {
-    event.preventDefault();
-    window.location.href = './card.html';
-  });
+// document.addEventListener('DOMContentLoaded', function() {
+//   const home = document.querySelector('.header-menu-home');
+//   const shoppingList = document.querySelector('.header-menu-shopping');
+//   function applyBackground() {
+//     const currentPath = window.location.pathname;
+//     home.classList.toggle('btn-active', currentPath === '/index.html' || currentPath === '/');
+//     shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
+//   }
+//   applyBackground();
+//   home.addEventListener('click', function (event) {
+//     event.preventDefault();
+//     window.location.href = './index.html';
+//   });
+//   shoppingList.addEventListener('click', function (event) {
+//     event.preventDefault();
+//     window.location.href = './card.html';
+//   });
+// });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mobeHomeMenu = document.querySelector('.mob-menu-home');
+  const mobShoppingList = document.querySelector('.mob-menu-calor');
+  const headerHomeMenu = document.querySelector('.header-menu-home');
+  const headerShoppingList = document.querySelector('.header-menu-shopping');
+
+  const currentLink = window.location.pathname;
+  const linkMob = document.querySelector('.mob-list a');
+  const linkHeader = document.querySelector('.header-menu a');
+
+  console.log(currentLink);
+  
+  let mobLinkHref = linkMob.getAttribute('href');
+  let headerLinkHref = linkHeader.getAttribute('href').slice(1);
+
+  console.log(mobLinkHref);
+  console.log(headerLinkHref);
+
+  if (mobLinkHref == currentLink || headerLinkHref == currentLink) {
+    mobeHomeMenu.classList.add('open-home');
+    headerHomeMenu.classList.add('open-home');
+    console.log(true); 
+  } else {
+    mobShoppingList.classList.add('open-list');
+    headerShoppingList.classList.add('open-list');
+    console.log(false);
+  } 
 });
+        
+    
+
+

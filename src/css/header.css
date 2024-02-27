@@ -168,12 +168,15 @@ body.dark-theme body.dark-theme body.dark-theme button {
   align-items: center;
   background-color: transparent;
 }
-.menu-open-btn:focus.menu-open-icon {
+
+.menu-open-btn:focus .menu-open-icon {
   stroke: #4f2ee8;
 }
-.menu-open-btn:hover.menu-open-icon {
+
+.menu-open-btn:hover .menu-open-icon {
   stroke: #4f2ee8;
 }
+
 /* .menu-open-btn.menu-open-icon:is(:hover, :focus) {
   columns: #4f2ee8;
 } */
@@ -281,14 +284,14 @@ body.dark-theme body.dark-theme body.dark-theme button {
   justify-content: center;
 }
 
-.btn-active {
+/* .btn-active {
   border-radius: 36px;
   padding: 8px 16px;
   height: 34px;
   background: #eac645;
-}
+} */
 
-.btn-active-home {
+.btn-active-home, .open-home {
   color: #111;
   border-radius: 36px;
   padding: 8px 16px;
@@ -296,7 +299,7 @@ body.dark-theme body.dark-theme body.dark-theme button {
   height: 34px;
   background: #eac645;
 }
-.btn-active-shopping {
+.btn-active-shopping, .open-list {
   color: #111;
   border-radius: 36px;
   padding: 8px 16px;
