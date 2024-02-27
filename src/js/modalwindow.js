@@ -22,7 +22,7 @@ const book = {
   apple_buy_link: '',
 };
 
-async function renderModal(bookId) {
+export async function renderModal(bookId) {
   try {
     modalWrapper.innerHTML = '';
     links.innerHTML = '';
