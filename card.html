@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Store</title>
     
     
     
-  <script type="module" crossorigin src="/CrazySuperStars/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/vendor-8dea2054.js">
-  <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/api-ea25c3d4.js">
-  <link rel="stylesheet" href="/CrazySuperStars/assets/api-e7d35d7a.css">
-  <link rel="stylesheet" href="/CrazySuperStars/assets/vendor-e5212ee8.css">
-</head>
+    <script type="module" crossorigin src="/CrazySuperStars/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/vendor-8dea2054.js">
+    <link rel="modulepreload" crossorigin href="/CrazySuperStars/assets/api-247f8bb4.js">
+    <link rel="stylesheet" href="/CrazySuperStars/assets/api-f2438971.css">
+    <link rel="stylesheet" href="/CrazySuperStars/assets/vendor-e5212ee8.css">
+  </head>
 
-<body>
+  <body>
     <header class="header">
   <div class="container header-container">
-    <nav class="header-naviganion">
+    <nav class="header-navigation">
       <a class="header-logo" href="/">
         <svg class="logo-icon" width="24" height="24">
           <use href="/CrazySuperStars/assets/symbol-defs-1707de61.svg#icon-logo-mob"></use>
@@ -58,45 +57,31 @@
           <use href="/CrazySuperStars/assets/symbol-defs-1707de61.svg#icon-close-mob"></use>
         </svg>
       </button>
-      <!-- <button class="registration-btn">Sign up
-              <svg class="registration-icon" width="20" height="20">
-                <use href="../img/symbol-defs.svg#icon-arrow-signin-mob"></use>
-              </svg>
-            </button> -->
-      <!-- <button class="account-btn">
-              <svg class="account-icon" width="28" height="28">
-                <use href="./images/icon.svg#icon-registration"></use>
-              </svg>
-              <svg class="account-arrow-icon" width="28" height="28">
-                <use href="./images/icon.svg#icon-registration"></use>
-              </svg>
-            </button> -->
     </div>
   </div>
 
   <div class="mob-menu hidden">
     <div class="mob-menu-img">
-      <a class="mob-menu-link" href="./card.html">
-        <ul class="mob-list">
-          <li class="mob-item">
-            <a class="mob-menu-link" href="/">Home</a>
-          </li>
-          <li class="mob-item">
-            <a class="header-menu-link mob-menu-calor" href="./card.html">
-              Shopping list
-              <svg class="mob-basket-icon" width="20" height="20">
-                <use href="/CrazySuperStars/assets/symbol-defs-1707de61.svg#icon-shopping-icon-header-desk"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </a>
+      <ul class="mob-list">
+        <li class="mob-item">
+          <a class="mob-menu-link exception" href="/">Home</a>
+        </li>
+        <li class="mob-item">
+          <a class="mob-menu-link mob-menu-calor" href="./card.html">
+            Shopping list
+            <svg class="mob-basket-icon" width="20" height="20">
+              <use href="/CrazySuperStars/assets/symbol-defs-1707de61.svg#icon-shopping-icon-header-desk"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
     <main class="main">
+
         <div class="container">
-            <aside class="card-support">
+            <aside class="card-support" style="width: 100; height: 100%;">
                 <div class="slider-container">
   <div class="slider-suport-title">
     <p class="slider-p">Support Ukraine</p>
@@ -212,11 +197,19 @@
       </ol>
     </div>
   </div>
-  <button class="slider-button-scroll">
+  <button class="slider-button-scrolldown scrolldown-open">
     <svg class="slider-arrow-icon">
       <use
         class="slider-button-arrow"
         href="/CrazySuperStars/assets/symbol-defs-1707de61.svg#icon-Vector-down1-1"
+      ></use>
+    </svg>
+  </button>
+  <button class="slider-button-scrollup scrolldown-hidden">
+    <svg class="slider-arrow-icon">
+      <use
+        class="slider-button-arrow"
+        href="/CrazySuperStars/assets/symbol-defs-1707de61.svg#icon-Vector-up1-1"
       ></use>
     </svg>
   </button>
@@ -263,12 +256,9 @@
 
             </section>
         </div>
-    </main>
-    <div class="loader-container is-hidden">
-        <div class="loader"></div>
-    </div>
-    
-    
-</body>
 
+    </main>
+    
+    
+  </body>
 </html>
