@@ -1,5 +1,5 @@
 .bestsellers {
-  position: relative;
+  width: 100%;
 }
 
 .bestsellers-container {
@@ -17,7 +17,6 @@
 }
 
 body.dark-theme .page-title {
-  /*dark theme*/
   color: #fff;
 }
 
@@ -47,14 +46,24 @@ body.dark-theme .page-title {
   margin-bottom: 18px;
 }
 
+.category-empty {
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.28571;
+  letter-spacing: 0.03em;
+  color: #4f2ee8;
+}
+
 .bestsellers-books-list {
   display: flex;
   height: 535px;
   margin-bottom: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 .book-category-item {
-  /*Olena book-category-item*/
   width: 335px;
   align-items: center;
 }
@@ -67,7 +76,6 @@ body.dark-theme .page-title {
 }
 
 .book-category-image {
-  /*Olena book-category-image*/
   width: 100%;
   height: 485px;
   border-radius: 8px;
@@ -90,7 +98,6 @@ body.dark-theme .page-title {
 }
 
 body.dark-theme .bestsellers-btn {
-  /*dark theme*/
   color: #fff;
 }
 
@@ -100,7 +107,7 @@ body.dark-theme .bestsellers-btn {
   color: #fff;
 }
 
-body.dark-theme .bestsellers-btn:hover, /*dark theme*/
+body.dark-theme .bestsellers-btn:hover,
 body.dark-theme .bestsellers-btn:focus {
   background-color: #eac645;
   color: #111;
