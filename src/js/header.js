@@ -87,19 +87,15 @@ document.addEventListener('DOMContentLoaded', function() {
   shoppingList.addEventListener('click', onShopping);
 
   function onShopping() {
-    if (!shoppingList.classList.contains('btn-active')) {
       home.classList.remove('btn-active');
       shoppingList.classList.add('btn-active');
     }
-  }
 
   home.addEventListener('click', onHome);
 
   function onHome() {
-    if (!home.classList.contains('btn-active')) {
       shoppingList.classList.remove('btn-active');
       home.classList.add('btn-active');
-    }
   }
 });
 
