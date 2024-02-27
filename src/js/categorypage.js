@@ -4,6 +4,7 @@ import { renderTitle, bookTemplate } from './Services/helpers';
 import { renderModal, showModal } from './modalwindow';
 
 export function renderCategoryPage(books, category) {
+  
   try {
     const pageContainer = document.querySelector('.bestsellers-container');
     pageContainer.innerHTML = '';
