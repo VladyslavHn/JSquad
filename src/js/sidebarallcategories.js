@@ -75,7 +75,7 @@ categorySelectors.categoryList.addEventListener('click', async event => {
         const categoryData = await backendAPI.getSelectedCategory(category);
 <<<<<<< Updated upstream
 
-        renderCategoryPage(categoryData, category);
+        // renderCategoryPage(categoryData, category);
 =======
         if (categoryData.length === 0) {
           notification(

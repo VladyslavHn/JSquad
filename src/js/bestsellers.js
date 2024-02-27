@@ -106,7 +106,7 @@ async function onButtonClick(e) {
     });
 
 =======
-    hideLoader()
+    // hideLoader()
 >>>>>>> Stashed changes
     window.scrollTo({
       top: 0,
