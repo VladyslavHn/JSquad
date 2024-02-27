@@ -8,6 +8,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  z-index: 9999;
 }
 
 .backdrop {
@@ -86,6 +87,9 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .modal-description-list-subtitle {
@@ -213,6 +217,9 @@
 
   .modal-description-list {
     margin-top: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .modal-description-list-title {
     font-size: 24px;
