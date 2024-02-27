@@ -49,6 +49,11 @@ export async function renderModal(bookId) {
 
     btnAddRemove.addEventListener('click', buttonClickHandler);
     closeModalButton.addEventListener('click', closeButtonHandler);
+
+    // ==============Додав два слухачі на дії===================
+    document.addEventListener('keydown', keydownHandler);
+    backdrop.addEventListener('click', clickOutsideHandler);
+    // =========================================================
     // const btnClose = document.querySelector('.modal-close');
     // btnClose.addEventListener('click', closeButtonHandler);
   } catch (error) {
@@ -116,6 +121,31 @@ function buttonClickHandler(e) {
   }
   // btnAddRemove.removeEventListener('click', buttonClickHandler);
 }
+
+function closeModal() {
+  backdrop.classList.remove('is-open');
+  body.classList.remove('no-scroll');
+
+  // ============Прибрав слухачів дії================
+  document.removeEventListener('keydown', keydownHandler);
+  backdrop.removeEventListener('click', clickOutsideHandler);
+  // ================================================
+  closeModalButton.removeEventListener('click', closeModal);
+  btnAddRemove.removeEventListener('click', buttonClickHandler);
+}
+
+// ============Додав функції дії=====================
+function keydownHandler(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+}
+function clickOutsideHandler(event) {
+  if (event.target === backdrop) {
+    closeModal();
+  }
+}
+// ==================================================
 
 function closeButtonHandler() {
   backdrop.classList.remove('is-open');
