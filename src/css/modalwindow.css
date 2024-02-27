@@ -28,6 +28,7 @@
 }
 .modal-window {
   width: 335px;
+  height: auto;
   flex-shrink: 0;
   background: #ffffff;
   position: absolute;
