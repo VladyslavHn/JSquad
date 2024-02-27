@@ -1,4 +1,4 @@
-import{r as k,l as d}from"./assets/api-2ab76f54.js";import"./assets/vendor-8dea2054.js";const r=document.querySelector(".cart-list"),B=document.querySelector(".cart-empty-container"),s=document.querySelector(".pagination-list"),L=document.querySelector(".cart-buttons-container");k(".shoppinglist-title","Shopping List");function a(t){r.innerHTML="";const n=t.map(e=>`<li class="cart-item">
+import{r as k,l as d}from"./assets/api-d01f2ce1.js";import"./assets/vendor-8dea2054.js";const r=document.querySelector(".cart-list"),B=document.querySelector(".cart-empty-container"),s=document.querySelector(".pagination-list"),L=document.querySelector(".cart-buttons-container");k(".shoppinglist-title","Shopping List");function a(t){r.innerHTML="";const n=t.map(e=>`<li class="cart-item">
       <img
         class="cart-item-img"
         src="${e.book_image}"
@@ -14,7 +14,7 @@ import{r as k,l as d}from"./assets/api-2ab76f54.js";import"./assets/vendor-8dea2
           </div>
           <button data-id="${e._id}" class="cart-item-del-button">
             <svg class="cart-item-del-button-icon" width="12" height="12">
-              <use href="../img/symbol-defs.svg#icon-delete-shoppinglist-tab" />
+              <use href="/img/symbol-defs.svg#icon-delete-shoppinglist-tab" />
             </svg>
           </button>
         </div>
@@ -32,7 +32,7 @@ import{r as k,l as d}from"./assets/api-2ab76f54.js";import"./assets/vendor-8dea2
               >
                 <img
                   class="cart-items-amazon"
-                  src="../img/amazon-n.png"
+                  src="/img/amazon-n.png"
                   alt="shopping cart empty"
                   height="11"
                   width="32"
@@ -45,7 +45,7 @@ import{r as k,l as d}from"./assets/api-2ab76f54.js";import"./assets/vendor-8dea2
               >
                 <img
                   class="cart-items-apple"
-                  src="../img/apple-n.png"
+                  src="/img/apple-n.png"
                   alt="shopping cart empty"
                   height="16"
                   width="16"
