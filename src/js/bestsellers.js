@@ -39,18 +39,20 @@ export function renderBestBooks(bestBooks) {
     .map(({ books, list_name }) => {
       return `<li class="bestsellers-item">
       <h2 class="bestsellers-category-title">${list_name}</h2>
-      <ul class="bestsellers-books-list">${
-        books.map(({ title, author, book_image, _id }) => {
+      <ul class="bestsellers-books-list">${books
+        .map(({ title, author, book_image, _id }) => {
           if (books.length === 0) {
             return `<p class="category-empty">Sorry, no books were found for the given category!</p>`;
-          }else{
+          } else {
             return bookTemplate({ title, author, book_image, _id });
           }
-        }).join('\n')}
+        })
+        .join('\n')}
         </ul>
         <button class="bestsellers-btn" type="button" data-category="${list_name}">See more</button>
       </li>`;
-    }).join('\n');
+    })
+    .join('\n');
 
   bestBooksList.insertAdjacentHTML('beforeend', markup);
 
@@ -64,7 +66,7 @@ export function renderBestBooks(bestBooks) {
 
 async function onImageClick(e) {
   e.preventDefault();
-  
+
   if (
     e.target.nodeName === 'IMG' ||
     e.target.nodeName === 'H3' ||
@@ -87,29 +89,37 @@ async function onButtonClick(e) {
 
     let category = e.target.dataset.category;
     const allCategoryItem = document.querySelector('.sidebar-category-item');
-    const sidebarCategoryList = document.querySelectorAll('.sidebar-category-item');
+    const sidebarCategoryList = document.querySelectorAll(
+      '.sidebar-category-item'
+    );
 
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
 
-    const categoryBooksContainer = document.querySelector('.bestsellers-container');
+    const categoryBooksContainer = document.querySelector(
+      '.bestsellers-container'
+    );
     categoryBooksContainer.innerHTML = '';
-    
+
     showLoader();
     const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
     hideLoader();
-    
+
     sidebarCategoryList.forEach(el => {
       if (el.dataset.source === category) {
         allCategoryItem.classList.remove('category-active');
         el.classList.add('category-active');
-        el.scrollIntoView(true);
+        el.scrollIntoView({
+          behavior: 'instant',
+          block: 'center',
+          inline: 'nearest',
+        });
       }
     });
-    
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -118,4 +128,3 @@ async function onButtonClick(e) {
     console.log('Error fetching modal:', error);
   }
 }
-
