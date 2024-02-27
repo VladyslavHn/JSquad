@@ -10,8 +10,10 @@ import { showLoader } from '../main';
 // ==============================================================================
 
 export async function topPageBestsellersBooks() {
-  showLoader();
   try {
+    const bestBooksContainer = document.querySelector('.bestsellers-container');
+  bestBooksContainer.innerHTML = '';
+    showLoader()
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
     hideLoader()
@@ -93,9 +95,12 @@ async function onButtonClick(e) {
       top: 0,
       behavior: 'smooth',
     });
+    const bestBooksContainer = document.querySelector('.bestsellers-container');
+  bestBooksContainer.innerHTML = '';
+    showLoader()
     const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
-
+    hideLoader()
     sidebarCategoryList.forEach(el => {
       if (el.dataset.source === category) {
         allCategoryItem.classList.remove('category-active');

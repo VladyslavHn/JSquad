@@ -46,6 +46,7 @@
   width: 335px;
   height: 460px;
   gap: 16px;
+  overflow: hidden;
 }
 
 .slider {

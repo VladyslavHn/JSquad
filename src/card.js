@@ -10,14 +10,5 @@ import './js/localstorage'
 
 
 
-export function showLoader() {
-  const loader = document.querySelector('.loader-container');
-  loader.classList.remove('is-hidden');
-}
 
-export function hideLoader() {
-  const loader = document.querySelector('.loader-container');
-
-  setTimeout(() => loader.classList.add('is-hidden'), 600);
-}
 

@@ -4,7 +4,7 @@ import { renderTitle, bookTemplate } from './Services/helpers';
 import { showModal } from './modalwindow';
 
 export function renderCategoryPage(books, category) {
-  showLoader();
+  
   try {
     const pageContainer = document.querySelector('.bestsellers-container');
     pageContainer.innerHTML = '';
@@ -24,8 +24,6 @@ export function renderCategoryPage(books, category) {
     categoryPage.addEventListener('click', onClickBook);
   } catch {
     console.log('Error fetching modal:', error);
-  } finally {
-    hideLoader();
   }
 }
 

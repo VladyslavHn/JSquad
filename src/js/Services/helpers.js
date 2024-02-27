@@ -14,6 +14,7 @@ export function renderTitle(containerClass, title) {
 }
 
 export function bookTemplate({ title, author, book_image, _id }) {
+  
   return `<li class="book-category-item" data-id="${_id}">
     <div class = "img-cover">
       <img class="book-category-image" src="${book_image}" alt="Book cover" width="335"  /> 
