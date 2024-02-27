@@ -46,15 +46,11 @@ body.dark-theme .bestsellers-btn {
 }
 body.dark-theme .bestsellers-btn:hover,
 body.dark-theme .bestsellers-btn:focus {
-  background-color: #EAC645;
+  background-color: #eac645;
   color: #111;
 }
 
-body.dark-theme
-body.dark-theme
-body.dark-theme
-
-button {
+body.dark-theme body.dark-theme body.dark-theme button {
   border: none;
   padding: 0;
 }
@@ -269,17 +265,7 @@ button {
   color: #111;
 }
 
-.mob-menu-list
-
-
-.btn-active {
-  border-radius: 36px;
-  padding: 8px 16px;
-  height: 34px;
-  background: #eac645;
-}
-
-.mob-menu-home {
+.mob-menu-list .mob-menu-home {
   color: #fff;
   padding: 7px 16px;
   padding: 8px 16px;
@@ -294,6 +280,14 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+.btn-active {
+  border-radius: 36px;
+  padding: 8px 16px;
+  height: 34px;
+  background: #eac645;
+}
+
 .btn-active-home {
   color: #111;
   border-radius: 36px;
@@ -318,7 +312,7 @@ button {
 
 .mob-basket-icon {
   fill: #fff;
-  bottom: 3px;;
+  bottom: 3px;
 }
 
 .hidden {

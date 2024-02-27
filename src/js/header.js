@@ -79,8 +79,27 @@ document.addEventListener('DOMContentLoaded', function() {
   function applyBackground() {
     const currentPath = window.location.pathname;
     home.classList.toggle('btn-active-home', currentPath === '/index.html' || currentPath === '/');
-    shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
+    shoppingList.classList.toggle('btn-active-shopping', currentPath.includes('card.html'));
     mobBasketIcon.classList.toggle('mob-basket-isactive', currentPath.includes('card.html'));
+  }
+  applyBackground();
+  home.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './index.html';
+  });
+  shoppingList.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './card.html';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const home = document.querySelector('.header-menu-home');
+  const shoppingList = document.querySelector('.header-menu-shopping');
+  function applyBackground() {
+    const currentPath = window.location.pathname;
+    home.classList.toggle('btn-active', currentPath === '/index.html' || currentPath === '/');
+    shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
   }
   applyBackground();
   home.addEventListener('click', function (event) {
