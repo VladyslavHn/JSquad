@@ -92,11 +92,11 @@ function markupBooks(modalData) {
 
 function renderLinks(modalData) {
   return `<li>
-        <a class="modal-icon amazon" href="${modalData.buy_links[0].url}"><img class='modal-icon' src="../img/amazon.png" alt="" width='62' height='19' 
+        <a class="modal-icon amazon" href="${modalData.buy_links[0].url}"><img class='modal-icon' src="/img/amazon.png" alt="" width='62' height='19' 
        /></a>
       </li>
       <li>
-        <a class="modal-icon" href="${modalData.buy_links[1].url}"><img class='modal-icon' src="../img/applebook.png" alt="" width='33' height='32'
+        <a class="modal-icon" href="${modalData.buy_links[1].url}"><img class='modal-icon' src="/img/applebook.png" alt="" width='33' height='32'
        /></a>
       </li>`;
 }
