@@ -2,6 +2,7 @@
   /* margin: 0 auto; */
   position: relative;
   overflow: hidden;
+  margin-bottom: 40px;
 }
 
 .pagination-list {
@@ -33,7 +34,17 @@
 .active {
   background-color: #111111;
   color: white;
-  scale: 1;
+}
+
+body.dark-theme .pagination-list > li > button.active {
+  background-color: white;
+  color: black;
+}
+
+body.dark-theme .pagination-list > li > button {
+  border-color: white;
+  color: white;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 768px) {
@@ -41,6 +52,10 @@
     height: 44px;
     width: 44px;
     gap: 8px;
+  }
+
+  .pagination-list {
+    gap: 10px;
   }
 }
 

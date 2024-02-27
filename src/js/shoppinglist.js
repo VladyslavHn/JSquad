@@ -43,18 +43,26 @@ function renderShoppingList(books) {
                 target="_blank"
                 href="${book.amazon_buy_link}"
               >
-                <svg class="cart-item-amazon" width="32" height="11">
-                  <use href="../img/symbol-defs.svg#icon-amazon" />
-                </svg>
+                <img
+                  class="cart-items-amazon"
+                  src="../img/amazon-n.png"
+                  alt="shopping cart empty"
+                  height="11"
+                  width="32"
+                />
               </a>
               <a
                 class="cart-items-link"
                 target="_blank"
                 href="${book.apple_buy_link}"
               >
-                <svg class="cart-items-apple" width="16" height="16">
-                  <use href="../img/symbol-defs.svg#icon-applebook" />
-                </svg>
+                <img
+                  class="cart-items-apple"
+                  src="../img/apple-n.png"
+                  alt="shopping cart empty"
+                  height="16"
+                  width="16"
+                />
               </a>
             </div>
           </div>
@@ -65,7 +73,6 @@ function renderShoppingList(books) {
     .join('');
   shoppingList.insertAdjacentHTML('beforeend', hmtlBookList);
 }
-
 
 let pageData = {
   books: [],
@@ -79,7 +86,6 @@ let pageData = {
   totalButtonsGroups: 0,
   pagesOnLastGroup: 0,
 };
-
 
 function renderShoppingListPage(pageData) {
   paginationList.removeEventListener('click', buttonClickHandler);
@@ -103,7 +109,6 @@ function renderShoppingListPage(pageData) {
     pageData.totalPages / pageData.buttonsPerPage
   );
 
-
   pageData.pagesOnLastGroup = pageData.totalPages % pageData.totalButtonsGroups;
 
   if (pageData.totalBooks > 0) {
@@ -120,7 +125,6 @@ function renderShoppingListPage(pageData) {
       paginationList.addEventListener('click', buttonClickHandler);
     }
     shoppingList.addEventListener('click', removeBookFromList);
-
   } else {
     cartEmptyMsg.classList.remove('is-hidden');
   }
