@@ -275,21 +275,17 @@ button {
 .btn-active {
   border-radius: 36px;
   padding: 8px 16px;
-  width: 72px;
   height: 34px;
   background: #eac645;
 }
 
 .mob-menu-home {
+  color: #fff;
   padding: 7px 16px;
-  font-weight: 700;
-  background: #eac645;
-  border-radius: 36px;
-  border-radius: 36px;
   padding: 8px 16px;
   width: 72px;
   height: 34px;
-} 
+}
 
 .mob-menu-calor {
   color: #fff;
@@ -297,6 +293,27 @@ button {
   gap: 8px;
   align-items: center;
   justify-content: center;
+}
+.btn-active-home {
+  color: #111;
+  border-radius: 36px;
+  padding: 8px 16px;
+  width: 72px;
+  height: 34px;
+  background: #eac645;
+}
+.btn-active-shopping {
+  color: #111;
+  border-radius: 36px;
+  padding: 8px 16px;
+  width: 157px;
+  height: 34px;
+  background: #eac645;
+}
+
+.mob-basket-isactive {
+  fill: #111;
+  bottom: 3px;
 }
 
 .mob-basket-icon {
