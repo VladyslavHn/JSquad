@@ -250,7 +250,7 @@ button {
 
 .mob-item {
   display: flex;
-  margin-bottom: 17px;
+  margin-bottom: 16px;
   flex-direction: column;
 }
 
@@ -269,6 +269,9 @@ button {
   color: #111;
 }
 
+.mob-menu-list
+
+
 .btn-active {
   border-radius: 36px;
   padding: 8px 16px;
@@ -277,7 +280,7 @@ button {
   background: #eac645;
 }
 
-/* .exception {
+.mob-menu-home {
   padding: 7px 16px;
   font-weight: 700;
   background: #eac645;
@@ -286,14 +289,19 @@ button {
   padding: 8px 16px;
   width: 72px;
   height: 34px;
-} */
+} 
 
 .mob-menu-calor {
   color: #fff;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 .mob-basket-icon {
   fill: #fff;
+  bottom: 3px;;
 }
 
 .hidden {
