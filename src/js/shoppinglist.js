@@ -67,19 +67,21 @@ function renderShoppingList(books) {
 
 let pageData = {
   books: [],
-  currentPage: 1,
+  currentPage: 0,
   nextPage: 0,
   prevPage: 0,
   totalBooks: 0,
   totalPages: 0,
   booksPerPage: 0,
+  buttonsPerPage: 0,
+  totalButtonsGroups: 0,
+  pagesOnLastGroup: 0,
 };
 
 function renderShoppingListPage(pageData) {
   paginationList.removeEventListener('click', buttonClickHandler);
   shoppingList.removeEventListener('click', removeBookFromList);
   const books = localStorageBooks.getAllBooks();
-  console.log(shoppingList);
   shoppingList.innerHTML = '';
   paginationList.innerHTML = '';
   pageData.totalBooks = books.length;
@@ -93,89 +95,35 @@ function renderShoppingListPage(pageData) {
     pageData.booksPerPage,
     pageData.totalPages
   );
+  pageData.buttonsPerPage = getButtonsPerPage();
+  pageData.totalButtonsGroups = Math.ceil(
+    pageData.totalPages / pageData.buttonsPerPage
+  );
 
-  console.log(pageData);
+  pageData.pagesOnLastGroup = pageData.totalPages % pageData.totalButtonsGroups;
 
-  if (pageData.totalPages === 1) {
-    renderShoppingList(pageData.books[0]);
+  // console.log(pageData);
+  if (pageData.totalBooks > 0) {
+    if (pageData.totalPages === 1) {
+      renderShoppingList(pageData.books[0]);
+    }
+
+    if (pageData.totalPages > 1) {
+      renderShoppingList(pageData.books[pageData.currentPage]);
+      renderPaginationButtons(pageData, paginationList);
+      makeActiveButton(pageData.currentPage);
+      paginationList.addEventListener('click', buttonClickHandler);
+    }
+    shoppingList.addEventListener('click', removeBookFromList);
+  } else {
+    cartEmptyMsg.classList.remove('is-hidden');
   }
+}
+
+function renderPaginationButtons(pageData, paginationList) {
+  paginationList.innerHTML = '';
 
   if (pageData.totalPages > 1) {
-    renderShoppingList(pageData.books[pageData.currentPage - 1]);
-    renderPaginationButtons(pageData.totalPages, paginationList);
-    makeActiveButton(pageData.currentPage);
-    paginationList.addEventListener('click', buttonClickHandler);
-  }
-  shoppingList.addEventListener('click', removeBookFromList);
-}
-
-function buttonClickHandler(e) {
-  const clickedElement = e.target.closest('button');
-  if (clickedElement) {
-    const pageButton = clickedElement.dataset.page;
-    if (pageButton) {
-      renderShoppingList(pageData.books[pageButton - 1]);
-      makeActiveButton(pageButton);
-      pageData.currentPage = pageButton;
-      console.log('premuto pulsante: ', pageData);
-    }
-  }
-}
-
-function removeBookFromList(e) {
-  if (e.target.closest('.cart-item-del-button') !== null) {
-    const bookId = e.target.closest('.cart-item-del-button').dataset.id;
-    localStorageBooks.removeBookFromFavorites(bookId);
-    console.log('dentro listener: ', pageData.books[pageData.currentPage - 1]);
-    console.log('current page: ', pageData.currentPage);
-    console.log('totale page:', pageData.totalPages);
-    console.log(pageData.books[pageData.currentPage - 1].length);
-    if (
-      parseInt(pageData.currentPage) === pageData.totalPages &&
-      pageData.books[pageData.currentPage - 1].length === 1
-    ) {
-      console.log('eliminato ultimo libro della pagina ');
-      pageData.currentPage -= 1;
-      console.log(pageData.currentPage);
-    }
-    renderShoppingListPage(pageData);
-  }
-}
-//   const pagesBook = createBooksListsPerPage(books, booksPerPage, totalPages);
-
-//   // console.log('array for each page:', pagesBook);
-
-//   if (totalBooks === 0) {
-//     cartEmptyMsg.classList.remove('is-hidden');
-//   } else {
-//     if (totalPages > 1) {
-//       console.log('current page: ', currentPage);
-//       renderShoppingList(pagesBook[currentPage - 1]);
-//       paginationButtons.addEventListener('click', buttonsHandler);
-//       renderPaginationButtons(totalPages, paginationButtons);
-//     }
-//     // createCartPagination(pagesBook, paginationButtons, totalPages, currentPage);
-//     shoppingList.addEventListener('click', remove);
-//
-//   }
-// }
-
-function getBooksPerPage() {
-  const windowWidth = window.innerWidth;
-  if (windowWidth < 767) {
-    return 4;
-  } else {
-    return 3;
-  }
-}
-
-function getTotalPages(totalBooks, booksPerPage) {
-  return Math.ceil(totalBooks / booksPerPage);
-}
-
-function renderPaginationButtons(totalPages, paginationList) {
-  paginationList.innerHTML = '';
-  if (totalPages > 1) {
     paginationList.insertAdjacentHTML(
       'beforeend',
       `<button class="pagination-buttons-first"><<</button>
@@ -194,15 +142,108 @@ function renderPaginationButtons(totalPages, paginationList) {
       '.pagination-buttons-numbers'
     );
 
-    for (let i = 0; i < totalPages; i++) {
-      const pageNumber = i + 1;
+    const currentGroup =
+      parseInt(pageData.currentPage) / parseInt(pageData.buttonsPerPage);
+    // console.log(currentGroup);
+    // const totalGroups = Math.ceil(
+    //   pageData.totalPages / pageData.buttonsPerGroup
+    // );
+
+    // const bookOnLastPage =
+    //   parseInt(pageData.totalBooks) % parseInt(pageData.buttonsPerGroup);
+
+    // let lastButtonOfGroup = 0;
+    // lastButtonOfGroup =
+    //   parseInt(pageData.currentPage) + parseInt(pageData.buttonsPerGroup);
+    // const lastGroup = totalGroups - 1;
+    // if (lastGroup === currentGroup) {
+    //   console.log(lastButtonOfGroup);
+    //   console.log('last group');
+    // } else {
+    //   console.log('non last group');
+    // }
+
+    // // console.log('current group ', currentGroup, 'total groups', totalGroups);
+    // //parseInt(pageData.currentPage)
+    // //lastButtonOfGroup
+    for (let i = 0; i < pageData.totalPages; i++) {
       numbersButtonsList.insertAdjacentHTML(
         'beforeend',
-        `<li><button data-page="${pageNumber}">${pageNumber}</button></li>`
+        `<li><button data-page="${i}">${i + 1}</button></li>`
       );
     }
+
+    // const firstPageOfNextGroup =
+    //   Math.ceil(pageData.currentPage / pageData.buttonsPerGroup) +
+    //   pageData.buttonsPerGroup;
+    // if (totalGroups > 0) {
+    //   // console.log(totalGroups);
+    //   numbersButtonsList.insertAdjacentHTML(
+    //     'beforeend',
+    //     `<li><button data-group="${firstPageOfNextGroup}">...</button></li>`
+    //   );
+    // }
   }
 }
+
+function buttonClickHandler(e) {
+  const clickedElement = e.target.closest('button');
+  if (clickedElement) {
+    const pageButton = clickedElement.dataset.page;
+    // const groupButton = clickedElement.dataset.group;
+    if (pageButton) {
+      renderShoppingList(pageData.books[pageButton]);
+      makeActiveButton(pageButton);
+      pageData.currentPage = pageButton;
+    }
+    // if (groupButton) {
+    //   pageData.currentPage = groupButton;
+    //   console.log('primo pulsante dovrebbe diventare: ', pageData.currentPage);
+    //   renderPaginationButtons(pageData, paginationList);
+    //   renderShoppingList(pageData.books[groupButton]);
+    //   makeActiveButton(groupButton);
+    // }
+  }
+}
+
+function removeBookFromList(e) {
+  if (e.target.closest('.cart-item-del-button') !== null) {
+    const bookId = e.target.closest('.cart-item-del-button').dataset.id;
+    localStorageBooks.removeBookFromFavorites(bookId);
+    if (
+      parseInt(pageData.currentPage) === parseInt(pageData.totalPages) - 1 &&
+      pageData.books[pageData.currentPage].length === 1
+    ) {
+      if (pageData.currentPage >= 1) {
+        pageData.currentPage -= 1;
+      }
+    }
+    renderShoppingListPage(pageData);
+  }
+}
+
+function isMobile() {
+  const windowWidth = window.innerWidth;
+  return windowWidth < 767;
+}
+
+function getBooksPerPage() {
+  return isMobile() ? 4 : 3;
+}
+
+function getButtonsPerPage() {
+  return isMobile() ? 2 : 3;
+}
+
+function getTotalPages(totalBooks, booksPerPage) {
+  return Math.ceil(totalBooks / booksPerPage);
+}
+
+//   1      2     3
+//  1 2    3 4   4 5          5
+//
+//
+//
 
 // function buttonsHandler(e) {
 //   if (e.target.closest('button')) {
@@ -257,7 +298,6 @@ function renderPaginationButtons(totalPages, paginationList) {
 // }
 
 function makeActiveButton(currentPage) {
-  console.log('make active button with page ', currentPage);
   const currentButton = document.querySelector('.active');
   currentButton?.classList.remove('active');
   const activeButton = document.querySelector(`[data-page="${currentPage}"]`);
@@ -290,10 +330,3 @@ function createBooksListsPerPage(books, booksPerPage, totalPages) {
 // }
 
 renderShoppingListPage(pageData);
-
-//   let variabileLocale = 'Valore';
-
-//   document.getElementById('mioElemento').addEventListener('click', function () {
-//     // Usa variabileLocale qui
-//     console.log(variabileLocale);
-//   });
