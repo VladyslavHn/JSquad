@@ -4,6 +4,7 @@ import localStorageBooks from '../js/localstorage';
 const shoppingList = document.querySelector('.cart-list');
 const cartEmptyMsg = document.querySelector('.cart-empty-container');
 const paginationList = document.querySelector('.pagination-list');
+const buttonsContainer = document.querySelector('.cart-buttons-container');
 
 renderTitle('.shoppinglist-title', 'Shopping List');
 function renderShoppingList(books) {
@@ -102,7 +103,6 @@ function renderShoppingListPage(pageData) {
 
   pageData.pagesOnLastGroup = pageData.totalPages % pageData.totalButtonsGroups;
 
-  // console.log(pageData);
   if (pageData.totalBooks > 0) {
     if (pageData.totalPages === 1) {
       renderShoppingList(pageData.books[0]);
@@ -112,6 +112,8 @@ function renderShoppingListPage(pageData) {
       renderShoppingList(pageData.books[pageData.currentPage]);
       renderPaginationButtons(pageData, paginationList);
       makeActiveButton(pageData.currentPage);
+      const currentButton = document.querySelector('.active');
+      moveButtonToCenter(currentButton);
       paginationList.addEventListener('click', buttonClickHandler);
     }
     shoppingList.addEventListener('click', removeBookFromList);
@@ -124,65 +126,12 @@ function renderPaginationButtons(pageData, paginationList) {
   paginationList.innerHTML = '';
 
   if (pageData.totalPages > 1) {
-    paginationList.insertAdjacentHTML(
-      'beforeend',
-      `<button class="pagination-buttons-first"><<</button>
-      <button class="pagination-buttons-prev"><</button>
-      <button class="pagination-buttons-next">></button>
-      <button class="pagination-buttons-last">>></button>`
-    );
-
-    const prevButton = document.querySelector('.pagination-buttons-prev');
-    prevButton.insertAdjacentHTML(
-      'afterend',
-      '<ul class="pagination-buttons-numbers"></ul>'
-    );
-
-    const numbersButtonsList = document.querySelector(
-      '.pagination-buttons-numbers'
-    );
-
-    const currentGroup =
-      parseInt(pageData.currentPage) / parseInt(pageData.buttonsPerPage);
-    // console.log(currentGroup);
-    // const totalGroups = Math.ceil(
-    //   pageData.totalPages / pageData.buttonsPerGroup
-    // );
-
-    // const bookOnLastPage =
-    //   parseInt(pageData.totalBooks) % parseInt(pageData.buttonsPerGroup);
-
-    // let lastButtonOfGroup = 0;
-    // lastButtonOfGroup =
-    //   parseInt(pageData.currentPage) + parseInt(pageData.buttonsPerGroup);
-    // const lastGroup = totalGroups - 1;
-    // if (lastGroup === currentGroup) {
-    //   console.log(lastButtonOfGroup);
-    //   console.log('last group');
-    // } else {
-    //   console.log('non last group');
-    // }
-
-    // // console.log('current group ', currentGroup, 'total groups', totalGroups);
-    // //parseInt(pageData.currentPage)
-    // //lastButtonOfGroup
     for (let i = 0; i < pageData.totalPages; i++) {
-      numbersButtonsList.insertAdjacentHTML(
+      paginationList.insertAdjacentHTML(
         'beforeend',
         `<li><button data-page="${i}">${i + 1}</button></li>`
       );
     }
-
-    // const firstPageOfNextGroup =
-    //   Math.ceil(pageData.currentPage / pageData.buttonsPerGroup) +
-    //   pageData.buttonsPerGroup;
-    // if (totalGroups > 0) {
-    //   // console.log(totalGroups);
-    //   numbersButtonsList.insertAdjacentHTML(
-    //     'beforeend',
-    //     `<li><button data-group="${firstPageOfNextGroup}">...</button></li>`
-    //   );
-    // }
   }
 }
 
@@ -190,20 +139,31 @@ function buttonClickHandler(e) {
   const clickedElement = e.target.closest('button');
   if (clickedElement) {
     const pageButton = clickedElement.dataset.page;
-    // const groupButton = clickedElement.dataset.group;
     if (pageButton) {
       renderShoppingList(pageData.books[pageButton]);
       makeActiveButton(pageButton);
       pageData.currentPage = pageButton;
+      moveButtonToCenter(clickedElement);
     }
-    // if (groupButton) {
-    //   pageData.currentPage = groupButton;
-    //   console.log('primo pulsante dovrebbe diventare: ', pageData.currentPage);
-    //   renderPaginationButtons(pageData, paginationList);
-    //   renderShoppingList(pageData.books[groupButton]);
-    //   makeActiveButton(groupButton);
-    // }
   }
+}
+
+function moveButtonToCenter(clickedElement) {
+  const buttonSize = clickedElement.getBoundingClientRect();
+  const containerSize = buttonsContainer.getBoundingClientRect();
+  const sliderSize = paginationList.getBoundingClientRect();
+
+  const centerOfContainer = containerSize.width / 2;
+  const centerOfButton = buttonSize.width / 2;
+  const buttonPosition = buttonSize.left;
+  const sliderPosition = sliderSize.left;
+
+  const moveTo =
+    parseInt(centerOfContainer) -
+    parseInt(buttonPosition) -
+    parseInt(centerOfButton) +
+    parseInt(sliderPosition);
+  paginationList.style.translate = `${moveTo}px 0`;
 }
 
 function removeBookFromList(e) {
@@ -239,64 +199,6 @@ function getTotalPages(totalBooks, booksPerPage) {
   return Math.ceil(totalBooks / booksPerPage);
 }
 
-//   1      2     3
-//  1 2    3 4   4 5          5
-//
-//
-//
-
-// function buttonsHandler(e) {
-//   if (e.target.closest('button')) {
-//     if (e.target.closest('button').dataset.page) {
-//       console.log(e.target.closest('button').dataset.page);
-//       let newCurrentPage = e.target.closest('button').dataset.page;
-//       let currentButton = document.querySelector('.active');
-//       if (currentButton !== null) {
-//         currentButton.classList.remove('active');
-//       }
-//       makeActiveButton(newCurrentPage);
-//       currentButton = document.querySelector('.active');
-//       console.log(currentButton);
-//       renderShoppingList(pagesBook[newCurrentPage - 1]);
-//     }
-//     // if (
-//     //   e.target
-//     //     .closest('button')
-//     //     .classList.contains('pagination-buttons-prev')
-//     // ) {
-//     //   const currentButton = document.querySelector('.active');
-//     //   if (currentButton !== null) {
-//     //     const currentPage = currentButton.dataset.page;
-//     //     console.log('pressed button prev, current page: ', currentPage);
-//     //     if (currentPage > 1) {
-//     //       renderShoppingList(books[currentPage - 2]);
-//     //       currentButton.classList.remove('active');
-//     //       console.log('prev', currentButton, books);
-//     //       makeActiveButton(parseInt(currentPage) - 1);
-//     //     }
-//     //   }
-//     // }
-//     // if (
-//     //   e.target
-//     //     .closest('button')
-//     //     .classList.contains('pagination-buttons-next')
-//     // ) {
-//     //   const currentButton = document.querySelector('.active');
-//     //   if (currentButton !== null) {
-//     //     const currentPage = currentButton.dataset.page;
-//     //     console.log(currentPage);
-//     //     if (currentPage < books.length) {
-//     //       console.log('pressed button next, current page: ', currentPage);
-//     //       renderShoppingList(books[currentPage]);
-//     //       currentButton.classList.remove('active');
-//     //       console.log('next', currentButton, books);
-//     //       makeActiveButton(parseInt(currentPage) + 1);
-//     //     }
-//     //   }
-//     // }
-//   }
-// }
-
 function makeActiveButton(currentPage) {
   const currentButton = document.querySelector('.active');
   currentButton?.classList.remove('active');
@@ -312,7 +214,7 @@ function createBooksListsPerPage(books, booksPerPage, totalPages) {
   return booksPages;
 }
 
-// for (let i = 0; i < 20; i++) {
+// for (let i = 0; i < 60; i++) {
 //   const book = {
 //     _id: `${i}`,
 //     title: `${i}`,
