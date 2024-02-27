@@ -1,31 +1,24 @@
-// Функція, яка видаляє клас 'exception' з усіх елементів меню, окрім клікнутого
-function handleMenuLinkClick(event, menuSelector, menuLinkSelector) {
-  if (event.target.classList.contains(menuLinkSelector)) {
-    event.preventDefault();
-    
-    const menu = document.querySelector(menuSelector);
-    const menuLinks = menu.querySelectorAll('.' + menuLinkSelector);
+// функція зміни стану активності посилання
 
-    menuLinks.forEach(link => {
-      if (link !== event.target) {
-        link.classList.remove('exception');
-      }
-    });
-
-    event.target.classList.add('exception');
-
-    const path = event.target.getAttribute('href');
-    window.location.pathname = path;
+document.addEventListener('DOMContentLoaded', function() {
+  const home = document.querySelector('.header-menu-home');
+  const shoppingList = document.querySelector('.header-menu-shopping');
+  function applyBackground() {
+    const currentPath = window.location.pathname;
+    home.classList.toggle('btn-active', currentPath === '/index.html' || currentPath === '/');
+    shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
   }
-}
-
-document.querySelector('.header-menu').addEventListener('click', function(event) {
-  handleMenuLinkClick(event, '.header-menu', 'header-menu-link');
+  applyBackground();
+  home.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './index.html';
+  });
+  shoppingList.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './card.html';
+  });
 });
 
-document.querySelector('.mob-list').addEventListener('click', function(event) {
-  handleMenuLinkClick(event, '.mob-list', 'mob-menu-link');
-});
 
 
 const themeSwitch = document.querySelector('.theme-switch-input');
@@ -44,7 +37,6 @@ function toggleTheme() {
     }
 }
 
-
 // Перевірка, яка тема встановлена за замовчуванням
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
@@ -54,8 +46,8 @@ if (savedTheme === 'dark') {
     themeSwitch.checked = false;
 }
 
-// Додавання події для перемикання теми
 themeSwitch.addEventListener('change', toggleTheme);
+
 
 // відкриття та закриття мобільного меню
 
@@ -78,25 +70,44 @@ menuCloseButton.addEventListener('click', () => {
   menuCloseButton.classList.add('hidden');
 });
 
+//функція яка робить активним посилання в мобільному меню
 
+document.addEventListener('DOMContentLoaded', function() {
+  const home = document.querySelector('.mob-menu-home');
+  const shoppingList = document.querySelector('.mob-menu-calor');
+  const mobBasketIcon = document.querySelector('.mob-basket-icon')
+  function applyBackground() {
+    const currentPath = window.location.pathname;
+    home.classList.toggle('btn-active-home', currentPath === '/index.html' || currentPath === '/');
+    shoppingList.classList.toggle('btn-active-shopping', currentPath.includes('card.html'));
+    mobBasketIcon.classList.toggle('mob-basket-isactive', currentPath.includes('card.html'));
+  }
+  applyBackground();
+  home.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './index.html';
+  });
+  shoppingList.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './card.html';
+  });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const home = document.querySelector('.header-menu-home');
   const shoppingList = document.querySelector('.header-menu-shopping');
-
-  shoppingList.addEventListener('click', onShopping);
-
-  function onShopping() {
-      home.classList.remove('btn-active');
-      shoppingList.classList.add('btn-active');
-    }
-
-  home.addEventListener('click', onHome);
-
-  function onHome() {
-      shoppingList.classList.remove('btn-active');
-      home.classList.add('btn-active');
+  function applyBackground() {
+    const currentPath = window.location.pathname;
+    home.classList.toggle('btn-active', currentPath === '/index.html' || currentPath === '/');
+    shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
   }
+  applyBackground();
+  home.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './index.html';
+  });
+  shoppingList.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = './card.html';
+  });
 });
-
-
