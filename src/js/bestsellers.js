@@ -92,10 +92,8 @@ async function onButtonClick(e) {
       top: 0,
       behavior: 'smooth',
     });
-    showLoader()
     const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
-<<<<<<< Updated upstream
 
     sidebarCategoryList.forEach(el => {
       if (el.dataset.source === category) {
@@ -104,9 +102,6 @@ async function onButtonClick(e) {
         el.scrollIntoView(true);
       }
     });
-
-=======
->>>>>>> Stashed changes
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

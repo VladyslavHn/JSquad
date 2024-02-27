@@ -73,10 +73,9 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
-<<<<<<< Updated upstream
 
-        // renderCategoryPage(categoryData, category);
-=======
+
+        renderCategoryPage(categoryData, category);
         if (categoryData.length === 0) {
           notification(
             `Sorry! There are no books available in the category "${category}".`
@@ -85,7 +84,6 @@ categorySelectors.categoryList.addEventListener('click', async event => {
           renderCategoryPage(categoryData, category);
           hideLoader()
         }
->>>>>>> Stashed changes
       }
     } catch (error) {
       console.log(error);
