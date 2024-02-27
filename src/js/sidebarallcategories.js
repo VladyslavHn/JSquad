@@ -2,7 +2,6 @@ import { hideLoader, showLoader } from '../main';
 import backendAPI from './Services/api';
 import { renderBestBooks } from './bestsellers';
 import { renderCategoryPage } from './categorypage';
-// import { notification } from './Services/helpers';
 
 const categorySelectors = {
   categoryContainer: document.querySelector('.sidebar-category-container'),
@@ -30,13 +29,13 @@ function categoryMarkup(data) {
 (async () => {
   try {
     const bestBooksContainer = document.querySelector('.bestsellers-container');
-  bestBooksContainer.innerHTML = '';
+    bestBooksContainer.innerHTML = '';
     showLoader();
-    
+
     const categoryData = await backendAPI.getCategoryList();
     const markup = categoryMarkup(categoryData);
     categorySelectors.categoryList.insertAdjacentHTML('beforeend', markup);
-    hideLoader()
+    hideLoader();
   } catch (error) {
     console.log(error);
   }
@@ -49,14 +48,13 @@ function categoryMarkup(data) {
 */
 
 categorySelectors.allCategory.addEventListener('click', async event => {
-  
   try {
     const bestBooksContainer = document.querySelector('.bestsellers-container');
-  bestBooksContainer.innerHTML = '';
-    showLoader()
+    bestBooksContainer.innerHTML = '';
+    showLoader();
     const bestBooksData = await backendAPI.getBestSellers();
     renderBestBooks(bestBooksData);
-    hideLoader()
+    hideLoader();
   } catch (error) {
     console.log(error);
   }
@@ -77,22 +75,13 @@ categorySelectors.categoryList.addEventListener('click', async event => {
       behavior: 'smooth',
     });
     const bestBooksContainer = document.querySelector('.bestsellers-container');
-  bestBooksContainer.innerHTML = '';
-    showLoader()
+    bestBooksContainer.innerHTML = '';
+    showLoader();
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
-
         renderCategoryPage(categoryData, category);
-        hideLoader()
-        if (categoryData.length === 0) {
-          notification(
-            `Sorry! There are no books available in the category "${category}".`
-          );
-        } else {
-          renderCategoryPage(categoryData, category);
-          hideLoader()
-        }
+        hideLoader();
       }
     } catch (error) {
       console.log(error);
