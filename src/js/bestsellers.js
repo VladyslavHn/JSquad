@@ -14,10 +14,9 @@ export async function topPageBestsellersBooks() {
   try {
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
+    hideLoader()
   } catch (error) {
     console.error('Error fetching best sellers:', error);
-  } finally {
-    hideLoader();
   }
 }
 
@@ -71,7 +70,6 @@ async function onImageClick(e) {
   ) {
     let bookId = e.target.closest('.book-category-item').dataset.id;
     renderModal(bookId);
-    showModal();
   }
 }
 
@@ -94,9 +92,10 @@ async function onButtonClick(e) {
       top: 0,
       behavior: 'smooth',
     });
-
+    showLoader()
     const openCategory = await backendAPI.getSelectedCategory(category);
     renderCategoryPage(openCategory, category);
+<<<<<<< Updated upstream
 
     sidebarCategoryList.forEach(el => {
       if (el.dataset.source === category) {
@@ -106,6 +105,9 @@ async function onButtonClick(e) {
       }
     });
 
+=======
+    hideLoader()
+>>>>>>> Stashed changes
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

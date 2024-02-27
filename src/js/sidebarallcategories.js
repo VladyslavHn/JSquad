@@ -44,14 +44,14 @@ function categoryMarkup(data) {
 */
 
 categorySelectors.allCategory.addEventListener('click', async event => {
-  showLoader();
+  showLoader()
   try {
     const bestBooksData = await backendAPI.getBestSellers();
+    ca
     renderBestBooks(bestBooksData);
+    hideLoader()
   } catch (error) {
     console.log(error);
-  } finally {
-    hideLoader();
   }
 });
 
@@ -69,12 +69,23 @@ categorySelectors.categoryList.addEventListener('click', async event => {
       top: 0,
       behavior: 'smooth',
     });
-
+    showLoader()
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
+<<<<<<< Updated upstream
 
         renderCategoryPage(categoryData, category);
+=======
+        if (categoryData.length === 0) {
+          notification(
+            `Sorry! There are no books available in the category "${category}".`
+          );
+        } else {
+          renderCategoryPage(categoryData, category);
+          hideLoader()
+        }
+>>>>>>> Stashed changes
       }
     } catch (error) {
       console.log(error);
