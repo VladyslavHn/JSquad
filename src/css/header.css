@@ -50,6 +50,10 @@ body.dark-theme .bestsellers-btn:focus {
   color: #111;
 }
 
+body.dark-theme .header-item {
+  color: #fff;
+}
+
 body.dark-theme body.dark-theme body.dark-theme button {
   border: none;
   padding: 0;
@@ -107,6 +111,7 @@ body.dark-theme .basket-icon-catch {
 }
 
 .header-item {
+  color:#000;
 }
 
 .header-menu-link {

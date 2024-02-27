@@ -122,25 +122,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const headerHomeMenu = document.querySelector('.header-menu-home');
   const headerShoppingList = document.querySelector('.header-menu-shopping');
 
-  const currentLink = window.location.pathname;
-  const linkMob = document.querySelector('.mob-list a');
-  const linkHeader = document.querySelector('.header-menu a');
+  const currentLinkShoppingList = window.location.pathname; //.includes('/card.html');
 
-  console.log(currentLink);
+  const linkMob = document.querySelector('.mob-list > li:last-child > a');
+  const linkHeader = document.querySelector('.header-menu > li:last-child > a');
+
+  console.log(currentLinkShoppingList);
   
-  let mobLinkHref = linkMob.getAttribute('href');
-  let headerLinkHref = linkHeader.getAttribute('href').slice(1);
+  let mobLinkHref = linkMob.getAttribute('href'); //.includes('/card.html');
+  let headerLinkHref = linkHeader.getAttribute('href'); //.includes('/card.html');
 
   console.log(mobLinkHref);
   console.log(headerLinkHref);
 
-  if (mobLinkHref == currentLink || headerLinkHref == currentLink) {
-    mobeHomeMenu.classList.add('open-home');
-    headerHomeMenu.classList.add('open-home');
-    console.log(true); 
-  } else {
+  if (mobLinkHref === currentLinkShoppingList || headerLinkHref === currentLinkShoppingList) {
     mobShoppingList.classList.add('open-list');
     headerShoppingList.classList.add('open-list');
+    console.log(true); 
+  } else {
+    mobeHomeMenu.classList.add('open-home');
+    headerHomeMenu.classList.add('open-home');
     console.log(false);
   } 
 
