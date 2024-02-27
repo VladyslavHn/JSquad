@@ -44,5 +44,6 @@ export function showLoader() {
 
 export function hideLoader() {
   const loader = document.querySelector('.loader-container');
+  
   loader.classList.add('is-hidden');
 }
