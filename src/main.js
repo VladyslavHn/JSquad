@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   scrollUpButton.classList.remove('show');
 
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 650) {
+    if (window.scrollY > 600) {
       scrollUpButton.classList.add('show');
       // scrollUpButton.classList.add('border');
     } else {
