@@ -2,7 +2,7 @@ import { hideLoader } from '../main';
 import backendAPI from './Services/api';
 import { bookTemplate, renderTitle } from './Services/helpers';
 import { renderCategoryPage } from './categorypage';
-import { renderModal, showModal } from './modalwindow';
+import { showModal } from './modalwindow';
 import { showLoader } from '../main';
 
 // ==================================================================================
@@ -69,6 +69,7 @@ async function onImageClick(e) {
     e.target.nodeName === 'P'
   ) {
     let bookId = e.target.closest('.book-category-item').dataset.id;
+    // renderModal(bookId);
     renderModal(bookId);
   }
 }
@@ -110,3 +111,4 @@ async function onButtonClick(e) {
     console.log('Error fetching modal:', error);
   }
 }
+
