@@ -11,6 +11,8 @@ import { showLoader } from '../main';
 
 export async function topPageBestsellersBooks() {
   try {
+    const bestBooksContainer = document.querySelector('.bestsellers-container');
+    bestBooksContainer.innerHTML = '';
     showLoader();
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
