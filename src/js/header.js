@@ -125,16 +125,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const linkMob = document.querySelector('.mob-list > li:last-child > a');
   const linkHeader = document.querySelector('.header-menu > li:last-child > a');
+
+  console.log(currentLinkShoppingList);
   
   let mobLinkHref = linkMob.getAttribute('href').includes('/card.html');
   let headerLinkHref = linkHeader.getAttribute('href').includes('/card.html');
 
+  console.log(mobLinkHref);
+  console.log(headerLinkHref);
+
   if (mobLinkHref === currentLinkShoppingList || headerLinkHref === currentLinkShoppingList) {
     mobShoppingList.classList.add('open-list');
     headerShoppingList.classList.add('open-list');
+    console.log(true); 
   } else {
     mobeHomeMenu.classList.add('open-home');
     headerHomeMenu.classList.add('open-home');
+    console.log(false);
   } 
 });
         
