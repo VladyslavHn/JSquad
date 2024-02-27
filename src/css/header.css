@@ -25,7 +25,7 @@ body.dark-theme .header-menu-link {
 body.dark-theme .basket-icon {
   fill: #fff;
 }
-body.dark-theme .exception {
+body.dark-theme .btn-active {
   color: #111;
 }
 body.dark-theme .theme-toggle {
@@ -53,6 +53,14 @@ body.dark-theme .bestsellers-btn:focus {
 body.dark-theme body.dark-theme body.dark-theme button {
   border: none;
   padding: 0;
+}
+
+body.dark-theme .basket-icon-catch {
+  fill: #202024;
+}
+
+.basket-icon-catch {
+  fill: #f6f6f6;
 }
 
 .header {
