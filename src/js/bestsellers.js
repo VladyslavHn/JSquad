@@ -90,24 +90,25 @@ async function onButtonClick(e) {
       '.sidebar-category-item'
     );
 
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    const openCategory = await backendAPI.getSelectedCategory(category);
+    renderCategoryPage(openCategory, category);
+
     sidebarCategoryList.forEach(el => {
       if (el.dataset.source === category) {
         allCategoryItem.classList.remove('category-active');
         el.classList.add('category-active');
+        el.scrollIntoView(true);
       }
     });
-
-    const openCategory = await backendAPI.getSelectedCategory(category);
-    renderCategoryPage(openCategory, category);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   } catch (error) {
     console.log('Error fetching modal:', error);
   }
-
-  //   window.addEventListener('DOMSectionLoaded', () => {
-  //   let background = document.querySelector('.background');
-  //   background.classList.add('hide');
-  //   setTimeout(() => {
-  //     background.remove();
-  //   }, 600)
-  // })
 }

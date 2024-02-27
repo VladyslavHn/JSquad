@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 export function showLoader() {
   const loader = document.querySelector('.loader-container');
-  loader.classList.remove('is-hidden');
+    setTimeout(() => loader.classList.add('is-hidden'), 600);
 }
 
 export function hideLoader() {

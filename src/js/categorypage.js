@@ -36,7 +36,6 @@ async function onClickBook(e) {
     e.target.nodeName === 'P'
   ) {
     let bookId = e.target.closest('.book-category-item').dataset.id;
-    // renderModal(bookId);
     showModal(bookId);
   }
 }
