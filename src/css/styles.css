@@ -160,6 +160,7 @@ body.dark-theme .loader-container {
 
   body.dark-theme .loader {
     border: 5px solid #f6f6f6;
+    border-bottom-color: #eac645;
   }
 
   .is-hidden-loader {
