@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const headerIcon = document.querySelector('.basket-icon')
   function applyBackground() {
     const currentPath = window.location.pathname;
-    home.classList.toggle('btn-active', currentPath === '/index.html' || currentPath === '/');
+    home.classList.toggle('btn-active', currentPath.includes('index.html'));
     shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
     headerIcon.classList.toggle('basket-icon-catch', currentPath.includes('card.html'));
   
