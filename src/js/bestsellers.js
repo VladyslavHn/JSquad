@@ -14,10 +14,9 @@ export async function topPageBestsellersBooks() {
   try {
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
+    hideLoader()
   } catch (error) {
     console.error('Error fetching best sellers:', error);
-  } finally {
-    hideLoader();
   }
 }
 
@@ -112,3 +111,4 @@ async function onButtonClick(e) {
     console.log('Error fetching modal:', error);
   }
 }
+

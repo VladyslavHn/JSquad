@@ -47,3 +47,6 @@ export function hideLoader() {
   
   loader.classList.add('is-hidden');
 }
+
+  loader.classList.add('is-hidden');
+}

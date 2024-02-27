@@ -1,3 +1,4 @@
+import { hideLoader, showLoader } from '../card';
 import { renderTitle } from '../js/Services/helpers';
 import localStorageBooks from '../js/localstorage';
 (function () {
@@ -76,6 +77,8 @@ import localStorageBooks from '../js/localstorage';
   };
 
   function renderShoppingListPage(pageData) {
+    showLoader();
+    try{
     paginationList.removeEventListener('click', buttonClickHandler);
     shoppingList.removeEventListener('click', removeBookFromList);
     const books = localStorageBooks.getAllBooks();
@@ -107,6 +110,10 @@ import localStorageBooks from '../js/localstorage';
       paginationList.addEventListener('click', buttonClickHandler);
     }
     shoppingList.addEventListener('click', removeBookFromList);
+    } catch {
+      console.log('Error');
+    } finally{hideLoader();}
+    
   }
 
   function buttonClickHandler(e) {

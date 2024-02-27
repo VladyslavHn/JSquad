@@ -80,12 +80,14 @@ html {
   fill: #fff;
 }
 
+body.dark-theme .loader-container {
+  background-color: #111;
+}
+
 .loader-container {
-  width: 100%;
-  height: 100%;
   background-color: #f6f6f6;
   z-index: 1002;
-  transition: opacity 0.3s;
+  transition: opacity 0.1s;
   position: fixed;
   top: 0;
   display: flex;
@@ -99,10 +101,14 @@ html {
   pointer-events: none;
 }
 
+body.dark-theme .loader {
+  border: 5px solid #f6f6f6;
+}
+
 .loader {
   position: fixed;
   top: 50%;
-  right: 50%;
+  left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +156,6 @@ html {
 
   .container {
     max-width: 1392px;
-    overflow: hidden;
     display: flex;
   }
 
@@ -163,5 +168,10 @@ html {
 
   .load {
     flex: 1;
+  }
+
+  footer {
+    width: 100%;
+    height: 220px;
   }
 }

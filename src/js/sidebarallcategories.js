@@ -2,6 +2,7 @@ import { hideLoader, showLoader } from '../main';
 import backendAPI from './Services/api';
 import { renderBestBooks } from './bestsellers';
 import { renderCategoryPage } from './categorypage';
+// import { notification } from './Services/helpers';
 
 const categorySelectors = {
   categoryContainer: document.querySelector('.sidebar-category-container'),
@@ -16,6 +17,7 @@ const categorySelectors = {
 */
 
 function categoryMarkup(data) {
+  data.sort((a, b) => a.list_name.localeCompare(b.list_name));
   const result = data
     .map(
       item =>
@@ -45,11 +47,11 @@ categorySelectors.allCategory.addEventListener('click', async event => {
   showLoader()
   try {
     const bestBooksData = await backendAPI.getBestSellers();
+    ca
     renderBestBooks(bestBooksData);
+    hideLoader()
   } catch (error) {
     console.log(error);
-  } finally {
-    hideLoader()
   }
 });
 
@@ -63,11 +65,25 @@ categorySelectors.categoryList.addEventListener('click', async event => {
     });
 
     event.target.classList.add('category-active');
-
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    showLoader()
     try {
       if (!event.target.classList.contains('all-category')) {
         const categoryData = await backendAPI.getSelectedCategory(category);
+
+
         renderCategoryPage(categoryData, category);
+        if (categoryData.length === 0) {
+          notification(
+            `Sorry! There are no books available in the category "${category}".`
+          );
+        } else {
+          renderCategoryPage(categoryData, category);
+          hideLoader()
+        }
       }
     } catch (error) {
       console.log(error);
