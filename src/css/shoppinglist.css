@@ -30,6 +30,10 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
+body.dark-theme .cart-empty-msg {
+  color: white;
+}
+
 .cart-empty-img {
   width: 265px;
   margin: auto;
@@ -56,6 +60,8 @@
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 8px;
   overflow: hidden;
+  background-color: #fff;
+  transition: 0.2s;
   /* min-width: 0; */
 }
 
@@ -225,6 +231,9 @@ body.dark-theme .cart-items-apple:hover {
 /* MEDIA QUERY */
 
 @media screen and (min-width: 768px) {
+  .cart {
+    max-width: 704px;
+  }
   .cart-empty {
     width: 349px;
   }
@@ -276,6 +285,9 @@ body.dark-theme .cart-items-apple:hover {
 }
 
 @media screen and (min-width: 1440px) {
+  .cart {
+    max-width: 996px;
+  }
   .cart-item {
     height: 213px;
     min-width: 996px;
