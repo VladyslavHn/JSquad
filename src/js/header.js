@@ -121,15 +121,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const headerHomeMenu = document.querySelector('.header-menu-home');
   const headerShoppingList = document.querySelector('.header-menu-shopping');
 
-  const currentLinkShoppingList = window.location.pathname.includes('/card.html');
+  const currentLinkShoppingList = window.location.pathname; //.includes('/card.html');
 
   const linkMob = document.querySelector('.mob-list > li:last-child > a');
   const linkHeader = document.querySelector('.header-menu > li:last-child > a');
 
   console.log(currentLinkShoppingList);
   
-  let mobLinkHref = linkMob.getAttribute('href').includes('/card.html');
-  let headerLinkHref = linkHeader.getAttribute('href').includes('/card.html');
+  let mobLinkHref = linkMob.getAttribute('href'); //.includes('/card.html');
+  let headerLinkHref = linkHeader.getAttribute('href'); //.includes('/card.html');
 
   console.log(mobLinkHref);
   console.log(headerLinkHref);
