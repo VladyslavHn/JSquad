@@ -256,6 +256,7 @@ body.dark-theme body.dark-theme body.dark-theme button {
   display: flex;
   margin-bottom: 16px;
   flex-direction: column;
+  color:#fff;
 }
 
 /* ==================================== */
@@ -311,6 +312,7 @@ body.dark-theme body.dark-theme body.dark-theme button {
   width: 157px;
   height: 34px;
   background: #eac645;
+
 }
 
 .mob-basket-isactive {
