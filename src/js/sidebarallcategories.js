@@ -47,7 +47,6 @@ categorySelectors.allCategory.addEventListener('click', async event => {
   showLoader()
   try {
     const bestBooksData = await backendAPI.getBestSellers();
-    ca
     renderBestBooks(bestBooksData);
     hideLoader()
   } catch (error) {
