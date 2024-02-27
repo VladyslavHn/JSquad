@@ -1,70 +1,46 @@
+.cart-buttons-container {
+  /* margin: 0 auto; */
+  position: relative;
+  overflow: hidden;
+}
+
 .pagination-list {
   display: flex;
-  justify-content: center;
-  gap: 5px;
+  gap: 8px;
   margin-bottom: 40px;
+  /* max-width: 375px; */
+  /* justify-content: center; */
+  transition: 0.5s;
+  margin: 0 auto;
 }
 
-.pagination-list > button {
-  border-radius: 50%;
-  height: 38px;
-  width: 38px;
-  outline: none;
-  border: 1px solid #111111;
-}
-
-.pagination-buttons-first,
-.pagination-buttons-prev {
-  background-color: #111111;
-  color: white;
-}
-
-.pagination-buttons-next,
-.pagination-buttons-last {
-  background-color: #eac645;
-  color: black;
-}
-
-.pagination-buttons-numbers {
-  display: flex;
-  gap: 5px;
-  margin-left: 9px;
-  margin-right: 9px;
-}
-
-.pagination-buttons-numbers > li > button {
+.pagination-list > li > button {
   height: 38px;
   width: 38px;
   border-radius: 50%;
   outline: none;
   border: 1px solid black;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22em;
+}
+
+.pagination-list > li > button {
+  transform-origin: center top;
+  transition: 0.5s;
 }
 
 .active {
   background-color: #111111;
   color: white;
+  scale: 1;
 }
 
 @media screen and (min-width: 768px) {
-  .pagination-buttons-numbers > li > button {
+  .pagination-list > li > button {
     height: 44px;
     width: 44px;
-  }
-
-  .pagination-list > button {
-    height: 44px;
-    width: 44px;
-  }
-
-  .pagination-list {
     gap: 8px;
-  }
-
-  .pagination-buttons-numbers {
-    display: flex;
-    gap: 8px;
-    margin-left: 16px;
-    margin-right: 16px;
   }
 }
 
