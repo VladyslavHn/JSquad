@@ -8,6 +8,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  z-index: 9999;
 }
 
 .backdrop {
@@ -86,6 +87,9 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .modal-description-list-subtitle {
@@ -188,20 +192,19 @@
 
   .modal-wrapper {
     display: flex;
+    width: 527px;
   }
 
   .modal-img-book {
     width: 192px;
     height: 281px;
-    margin-top: 40px;
     margin-left: 40px;
   }
   .modal-close {
     margin-left: 527px;
-    margin-top: 24px;
+    margin-right: 24px;
     width: 28px;
     height: 28px;
-    position: absolute;
   }
   .modal-icon-close {
     stroke: #111111;
@@ -211,8 +214,12 @@
   .modal-icon-close:hover {
     stroke: rgba(79, 46, 232, 1);
   }
+
   .modal-description-list {
-    margin-top: 40px;
+    margin-top: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .modal-description-list-title {
     font-size: 24px;
@@ -230,9 +237,9 @@
   }
 
   .modal-icons-list {
-    position: absolute;
+    width: 115px;
+    margin-top: -85px;
     margin-left: 256px;
-    margin-top: 204px;
   }
   .modal-btn-add {
     margin-top: 40px;
@@ -271,15 +278,31 @@
   border: 2px rgba(255, 255, 255, 1) solid;
 }
 
+.modal-icon-close {
+  stroke: rgba(255, 255, 255, 1);
+}
+
 .modal-description-list-title {
   color: rgba(255, 255, 255, 1);
 }
 .modal-description-list-text {
   color: rgba(255, 255, 255, 1);
 }
+
+.amazon {
+  filter: brightness(0) invert(1);
+}
+
+.modal-icon:hover {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
 .modal-btn-add {
   color: rgba(255, 255, 255, 1);
 }
 .modal-btn-remove {
   color: rgba(255, 255, 255, 1);
+}
+.modal-text-congratulations {
+  color: rgba(255, 255, 255, 0.5);
 } */

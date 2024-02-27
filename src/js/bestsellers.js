@@ -1,7 +1,9 @@
+import { hideLoader } from '../main';
 import backendAPI from './Services/api';
 import { bookTemplate, renderTitle } from './Services/helpers';
 import { renderCategoryPage } from './categorypage';
-import { renderModal, showModal } from './modalwindow';
+import { showModal } from './modalwindow';
+import { showLoader } from '../main';
 
 // ==================================================================================
 // Функція для відображення Best Sellers Books
@@ -9,8 +11,12 @@ import { renderModal, showModal } from './modalwindow';
 
 export async function topPageBestsellersBooks() {
   try {
+    const bestBooksContainer = document.querySelector('.bestsellers-container');
+  bestBooksContainer.innerHTML = '';
+    showLoader()
     const bestSellersData = await backendAPI.getBestSellers();
     renderBestBooks(bestSellersData);
+    hideLoader()
   } catch (error) {
     console.error('Error fetching best sellers:', error);
   }
@@ -65,8 +71,8 @@ async function onImageClick(e) {
     e.target.nodeName === 'P'
   ) {
     let bookId = e.target.closest('.book-category-item').dataset.id;
+    // renderModal(bookId);
     renderModal(bookId);
-    showModal();
   }
 }
 
@@ -75,22 +81,39 @@ async function onImageClick(e) {
 // ========================================================================
 
 async function onButtonClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  let category = e.target.dataset.category;
-  const allCategoryItem = document.querySelector('.sidebar-category-item');
-  const sidebarCategoryList = document.querySelectorAll(
-    '.sidebar-category-item'
-  );
-
-  sidebarCategoryList.forEach(el => {
-    if (el.dataset.source === category) {
-      allCategoryItem.classList.remove('category-active');
-      el.classList.add('category-active');
+  try {
+    if (e.target.nodeName !== 'BUTTON') {
+      return;
     }
-  });
+    let category = e.target.dataset.category;
+    const allCategoryItem = document.querySelector('.sidebar-category-item');
+    const sidebarCategoryList = document.querySelectorAll(
+      '.sidebar-category-item'
+    );
 
-  const openCategory = await backendAPI.getSelectedCategory(category);
-  renderCategoryPage(openCategory, category);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    const bestBooksContainer = document.querySelector('.bestsellers-container');
+  bestBooksContainer.innerHTML = '';
+    showLoader()
+    const openCategory = await backendAPI.getSelectedCategory(category);
+    renderCategoryPage(openCategory, category);
+    hideLoader()
+    sidebarCategoryList.forEach(el => {
+      if (el.dataset.source === category) {
+        allCategoryItem.classList.remove('category-active');
+        el.classList.add('category-active');
+        el.scrollIntoView(true);
+      }
+    });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  } catch (error) {
+    console.log('Error fetching modal:', error);
+  }
 }
+

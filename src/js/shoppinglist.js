@@ -1,3 +1,4 @@
+import { hideLoader, showLoader } from '../card';
 import { renderTitle } from '../js/Services/helpers';
 import localStorageBooks from '../js/localstorage';
 
@@ -65,6 +66,7 @@ function renderShoppingList(books) {
   shoppingList.insertAdjacentHTML('beforeend', hmtlBookList);
 }
 
+
 let pageData = {
   books: [],
   currentPage: 0,
@@ -77,6 +79,7 @@ let pageData = {
   totalButtonsGroups: 0,
   pagesOnLastGroup: 0,
 };
+
 
 function renderShoppingListPage(pageData) {
   paginationList.removeEventListener('click', buttonClickHandler);
@@ -100,6 +103,7 @@ function renderShoppingListPage(pageData) {
     pageData.totalPages / pageData.buttonsPerPage
   );
 
+
   pageData.pagesOnLastGroup = pageData.totalPages % pageData.totalButtonsGroups;
 
   // console.log(pageData);
@@ -115,6 +119,7 @@ function renderShoppingListPage(pageData) {
       paginationList.addEventListener('click', buttonClickHandler);
     }
     shoppingList.addEventListener('click', removeBookFromList);
+
   } else {
     cartEmptyMsg.classList.remove('is-hidden');
   }

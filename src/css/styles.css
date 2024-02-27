@@ -80,43 +80,43 @@ html {
   fill: #fff;
 }
 
-.background {
-  width: 100%;
-  height: 100%;
-  background-color: #f6f6f6;
+body.dark-theme .loader-container {
+  background-color: #111;
+}
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1002;
-  transition: 0.6s;
-  position: fixed;
-  top: 0;
+  transition: opacity 0.1s;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
 }
 
-.hide {
+body.dark-theme .loader {
+  border: 5px solid #f6f6f6;
+}
+
+.is-hidden-loader {
   opacity: 0;
 }
 
 .loader {
-  /* position: fixed;
-  top: 0;
-  right: 0; */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1002;
   width: 48px;
   height: 48px;
   border: 5px solid #4f2ee8;
   border-bottom-color: #eac645;
   border-radius: 50%;
-  display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-}
-
-.loader-hidden {
-  opacity: 0;
-  visibility: hidden;
 }
 
 @keyframes rotation {
@@ -149,14 +149,24 @@ html {
   }
 }
 
+.loader-container {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -25%);
+}
+
 @media screen and (min-width: 1440px) {
+  .loader-container {
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
   .card-support {
     display: flex;
   }
 
   .container {
     max-width: 1392px;
-    overflow: hidden;
     display: flex;
   }
 
