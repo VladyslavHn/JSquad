@@ -26,3 +26,12 @@ export function bookTemplate({ title, author, book_image, _id }) {
     </div>
  </li>`;
 }
+
+export function scrollTitleUp() {
+  const mainTitle = document.querySelector('h1');
+  mainTitle.scrollIntoView({
+    behavior: 'instant',
+    block: 'center',
+    inline: 'nearest',
+  });
+}
