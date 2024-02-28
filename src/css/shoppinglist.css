@@ -10,12 +10,14 @@
 .cart-empty-container {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .cart-empty {
   display: flex;
   flex-direction: column;
   width: 265px;
+  height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -238,6 +240,7 @@ body.dark-theme .cart-items-apple:hover {
     width: 349px;
   }
   .cart-empty-img {
+    margin: 0 auto;
     width: 322px;
   }
   .cart-empty-msg {
