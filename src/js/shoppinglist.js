@@ -1,5 +1,8 @@
 import { renderTitle } from '../js/Services/helpers';
 import localStorageBooks from '../js/localstorage';
+import sprite from '../img/symbol-defs.svg';
+import amazon from '../img/amazon-n.png';
+import apple from '../img/apple-n.png';
 
 const shoppingList = document.querySelector('.cart-list');
 const cartEmptyMsg = document.querySelector('.cart-empty-container');
@@ -28,7 +31,7 @@ function renderShoppingList(books) {
           <button data-id="${book._id}" class="cart-item-del-button">
             <svg class="cart-item-del-button-icon" width="12" height="12">
 
-              <use href="./img/symbol-defs.svg#icon-delete-shoppinglist-tab" />
+              <use href="${sprite}#icon-delete-shoppinglist-tab" />
             </svg>
           </button>
         </div>
@@ -46,7 +49,7 @@ function renderShoppingList(books) {
               >
                 <img
                   class="cart-items-amazon"
-                  src="./img/amazon-n.png"
+                  src="${amazon}"
                   alt="shopping cart empty"
                   height="11"
                   width="32"
@@ -60,7 +63,7 @@ function renderShoppingList(books) {
                 <img
                   class="cart-items-apple"
 
-                  src="./img/apple-n.png"
+                  src="${apple}"
                   alt="shopping cart empty"
                   height="16"
                   width="16"
