@@ -14,8 +14,6 @@ topPageBestsellersBooks();
 document.addEventListener('DOMContentLoaded', function () {
   const scrollUpButton = document.querySelector('.scroll-up');
 
-  scrollUpButton.classList.remove('show');
-
   window.addEventListener('scroll', function () {
     if (window.scrollY > 600) {
       scrollUpButton.classList.add('show');
@@ -37,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 export function showLoader() {
   const loader = document.querySelector('.loader-container');
+  const scrollUpButton = document.querySelector('.scroll-up');
+
   loader.classList.remove('is-hidden-loader');
+  scrollUpButton.classList.remove('show');
 }
 
 export function hideLoader() {

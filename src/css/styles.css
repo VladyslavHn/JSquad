@@ -50,32 +50,36 @@ html {
 
 .scroll-up {
   position: fixed;
-  bottom: 50px;
-  right: 30px;
-  border: 2px solid #4f2ee8;
+  bottom: 20px;
+  right: 20px;
+  border: 4px solid #502ee89b;
   border-radius: 50%;
   width: 54px;
   height: 54px;
   cursor: pointer;
   display: none;
   z-index: 2;
-  background-color: #f6f6f6;
+  background-color: #dbd1f384;
   transition: background-color 0.1s ease;
+  padding: 0;
 }
-
+/*  */
 .scroll-up:hover,
 .scroll-up:focus {
-  background-color: #4f2ee8;
+  border-color: #502ee8e4;
+  background-color: #dbd1f3f5;
 }
 
 .scroll-up-icon {
-  fill: #4f2ee8;
+  fill: #502ee89b;
 }
 
-.scroll-up:hover .scroll-up-icon,
-.scroll-up:focus .scroll-up-icon {
-  fill: #f6f6f6;
+.scroll-up:hover .scroll-up-icon {
+  fill: #502ee8e4;
 }
+/* .scroll-up:focus .scroll-up-icon {
+  fill: #502ee86c;
+} */
 
 /* .scroll-up.border:hover,
 .scroll-up.border:focus {
@@ -87,11 +91,11 @@ html {
 }
 
 body.dark-theme .scroll-up {
-  background-color: #202024;
+  background-color: #202024bf;
 }
 
 body.dark-theme .scroll-up:hover,
-:focus {
+body.dark-theme .scroll-up:focus {
   background-color: #eac645;
 }
 
@@ -163,7 +167,7 @@ body.dark-theme .loader {
   position: relative;
   width: 100%;
   justify-content: center;
-  z-index: 1002;
+  z-index: 900;
   background-color: transparent;
 }
 
@@ -171,7 +175,7 @@ body.dark-theme .loader {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1002;
+  z-index: 901;
   width: 48px;
   height: 48px;
   border: 5px solid #4f2ee8;

@@ -41,7 +41,7 @@ export async function renderModal(bookId) {
     modalWrapper.insertAdjacentHTML('beforeend', markupBook);
 
     manageButton(btnAddRemove, bookId);
-
+    closeModalButton.blur();
     btnAddRemove.addEventListener('click', buttonClickHandler);
     closeModalButton.addEventListener('click', closeModal);
     document.addEventListener('keydown', keydownHandler);
@@ -52,7 +52,7 @@ export async function renderModal(bookId) {
 }
 
 export function showModal(id) {
-  backdrop.classList.add('is-open');
+  backdrop.classList.add('modal-open');
   body.classList.add('no-scroll');
   renderModal(id);
 }
@@ -87,10 +87,12 @@ function manageButton(btnAddRemove, bookId) {
     btnAddRemove.textContent = 'remove from the shopping list';
     // btnAddRemove.classList.add('modal-btn-remove');
     bookAddMsg.classList.add('modal-text-congratulations');
+    btnAddRemove.blur();
   } else {
     btnAddRemove.textContent = 'add to shopping list';
     // btnAddRemove.classList.remove('modal-btn-remove');
     bookAddMsg.classList.remove('modal-text-congratulations');
+    btnAddRemove.blur();
   }
 }
 function buttonClickHandler(e) {
@@ -118,7 +120,7 @@ function clickOutsideHandler(event) {
 // ==================================================
 
 function closeModal() {
-  backdrop.classList.remove('is-open');
+  backdrop.classList.remove('modal-open');
   body.classList.remove('no-scroll');
   closeModalButton.removeEventListener('click', closeModal);
   btnAddRemove.removeEventListener('click', buttonClickHandler);
