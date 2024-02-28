@@ -264,6 +264,7 @@ body.dark-theme .basket-icon-catch {
   display: flex;
   margin-bottom: 16px;
   flex-direction: column;
+  color:#fff;
 }
 
 /* ==================================== */
@@ -319,6 +320,7 @@ body.dark-theme .basket-icon-catch {
   width: 157px;
   height: 34px;
   background: #eac645;
+
 }
 
 .mob-basket-isactive {
