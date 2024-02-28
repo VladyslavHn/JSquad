@@ -22,12 +22,10 @@ const book = {
 };
 
 export async function renderModal(bookId) {
-  showLoader();
   try {
     modalWrapper.innerHTML = '';
     bookAddMsg.innerHTML = '';
     const modalData = await backendAPI.getBookDescription(bookId);
-    hideLoader();
     book._id = modalData._id;
     book.title = modalData.title;
     book.author = modalData.author;

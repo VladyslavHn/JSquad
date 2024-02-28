@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 export function showLoader() {
   const loader = document.querySelector('.loader-container');
-    loader.classList.remove('is-hidden-loader');
+  loader.classList.remove('is-hidden-loader');
 }
 
 export function hideLoader() {
