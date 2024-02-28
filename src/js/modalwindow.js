@@ -68,11 +68,11 @@ function markupBooks(modalData) {
           <p class="modal-book-description">${modalData.description}</p>
           <ul class="modal-icons-list">
           <li>
-            <a class="modal-book-link" href="${modalData.buy_links[0].url}" target="_blank"><img class='modal-link-icon-amazon' src="./img/amazon-n.png" alt="" width='62' height='19' 
+            <a class="modal-book-link" href="${modalData.buy_links[0].url}" target="_blank"><img class='modal-link-icon-amazon' src="/img/amazon-n.png" alt="" width='62' height='19' 
             /></a>
           </li>
           <li>
-            <a class="modal-book-link" href="${modalData.buy_links[1].url}" target="_blank"><img class='modal-link-icon-apple' src="./img/apple-n.png" alt="" width='33' height='32'
+            <a class="modal-book-link" href="${modalData.buy_links[1].url}" target="_blank"><img class='modal-link-icon-apple' src="/img/apple-n.png" alt="" width='33' height='32'
             /></a>
           </li>
           </ul>
