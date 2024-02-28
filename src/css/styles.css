@@ -165,7 +165,6 @@ body.dark-theme .loader {
   width: 100%;
   justify-content: center;
   z-index: 1002;
-  transition: 0.2;
   background-color: transparent;
 }
 
