@@ -121,6 +121,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobShoppingList = document.querySelector('.mob-menu-calor');
   const headerHomeMenu = document.querySelector('.header-menu-home');
   const headerShoppingList = document.querySelector('.header-menu-shopping');
+  const basketIcon = document.querySelector('.basket-icon');
+  const mobBasketIcon = document.querySelector('.mob-basket-icon');
 
   const currentLinkShoppingList = window.location.pathname.includes('/card.html');
 
@@ -138,12 +140,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (mobLinkHref === currentLinkShoppingList || headerLinkHref === currentLinkShoppingList) {
     mobShoppingList.classList.add('open-list');
     headerShoppingList.classList.add('open-list');
-    console.log(true); 
+    basketIcon.classList.add('basket-icon-catch')
+    mobBasketIcon.classList.add('mob-basket-isactive')
   } else {
     mobeHomeMenu.classList.add('open-home');
+    
     headerHomeMenu.classList.add('open-home');
     console.log(false);
   } 
+  });
 
   //comented
   
@@ -166,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //     event.preventDefault();
 //     window.location.href = './card.html';
 //   });
-});
+
         
     
 

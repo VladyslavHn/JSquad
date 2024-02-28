@@ -111,7 +111,7 @@ body.dark-theme .basket-icon-catch {
 }
 
 .header-item {
-  color:#000;
+  color: #000;
 }
 
 .header-menu-link {
@@ -264,7 +264,7 @@ body.dark-theme .basket-icon-catch {
   display: flex;
   margin-bottom: 16px;
   flex-direction: column;
-  color:#fff;
+  color: #fff;
 }
 
 /* ==================================== */
@@ -282,16 +282,20 @@ body.dark-theme .basket-icon-catch {
   color: #111;
 }
 
-.mob-menu-list .mob-menu-home {
+.mob-menu-home {
+  display: flex;
+  justify-content: center;
   color: #fff;
   padding: 7px 16px;
   padding: 8px 16px;
   width: 72px;
   height: 34px;
+  font-weight: bold;
 }
 
 .mob-menu-calor {
-  color: #fff;
+  color: #f6f6f6;
+  font-weight: bold;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -305,7 +309,8 @@ body.dark-theme .basket-icon-catch {
   background: #eac645;
 } */
 
-.btn-active-home, .open-home {
+.btn-active-home,
+.open-home {
   color: #111;
   border-radius: 36px;
   padding: 8px 16px;
@@ -313,24 +318,42 @@ body.dark-theme .basket-icon-catch {
   height: 34px;
   background: #eac645;
 }
-.btn-active-shopping, .open-list {
+.btn-active-shopping,
+.open-list {
   color: #111;
   border-radius: 36px;
   padding: 8px 16px;
-  width: 157px;
+  width: 162px;
   height: 34px;
   background: #eac645;
-
 }
 
 .mob-basket-isactive {
-  fill: #111;
+  color: #202024;
+
+  font-weight: lighter;
   bottom: 3px;
 }
 
 .mob-basket-icon {
-  fill: #fff;
+  fill: #f6f6f6;
   bottom: 3px;
+}
+
+body.dark-theme .mob-basket-isactive {
+  fill: #202024;
+}
+
+.basket-icon {
+  fill: #202024;
+}
+
+body.dark-theme .basket-icon-catch {
+  fill: #202024;
+}
+
+.basket-icon-catch {
+  fill: #202024;
 }
 
 .hidden {
