@@ -260,6 +260,11 @@ body.dark-theme .basket-icon-catch {
   margin-bottom: 16px;
   flex-direction: column;
   color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
 /* ==================================== */
@@ -333,9 +338,14 @@ body.dark-theme .basket-icon-catch {
   bottom: 3px;
 }
 
-body.dark-theme .mob-basket-isactive {
+body.dark-theme {
   fill: #202024;
 }
+
+.mob-basket-isactive {
+  fill: #000;
+}
+
 
 .basket-icon {
   fill: #202024;
@@ -385,6 +395,11 @@ body.dark-theme .basket-icon-catch {
     gap: 16px;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
   }
 
   /* ==================================== */
