@@ -15,8 +15,8 @@ export async function topPageBestsellersBooks() {
     bestBooksContainer.innerHTML = '';
     showLoader();
     const bestSellersData = await backendAPI.getBestSellers();
+
     renderBestBooks(bestSellersData);
-    hideLoader();
   } catch (error) {
     console.error('Error fetching best sellers:', error);
   }
@@ -28,6 +28,7 @@ export async function topPageBestsellersBooks() {
 
 export function renderBestBooks(bestBooks) {
   const bestBooksContainer = document.querySelector('.bestsellers-container');
+  hideLoader();
   bestBooksContainer.innerHTML = '';
   renderTitle('.bestsellers-container', 'Best Sellers Books');
   bestBooksContainer.insertAdjacentHTML(
