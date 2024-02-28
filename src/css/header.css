@@ -13,8 +13,11 @@ body.dark-theme {
   color: rgba(255, 255, 255, 0.6);
 }
 body.dark-theme .header {
-  background-color: #111;
-  border: 1.5px solid #fff;
+  /* background-color: #111;
+  border: 1.5px solid #fff; */
+  background-color: #202024;
+  border: none;
+  border-radius: 0%;
 }
 body.dark-theme .header-container {
   background-color: #111;
@@ -345,7 +348,6 @@ body.dark-theme {
 .mob-basket-isactive {
   fill: #000;
 }
-
 
 .basket-icon {
   fill: #202024;
