@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //comented
 
+
 // document.addEventListener('DOMContentLoaded', function() {
 //   const home = document.querySelector('.mob-menu-home');
 //   const shoppingList = document.querySelector('.mob-menu-calor');
