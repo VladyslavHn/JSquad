@@ -209,7 +209,7 @@ body.dark-theme .basket-icon-catch {
   );
   background-repeat: no-repeat;
   /* padding: 20px; */
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -329,9 +329,7 @@ body.dark-theme .basket-icon-catch {
 }
 
 .mob-basket-isactive {
-  color: #202024;
-
-  font-weight: lighter;
+  fill: #202024;
   bottom: 3px;
 }
 
@@ -374,6 +372,7 @@ body.dark-theme .basket-icon-catch {
 
 @media screen and (min-width: 768px) {
   .header-container {
+    width: 100%;
     padding-left: 32px !important;
     padding-right: 32px !important;
   }
@@ -402,6 +401,7 @@ body.dark-theme .basket-icon-catch {
 
 @media screen and (min-width: 1440px) {
   .header-container {
+    min-width: 1440px;
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
