@@ -127,6 +127,8 @@ body.dark-theme .loader {
   aside {
     display: flex;
     gap: 32px;
+    width: 100%;
+    height: 100%;
   }
 }
 
