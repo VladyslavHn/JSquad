@@ -93,6 +93,9 @@ body.dark-theme .basket-icon-catch {
   padding-top: 18px;
   padding-bottom: 18px;
   min-width: 100%;
+  position: fixed;
+  z-index: 1000;
+  background-color: #fff;
 }
 
 .header-navigation {
@@ -104,6 +107,15 @@ body.dark-theme .basket-icon-catch {
   justify-content: center;
   align-items: center;
   gap: 8px;
+  /* background-color: transparent; */
+}
+
+.header-logo:hover {
+  background-color: transparent;
+}
+
+.mob-item:hover {
+  background-color: transparent;
 }
 
 .logo-icon {
@@ -121,7 +133,12 @@ body.dark-theme .basket-icon-catch {
   color: #000;
 }
 
-.header-menu-link {
+.header-menu-home:focus {
+  background-color: transparent;
+}
+
+.header-menu-shopping:focus {
+  background-color: transparent;
 }
 
 .basket-icon {
@@ -181,10 +198,12 @@ body.dark-theme .basket-icon-catch {
   transform: translate(21px, -50%);
 }
 .menu-open-btn {
+  display: block;
   display: flex;
   background-color: transparent;
   margin-left: 14px;
   border: none;
+  padding: 0;
 }
 
 .menu-open-icon {
@@ -193,6 +212,7 @@ body.dark-theme .basket-icon-catch {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  padding: 0;
 }
 
 .menu-open-btn:focus .menu-open-icon,
@@ -200,7 +220,16 @@ body.dark-theme .basket-icon-catch {
 .menu-close-btn:hover .menu-close-icon,
 .menu-close-btn:focus .menu-close-icon {
   stroke: #4f2ee8;
-  transition: stroke 0.2s ease-in-out; /* Додана плавність протягом 0.3 секунди */
+  transition: stroke 0.2s ease-in-out;
+  background-color: transparent; /* Додана плавність протягом 0.3 секунди */
+}
+
+.menu-close-btn:focus {
+  background-color: transparent;
+}
+
+.menu-open-btn:focus {
+  background-color: transparent;
 }
 
 /* .menu-open-btn.menu-open-icon:is(:hover, :focus) {
@@ -209,7 +238,7 @@ body.dark-theme .basket-icon-catch {
 
 .mob-menu {
   position: fixed;
-  top: 69px;
+  top: 0px;
   left: 0;
   z-index: 999;
   width: 100%;
@@ -222,7 +251,7 @@ body.dark-theme .basket-icon-catch {
   );
   background-repeat: no-repeat;
   /* padding: 20px; */
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -252,6 +281,7 @@ body.dark-theme .basket-icon-catch {
   margin-left: 14px;
   border: none;
   background-color: transparent;
+  padding: 0;
 }
 
 .menu-close-icon {
@@ -302,6 +332,10 @@ body.dark-theme .basket-icon-catch {
   font-weight: bold;
 }
 
+.mob-menu-home:focus {
+  background-color: transparent;
+}
+
 .mob-menu-calor {
   color: #f6f6f6;
   font-weight: bold;
@@ -309,6 +343,10 @@ body.dark-theme .basket-icon-catch {
   gap: 8px;
   align-items: center;
   justify-content: center;
+}
+
+.mob-menu-calor:focus {
+  background-color: transparent;
 }
 
 /* .btn-active {
@@ -381,9 +419,16 @@ body.dark-theme .basket-icon-catch {
   display: flex;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 /* ==================================== */
 
 @media screen and (min-width: 768px) {
+  .overflow-hidden {
+    overflow: auto;
+  }
   .header-container {
     min-width: 100%;
     padding-left: 32px !important;
@@ -419,7 +464,7 @@ body.dark-theme .basket-icon-catch {
 
 @media screen and (min-width: 1440px) {
   .header-container {
-    min-width: 1440px;
+    max-width: 1440px;
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
