@@ -90,12 +90,11 @@ body.dark-theme .basket-icon-catch {
   border-radius: 0 0 8px 8px;
   justify-content: space-between;
   align-items: center;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  min-width: 100%;
+  width: 100%;
   position: fixed;
   z-index: 1000;
   background-color: #fff;
+  padding: 20px 18px;
 }
 
 .header-navigation {
@@ -225,10 +224,6 @@ body.dark-theme .basket-icon-catch {
 }
 
 .menu-close-btn:focus {
-  background-color: transparent;
-}
-
-.menu-open-btn:focus {
   background-color: transparent;
 }
 
@@ -430,7 +425,6 @@ body.dark-theme .basket-icon-catch {
     overflow: auto;
   }
   .header-container {
-    min-width: 100%;
     padding-left: 32px !important;
     padding-right: 32px !important;
   }
@@ -464,9 +458,11 @@ body.dark-theme .basket-icon-catch {
 
 @media screen and (min-width: 1440px) {
   .header-container {
-    max-width: 1440px;
+    width: 1440px;
     padding-left: 24px !important;
     padding-right: 24px !important;
+    position: static;
+    margin: 0 auto;
   }
   .header-menu {
     margin-left: 76px;
