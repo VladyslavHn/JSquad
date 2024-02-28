@@ -200,7 +200,7 @@ body.dark-theme .basket-icon-catch {
 .menu-close-btn:hover .menu-close-icon,
 .menu-close-btn:focus .menu-close-icon {
   stroke: #4f2ee8;
-  transition: stroke 0.5s ease-in-out; /* Додана плавність протягом 0.3 секунди */
+  transition: stroke 0.2s ease-in-out; /* Додана плавність протягом 0.3 секунди */
 }
 
 /* .menu-open-btn.menu-open-icon:is(:hover, :focus) {
