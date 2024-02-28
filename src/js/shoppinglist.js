@@ -27,6 +27,7 @@ function renderShoppingList(books) {
           </div>
           <button data-id="${book._id}" class="cart-item-del-button">
             <svg class="cart-item-del-button-icon" width="12" height="12">
+
               <use href="./img/symbol-defs.svg#icon-delete-shoppinglist-tab" />
             </svg>
           </button>
@@ -58,6 +59,7 @@ function renderShoppingList(books) {
               >
                 <img
                   class="cart-items-apple"
+
                   src="./img/apple-n.png"
                   alt="shopping cart empty"
                   height="16"

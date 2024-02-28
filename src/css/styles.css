@@ -53,14 +53,29 @@ html {
   position: fixed;
   bottom: 145px;
   right: 25px;
-  background-color: #4f2ee8;
-  border: none;
+  border: 2px solid #4f2ee8;
   border-radius: 50%;
   width: 54px;
   height: 54px;
   cursor: pointer;
   display: none;
   z-index: 2;
+  background-color: #f6f6f6;
+  transition: background-color 0.1s ease;
+}
+
+.scroll-up:hover,
+.scroll-up:focus {
+  background-color: #4f2ee8;
+}
+
+.scroll-up-icon {
+  fill: #4f2ee8;
+}
+
+.scroll-up:hover .scroll-up-icon,
+.scroll-up:focus .scroll-up-icon {
+  fill: #f6f6f6;
 }
 
 /* .scroll-up.border:hover,
@@ -72,14 +87,19 @@ html {
   display: block;
 }
 
-.scroll-up-icon {
-  fill: #fff;
+body.dark-theme .scroll-up {
+  background-color: #202024;
 }
 
-.scroll-up-button-arrow {
-  fill: #fff;
+body.dark-theme .scroll-up:hover,
+:focus {
+  background-color: #eac645;
 }
 
+body.dark-theme .scroll-up:hover .scroll-up-icon,
+.scroll-up:focus .scroll-up-icon {
+  fill: #4f2ee8;
+}
 body.dark-theme .loader-container {
   background-color: #202024;
 }
