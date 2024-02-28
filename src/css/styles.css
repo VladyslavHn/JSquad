@@ -175,9 +175,9 @@ body.dark-theme .loader {
   animation: rotation 1s linear infinite;
 }
 
-/* .is-hidden-loader {
+.is-hidden-loader {
   display: none;
-} */
+}
 
 @keyframes rotation {
   0% {
