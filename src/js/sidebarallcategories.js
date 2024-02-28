@@ -2,6 +2,7 @@ import { hideLoader, showLoader } from '../main';
 import backendAPI from './Services/api';
 import { renderBestBooks } from './bestsellers';
 import { renderCategoryPage } from './categorypage';
+import { scrollTitleUp } from './Services/helpers';
 
 const categorySelectors = {
   categoryContainer: document.querySelector('.sidebar-category-container'),
@@ -55,6 +56,7 @@ categorySelectors.allCategory.addEventListener('click', async event => {
     const bestBooksData = await backendAPI.getBestSellers();
     renderBestBooks(bestBooksData);
     hideLoader();
+    scrollTitleUp();
   } catch (error) {
     console.log(error);
   }
@@ -82,6 +84,7 @@ categorySelectors.categoryList.addEventListener('click', async event => {
         const categoryData = await backendAPI.getSelectedCategory(category);
         renderCategoryPage(categoryData, category);
         hideLoader();
+        scrollTitleUp();
       }
     } catch (error) {
       console.log(error);
