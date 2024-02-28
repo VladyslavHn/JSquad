@@ -2,6 +2,8 @@
 import { showLoader, hideLoader } from '../main';
 import backendAPI from './Services/api';
 import localStorageBooks from '../js/localstorage';
+import amazon from '../img/amazon-n.png';
+import apple from '../img/apple-n.png';
 
 const backdrop = document.querySelector('.backdrop');
 const modalWrapper = document.querySelector('.modal-wrapper');
@@ -68,11 +70,11 @@ function markupBooks(modalData) {
           <p class="modal-book-description">${modalData.description}</p>
           <ul class="modal-icons-list">
           <li>
-            <a class="modal-book-link" href="${modalData.buy_links[0].url}" target="_blank"><img class='modal-link-icon-amazon' src="/img/amazon-n.png" alt="" width='62' height='19' 
+            <a class="modal-book-link" href="${modalData.buy_links[0].url}" target="_blank"><img class='modal-link-icon-amazon' src="${amazon}" alt="" width='62' height='19' 
             /></a>
           </li>
           <li>
-            <a class="modal-book-link" href="${modalData.buy_links[1].url}" target="_blank"><img class='modal-link-icon-apple' src="/img/apple-n.png" alt="" width='33' height='32'
+            <a class="modal-book-link" href="${modalData.buy_links[1].url}" target="_blank"><img class='modal-link-icon-apple' src="${apple}" alt="" width='33' height='32'
             /></a>
           </li>
           </ul>
