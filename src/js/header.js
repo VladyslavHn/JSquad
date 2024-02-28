@@ -57,7 +57,9 @@ const mobMenu = document.querySelector('.mob-menu');
 
 // Відкриття меню при кліку на кнопку відкриття
 menuOpenButton.addEventListener('click', () => {
+  document.body.style.overflow = 'hidden';
   mobMenu.classList.add('is-open');
+  
   menuOpenButton.classList.remove('is-open');
   menuOpenButton.classList.add('hidden');
   menuCloseButton.classList.remove('hidden');
@@ -65,6 +67,7 @@ menuOpenButton.addEventListener('click', () => {
 
 // Закриття меню при кліку на кнопку закриття
 menuCloseButton.addEventListener('click', () => {
+  document.body.style.overflow = 'auto';
   mobMenu.classList.remove('is-open');
   menuOpenButton.classList.remove('hidden');
   menuCloseButton.classList.add('hidden');

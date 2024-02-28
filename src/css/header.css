@@ -213,7 +213,6 @@ body.dark-theme .basket-icon-catch {
   );
   background-repeat: no-repeat;
   /* padding: 20px; */
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
