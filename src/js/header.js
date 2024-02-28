@@ -149,52 +149,25 @@ document.addEventListener('DOMContentLoaded', function () {
   } 
   });
 
-  //comented
-  
-// document.addEventListener('DOMContentLoaded', function() {
-//   const home = document.querySelector('.mob-menu-home');
-//   const shoppingList = document.querySelector('.mob-menu-calor');
-//   const mobBasketIcon = document.querySelector('.mob-basket-icon');
-//   function applyBackground() {
-//     const currentPath = window.location.pathname;
-//     home.classList.toggle('btn-active-home', currentPath === '/index.html' || currentPath === '/');
-//     shoppingList.classList.toggle('btn-active-shopping', currentPath.includes('card.html'));
-//     mobBasketIcon.classList.toggle('mob-basket-isactive', currentPath.includes('card.html'));
-//   }
-//   applyBackground();
-//   home.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     window.location.href = './index.html';
-//   });
-//   shoppingList.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     window.location.href = './card.html';
-//   });
+  // function applyBackground() {
+  //   const currentPath = window.location.pathname;
+  //   headerHomeMenu.classList.toggle('open-home', currentPath.includes('index.html'));
+  //   headerShoppingList.classList.toggle('open-list', currentPath.includes('card.html'));
+  //   basketIcon.classList.toggle('basket-icon-catch', currentPath.includes('card.html'));
+  //   mobeHomeMenu.classList.toggle('open-home', currentPath.includes('index.html'));
+  //   mobShoppingList.classList.toggle('open-list', currentPath.includes('card.html'));
+  //   mobBasketIcon.classList.toggle('mob-basket-isactive', currentPath.includes('card.html'));
+  // }
+  // applyBackground();
 
-        
-    
+  // headerHomeMenu.addEventListener('click', function (event) {
+  //   event.preventDefault();
+  //   window.location.href = './index.html';
+  //   removeEventListener();
+  // })
 
-// comented
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   const home = document.querySelector('.header-menu-home');
-//   const shoppingList = document.querySelector('.header-menu-shopping');
-//   const headerIcon = document.querySelector('.basket-icon')
-//   function applyBackground() {
-//     const currentPath = window.location.pathname;
-//     home.classList.toggle('btn-active', currentPath.includes('index.html'));
-//     shoppingList.classList.toggle('btn-active', currentPath.includes('card.html'));
-//     headerIcon.classList.toggle('basket-icon-catch', currentPath.includes('card.html'));
-  
-//   }
-//   applyBackground();
-//   home.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     window.location.href = './index.html';
-//   });
-//   shoppingList.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     window.location.href = './card.html';
-//   });
-// });
-
+  // headerShoppingList.addEventListener('click', function (event) {
+  //   event.preventDefault();
+  //   window.location.href = './card.html';
+  //   removeEventListener();
+  // })
