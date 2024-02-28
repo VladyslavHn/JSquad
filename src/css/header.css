@@ -186,12 +186,12 @@ body.dark-theme .basket-icon-catch {
   background-color: transparent;
 }
 
-.menu-open-btn:focus .menu-open-icon {
+.menu-open-btn:focus .menu-open-icon,
+.menu-open-btn:hover .menu-open-icon,
+.menu-close-btn:hover .menu-close-icon,
+.menu-close-btn:focus .menu-close-icon {
   stroke: #4f2ee8;
-}
-
-.menu-open-btn:hover .menu-open-icon {
-  stroke: #4f2ee8;
+  transition: stroke 0.5s ease-in-out; /* Додана плавність протягом 0.3 секунди */
 }
 
 /* .menu-open-btn.menu-open-icon:is(:hover, :focus) {
@@ -247,14 +247,6 @@ body.dark-theme .basket-icon-catch {
 
 .menu-close-icon {
   stroke: #111;
-}
-
-.menu-close-btn:hover .menu-close-icon {
-  stroke: #4f2ee8;
-}
-
-.menu-close-btn:focus .menu-close-icon {
-  stroke: #4f2ee8;
 }
 
 .mob-list {
