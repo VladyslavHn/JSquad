@@ -372,7 +372,7 @@ body.dark-theme .basket-icon-catch {
 
 @media screen and (min-width: 768px) {
   .header-container {
-    width: 100%;
+    min-width: 100%;
     padding-left: 32px !important;
     padding-right: 32px !important;
   }
