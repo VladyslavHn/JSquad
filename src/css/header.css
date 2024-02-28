@@ -12,6 +12,10 @@ body.dark-theme {
   background-color: #202024;
   color: rgba(255, 255, 255, 0.6);
 }
+body.dark-theme .header {
+  background-color: #111;
+  border: 1.5px solid #fff;
+}
 body.dark-theme .header-container {
   background-color: #111;
   border: 1.5px solid #fff;
