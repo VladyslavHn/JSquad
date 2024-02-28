@@ -3,6 +3,7 @@ import localStorageBooks from '../js/localstorage';
 import sprite from '../img/symbol-defs.svg';
 import amazon from '../img/amazon-n.png';
 import apple from '../img/apple-n.png';
+import { updateBooksCounter } from './updatecounter';
 
 const shoppingList = document.querySelector('.cart-list');
 const cartEmptyMsg = document.querySelector('.cart-empty-container');
@@ -183,6 +184,7 @@ function removeBookFromList(e) {
   if (e.target.closest('.cart-item-del-button') !== null) {
     const bookId = e.target.closest('.cart-item-del-button').dataset.id;
     localStorageBooks.removeBookFromFavorites(bookId);
+    updateBooksCounter();
     if (
       parseInt(pageData.currentPage) === parseInt(pageData.totalPages) - 1 &&
       pageData.books[pageData.currentPage].length === 1

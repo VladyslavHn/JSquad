@@ -4,6 +4,7 @@ import backendAPI from './Services/api';
 import localStorageBooks from '../js/localstorage';
 import amazon from '../img/amazon-n.png';
 import apple from '../img/apple-n.png';
+import { updateBooksCounter } from './updatecounter';
 
 const backdrop = document.querySelector('.backdrop');
 const modalWrapper = document.querySelector('.modal-wrapper');
@@ -130,11 +131,13 @@ function closeModal() {
 
 function addBook(book) {
   localStorageBooks.addBookToFavorites(book);
+  updateBooksCounter();
   bookAddMsg.textContent =
     'Сongratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
 }
 
 function removeBook(bookId) {
   localStorageBooks.removeBookFromFavorites(bookId);
+  updateBooksCounter();
   bookAddMsg.textContent = '';
 }

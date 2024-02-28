@@ -117,9 +117,6 @@ body.dark-theme .basket-icon-catch {
   background-color: transparent;
 }
 
-.logo-icon {
-}
-
 .logo-text-icon {
   fill: #000;
 }
@@ -136,8 +133,41 @@ body.dark-theme .basket-icon-catch {
   background-color: transparent;
 }
 
+.header-menu-shopping {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
 .header-menu-shopping:focus {
   background-color: transparent;
+}
+
+.header-book-counter {
+  display: none;
+  justify-content: center;
+  border: 1px solid #808080;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
+  /* padding: 2px; */
+}
+
+body.dark-theme .header-book-counter {
+  color: white;
+}
+
+body.dark-theme .btn-active .header-book-counter {
+  color: black;
+}
+
+.mob-menu-calor > span {
+  color: white;
+}
+
+.open-list > span {
+  color: black !important;
 }
 
 .basket-icon {
@@ -365,7 +395,7 @@ body.dark-theme .basket-icon-catch {
   color: #111;
   border-radius: 36px;
   padding: 8px 16px;
-  width: 162px;
+  /* width: 162px; */
   height: 34px;
   background: #eac645;
 }
