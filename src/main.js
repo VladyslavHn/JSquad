@@ -7,9 +7,12 @@ import './js/support';
 // import './js/Services/helpers';
 // import './js/modalwindow';
 // import './js/localstorage';
+
 import { topPageBestsellersBooks } from './js/bestsellers';
+import { updateBooksCounter } from './js/updatecounter';
 
 topPageBestsellersBooks();
+updateBooksCounter();
 
 document.addEventListener('DOMContentLoaded', function () {
   const scrollUpButton = document.querySelector('.scroll-up');
