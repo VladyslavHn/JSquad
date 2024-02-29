@@ -4,6 +4,7 @@ import { bookTemplate, renderTitle } from './Services/helpers';
 import { renderCategoryPage } from './categorypage';
 import { showModal } from './modalwindow';
 import { showLoader } from '../main';
+import { scrollTitleUp } from './Services/helpers';
 
 // ==================================================================================
 // Функція для відображення Best Sellers Books
@@ -123,10 +124,11 @@ async function onButtonClick(e) {
       }
     });
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    scrollTitleUp();
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth',
+    // });
   } catch (error) {
     console.log('Error fetching modal:', error);
   }
