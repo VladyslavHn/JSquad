@@ -95,6 +95,7 @@ body.dark-theme .basket-icon-catch {
   z-index: 1000;
   background-color: #fff;
   padding: 20px 18px;
+  height: 64px;
 }
 
 .header-navigation {
@@ -457,6 +458,7 @@ body.dark-theme .basket-icon-catch {
   .header-container {
     padding-left: 32px !important;
     padding-right: 32px !important;
+    height: 72px;
   }
   .menu-open-btn {
     display: none;
