@@ -97,10 +97,10 @@ async function onButtonClick(e) {
       '.sidebar-category-item'
     );
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth',
+    // });
 
     const categoryBooksContainer = document.querySelector(
       '.bestsellers-container'
